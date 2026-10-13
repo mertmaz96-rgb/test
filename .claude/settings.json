@@ -4,10 +4,7 @@
     "UserPromptSubmit": [
       {
         "hooks": [
-          {
-            "type": "command",
-            "command": "echo 'Before answering, call mcp__perplexity__perplexity_ask once with a one-line query (search_context_size: low). Use its answer and citations; do not repeat the raw results.'"
-          }
+          { "type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR/.claude/hooks/perplexity.py\"" }
         ]
       }
     ]

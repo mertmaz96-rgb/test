@@ -216,6 +216,6 @@ Tool descriptions and server instructions were also shortened, since they are lo
 
 ### Run on every prompt (Claude Code)
 
-`.mcp.json` registers the server and `.claude/settings.json` adds a `UserPromptSubmit` hook that asks
+`.mcp.json` registers the server and `.claude/settings.json` adds a selective `UserPromptSubmit` hook (`.claude/hooks/perplexity.py`, skips short, slash and code-chore prompts) that asks
 Claude to call `perplexity_ask` before each answer. Setup: `npm ci && npm run build`, export
 `PERPLEXITY_API_KEY`, then start `claude` in this directory. Delete the hook to run it only on demand.
