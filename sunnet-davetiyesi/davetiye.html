@@ -155,6 +155,10 @@ img { max-width: 100%; display: block; }
 .img-placeholder img { visibility: hidden; }
 .img-placeholder::after { content: 'Fotoğraf ekle'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--f-wide); font-size: 11px; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); padding: 12px; }
 
+.gallery-empty { border: 1px dashed var(--gold); background: #fff; padding: 44px 24px; text-align: center; }
+.gallery-empty svg { width: 46px; height: 46px; fill: none; stroke: var(--gold); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; margin-bottom: 14px; }
+.gallery-empty p { margin: 0; font-size: 18px; line-height: 1.5; font-style: italic; color: var(--muted); max-width: 240px; margin-inline: auto; }
+
 /* ---------- Footer ---------- */
 .site-footer { background: var(--ink); color: var(--cream); text-align: center; padding: 50px 24px 90px; display: flex; flex-direction: column; gap: 10px; }
 .footer-script { font-family: var(--f-serif); font-style: italic; font-size: 22px; color: #d3b57c; }
@@ -274,30 +278,7 @@ img { max-width: 100%; display: block; }
         </div>
       </section>
 
-      <!-- ETKİNLİK -->
-      <section class="reveal-section alt-bg" data-reveal-key="events">
-        <p class="eyebrow">Programımız</p>
-        <h2 class="section-title">Sünnet Düğünü</h2>
-        <div class="gold-rule"></div>
-        <div class="event-card event-card--last">
-          <p class="event-date">21 KASIM 2026 · CUMARTESİ</p>
-          <p class="event-time">19.00</p>
-          <p class="event-place">Seramoni 4 Düğün Salonu<br>Firüzköy / Avcılar</p>
-        </div>
-      </section>
 
-      <!-- KIYAFET -->
-      <section class="reveal-section" data-reveal-key="dress">
-        <p class="eyebrow">Kıyafet</p>
-        <h2 class="section-title">Renklerimiz</h2>
-        <div class="gold-rule"></div>
-        <div class="dress-colors">
-          <span class="dress-swatch" style="background:#111111;"></span>
-          <span class="dress-swatch" style="background:#a8803a;"></span>
-          <span class="dress-swatch" style="background:#faf9f5;"></span>
-        </div>
-        <p class="dress-note">Günümüze bu tonlardaki kıyafetlerinizle eşlik ederseniz seviniriz.</p>
-      </section>
 
       <!-- KONUM -->
       <section class="reveal-section alt-bg" data-reveal-key="location">
@@ -308,23 +289,23 @@ img { max-width: 100%; display: block; }
           <p class="location-label">Sünnet Düğünü</p>
           <p class="location-place">Seramoni 4 Düğün Salonu, Firüzköy / Avcılar</p>
           <iframe class="location-map" title="Harita: Seramoni 4 Düğün Salonu" src="https://www.google.com/maps?q=Seramoni%204%20D%C3%BC%C4%9F%C3%BCn%20Salonu%20Fir%C3%BCzk%C3%B6y%20Avc%C4%B1lar%20%C4%B0stanbul&output=embed" loading="lazy"></iframe>
-          <a class="btn-outline" href="https://www.google.com/maps/search/?api=1&query=Seramoni%204%20D%C3%BC%C4%9F%C3%BCn%20Salonu%20Fir%C3%BCzk%C3%B6y%20Avc%C4%B1lar%20%C4%B0stanbul" target="_blank" rel="noopener">Yol Tarifi</a>
+          <a class="btn-outline" href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x14caa0febc2e47eb:0xfbbf372aca654bda?sa=X&amp;ved=1t:8290&amp;ictx=111" target="_blank" rel="noopener">Yol Tarifi</a>
         </div>
       </section>
 
       <!-- HAVA DURUMU -->
       <section class="reveal-section" data-reveal-key="weather">
-        <p class="eyebrow">Şu An</p>
+        <p class="eyebrow">Düğün Günü</p>
         <h2 class="section-title">Hava Durumu</h2>
         <div class="gold-rule"></div>
         <div class="weather-card">
-          <p class="weather-date" id="weatherDate">21 KASIM 2026 · İSTANBUL</p>
+          <p class="weather-date" id="weatherDate">21 KASIM 2026 · AVCILAR</p>
           <div class="weather-main">
-            <p class="weather-temp"><span id="weatherTemp">16</span>°</p>
+            <p class="weather-temp"><span id="weatherTemp">8–14</span>°</p>
             <span id="weatherIcon" class="weather-icon"></span>
           </div>
-          <p class="weather-condition" id="weatherCondition">Bulutlu</p>
-          <p class="weather-note" id="weatherNote">Güncel veriye bağlı</p>
+          <p class="weather-condition" id="weatherCondition">Mevsim normalleri</p>
+          <p class="weather-note" id="weatherNote">Kesin tahmin, düğüne 15 gün kala burada görünecek</p>
         </div>
       </section>
 
@@ -382,11 +363,12 @@ img { max-width: 100%; display: block; }
         <p class="eyebrow">Anılarımız</p>
         <h2 class="section-title">Galeri</h2>
         <div class="gold-rule"></div>
-        <div class="gallery-scroll">
-          <div class="gallery-slide"><img src="assets/images/gallery1.jpg" alt="Galeri fotoğrafı 1" loading="lazy" onerror="this.parentElement.classList.add('img-placeholder')"></div>
-          <div class="gallery-slide"><img src="assets/images/gallery2.jpg" alt="Galeri fotoğrafı 2" loading="lazy" onerror="this.parentElement.classList.add('img-placeholder')"></div>
-          <div class="gallery-slide"><img src="assets/images/gallery3.jpg" alt="Galeri fotoğrafı 3" loading="lazy" onerror="this.parentElement.classList.add('img-placeholder')"></div>
+        <div class="gallery-empty">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="12" width="36" height="26" rx="3"/><circle cx="24" cy="25" r="7"/><path d="M17 12l2-4h10l2 4"/></svg>
+          <p>Düğünde çekilen fotoğraflar burada paylaşılacak</p>
         </div>
+        <!-- Düğünden sonra: yukarıdaki gallery-empty bloğunu silip yerine
+             <div class="gallery-scroll"><div class="gallery-slide"><img src="assets/images/gallery1.jpg" alt=""></div>...</div> ekleyin. -->
       </section>
 
       <footer class="site-footer">
@@ -415,8 +397,8 @@ img { max-width: 100%; display: block; }
   var CONFIG = {
     childName: 'Aybek & Alper Özkan',
     eventDate: '2026-11-21T19:00:00+03:00',
-    city: 'Istanbul',
-    cityLabel: 'İSTANBUL',
+    lat: 40.98,   // Avcılar
+    lon: 28.72,
     whatsapp: '905551112233' // ülke kodu ile, + olmadan
   };
 
@@ -501,47 +483,55 @@ img { max-width: 100%; display: block; }
   window.addEventListener('click', firstGesture, { once: true, passive: true });
   window.addEventListener('touchend', firstGesture, { once: true, passive: true });
 
-  /* ---------- Hava durumu (wttr.in) ---------- */
+  /* ---------- Hava durumu (Open-Meteo, düğün günü tahmini) ---------- */
   var weatherTemp = document.getElementById('weatherTemp');
   var weatherCondition = document.getElementById('weatherCondition');
-  var weatherDate = document.getElementById('weatherDate');
   var weatherNote = document.getElementById('weatherNote');
   var weatherIcon = document.getElementById('weatherIcon');
-
-  var WEATHER_TR = [
-    ['partly', 'Kısmen Bulutlu'], ['overcast', 'Kapalı'], ['drizzle', 'Çiseleyen Yağmur'],
-    ['rain', 'Yağmurlu'], ['snow', 'Karlı'], ['cloud', 'Bulutlu'], ['clear', 'Açık'], ['sunny', 'Güneşli'], ['mist', 'Sisli'], ['fog', 'Sisli']
-  ];
 
   var ICONS = {
     rain: '<svg viewBox="0 0 100 80"><ellipse cx="50" cy="25" rx="22" ry="15" fill="#5a8fb8"/><ellipse cx="30" cy="28" rx="16" ry="12" fill="#5a8fb8" opacity="0.8"/><circle cx="20" cy="50" r="3" fill="#5a8fb8"/><circle cx="35" cy="58" r="3" fill="#5a8fb8"/><circle cx="50" cy="55" r="3" fill="#5a8fb8"/><circle cx="65" cy="60" r="3" fill="#5a8fb8"/><circle cx="80" cy="52" r="3" fill="#5a8fb8"/></svg>',
     cloud: '<svg viewBox="0 0 100 80"><ellipse cx="55" cy="32" rx="28" ry="18" fill="#a8c5e0"/><ellipse cx="28" cy="38" rx="20" ry="14" fill="#7fa8d1" opacity="0.9"/></svg>',
-    sun: '<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="25" fill="#f4b860"/><g stroke="#f4a460" stroke-width="3" stroke-linecap="round"><path d="M50 12V2M50 98V88M88 50h10M12 50H2M75 25l7-7M25 75l-7 7M25 25l-7-7M75 75l7 7"/></g></svg>'
+    sun: '<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="25" fill="#e0b25a"/><g stroke="#e0b25a" stroke-width="3" stroke-linecap="round"><path d="M50 12V2M50 98V88M88 50h10M12 50H2M75 25l7-7M25 75l-7 7M25 25l-7-7M75 75l7 7"/></g></svg>'
   };
-
-  weatherDate.textContent = new Date(CONFIG.eventDate).toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' }).toUpperCase() + ' · ' + CONFIG.cityLabel;
   weatherIcon.innerHTML = ICONS.cloud;
 
-  fetch('https://wttr.in/' + encodeURIComponent(CONFIG.city) + '?format=j1')
-    .then(function (res) { return res.json(); })
-    .then(function (data) {
-      var cond = data && data.current_condition && data.current_condition[0];
-      if (!cond) return;
-      var tempC = parseInt(cond.temp_C, 10);
-      var desc = (cond.weatherDesc && cond.weatherDesc[0] && cond.weatherDesc[0].value) || '';
-      var lower = desc.toLowerCase();
-      var tr = desc;
-      for (var i = 0; i < WEATHER_TR.length; i++) {
-        if (lower.indexOf(WEATHER_TR[i][0]) !== -1) { tr = WEATHER_TR[i][1]; break; }
-      }
-      var rainy = /rain|drizzle|snow/.test(lower);
-      var cloudy = /cloud|overcast|mist|fog/.test(lower);
-      weatherTemp.textContent = isNaN(tempC) ? '--' : tempC;
-      weatherCondition.textContent = tr || 'Bilinmiyor';
-      weatherNote.textContent = 'Şu anki hava durumu';
-      weatherIcon.innerHTML = rainy ? ICONS.rain : (cloudy ? ICONS.cloud : ICONS.sun);
-    })
-    .catch(function () { /* varsayılan değerler kalır */ });
+  // WMO hava kodu -> [Türkçe açıklama, ikon]
+  function describe(code) {
+    if (code === 0) return ['Açık', 'sun'];
+    if (code <= 2) return ['Parçalı Bulutlu', 'cloud'];
+    if (code === 3) return ['Kapalı', 'cloud'];
+    if (code === 45 || code === 48) return ['Sisli', 'cloud'];
+    if (code >= 51 && code <= 57) return ['Çiseleyen Yağmur', 'rain'];
+    if (code >= 61 && code <= 67) return ['Yağmurlu', 'rain'];
+    if (code >= 71 && code <= 77) return ['Karlı', 'rain'];
+    if (code >= 80 && code <= 82) return ['Sağanak Yağmur', 'rain'];
+    if (code >= 85 && code <= 86) return ['Kar Sağanağı', 'rain'];
+    if (code >= 95) return ['Gök Gürültülü Fırtına', 'rain'];
+    return ['Bulutlu', 'cloud'];
+  }
+
+  // Open-Meteo yalnızca ~16 gün sonrasına kadar tahmin verir; öncesinde mevsim normali gösterilir.
+  var eventDay = CONFIG.eventDate.slice(0, 10);
+  var daysLeft = (new Date(eventDay + 'T12:00:00+03:00') - Date.now()) / 86400000;
+  if (daysLeft <= 15 && daysLeft > -1) {
+    fetch('https://api.open-meteo.com/v1/forecast?latitude=' + CONFIG.lat + '&longitude=' + CONFIG.lon +
+      '&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Europe%2FIstanbul&start_date=' + eventDay + '&end_date=' + eventDay)
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        var d = data && data.daily;
+        if (!d || !d.time || !d.time.length) return;
+        var info = describe(d.weather_code[0]);
+        var lo = Math.round(d.temperature_2m_min[0]);
+        var hi = Math.round(d.temperature_2m_max[0]);
+        var rain = d.precipitation_probability_max && d.precipitation_probability_max[0];
+        weatherTemp.textContent = lo + '–' + hi;
+        weatherCondition.textContent = info[0];
+        weatherNote.textContent = 'Düğün günü tahmini' + (rain != null ? ' · Yağış ihtimali %' + rain : '');
+        weatherIcon.innerHTML = ICONS[info[1]];
+      })
+      .catch(function () { /* mevsim normali kalır */ });
+  }
 
   /* ---------- Katılım formu (WhatsApp) ---------- */
   document.getElementById('rsvpForm').addEventListener('submit', function (e) {

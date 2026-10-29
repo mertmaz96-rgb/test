@@ -5,8 +5,8 @@
   var CONFIG = {
     childName: 'Aybek & Alper Özkan',
     eventDate: '2026-11-21T19:00:00+03:00',
-    city: 'Istanbul',
-    cityLabel: 'İSTANBUL',
+    lat: 40.98,   // Avcılar
+    lon: 28.72,
     whatsapp: '905551112233' // ülke kodu ile, + olmadan
   };
 
@@ -91,47 +91,55 @@
   window.addEventListener('click', firstGesture, { once: true, passive: true });
   window.addEventListener('touchend', firstGesture, { once: true, passive: true });
 
-  /* ---------- Hava durumu (wttr.in) ---------- */
+  /* ---------- Hava durumu (Open-Meteo, düğün günü tahmini) ---------- */
   var weatherTemp = document.getElementById('weatherTemp');
   var weatherCondition = document.getElementById('weatherCondition');
-  var weatherDate = document.getElementById('weatherDate');
   var weatherNote = document.getElementById('weatherNote');
   var weatherIcon = document.getElementById('weatherIcon');
-
-  var WEATHER_TR = [
-    ['partly', 'Kısmen Bulutlu'], ['overcast', 'Kapalı'], ['drizzle', 'Çiseleyen Yağmur'],
-    ['rain', 'Yağmurlu'], ['snow', 'Karlı'], ['cloud', 'Bulutlu'], ['clear', 'Açık'], ['sunny', 'Güneşli'], ['mist', 'Sisli'], ['fog', 'Sisli']
-  ];
 
   var ICONS = {
     rain: '<svg viewBox="0 0 100 80"><ellipse cx="50" cy="25" rx="22" ry="15" fill="#5a8fb8"/><ellipse cx="30" cy="28" rx="16" ry="12" fill="#5a8fb8" opacity="0.8"/><circle cx="20" cy="50" r="3" fill="#5a8fb8"/><circle cx="35" cy="58" r="3" fill="#5a8fb8"/><circle cx="50" cy="55" r="3" fill="#5a8fb8"/><circle cx="65" cy="60" r="3" fill="#5a8fb8"/><circle cx="80" cy="52" r="3" fill="#5a8fb8"/></svg>',
     cloud: '<svg viewBox="0 0 100 80"><ellipse cx="55" cy="32" rx="28" ry="18" fill="#a8c5e0"/><ellipse cx="28" cy="38" rx="20" ry="14" fill="#7fa8d1" opacity="0.9"/></svg>',
-    sun: '<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="25" fill="#f4b860"/><g stroke="#f4a460" stroke-width="3" stroke-linecap="round"><path d="M50 12V2M50 98V88M88 50h10M12 50H2M75 25l7-7M25 75l-7 7M25 25l-7-7M75 75l7 7"/></g></svg>'
+    sun: '<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="25" fill="#e0b25a"/><g stroke="#e0b25a" stroke-width="3" stroke-linecap="round"><path d="M50 12V2M50 98V88M88 50h10M12 50H2M75 25l7-7M25 75l-7 7M25 25l-7-7M75 75l7 7"/></g></svg>'
   };
-
-  weatherDate.textContent = new Date(CONFIG.eventDate).toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' }).toUpperCase() + ' · ' + CONFIG.cityLabel;
   weatherIcon.innerHTML = ICONS.cloud;
 
-  fetch('https://wttr.in/' + encodeURIComponent(CONFIG.city) + '?format=j1')
-    .then(function (res) { return res.json(); })
-    .then(function (data) {
-      var cond = data && data.current_condition && data.current_condition[0];
-      if (!cond) return;
-      var tempC = parseInt(cond.temp_C, 10);
-      var desc = (cond.weatherDesc && cond.weatherDesc[0] && cond.weatherDesc[0].value) || '';
-      var lower = desc.toLowerCase();
-      var tr = desc;
-      for (var i = 0; i < WEATHER_TR.length; i++) {
-        if (lower.indexOf(WEATHER_TR[i][0]) !== -1) { tr = WEATHER_TR[i][1]; break; }
-      }
-      var rainy = /rain|drizzle|snow/.test(lower);
-      var cloudy = /cloud|overcast|mist|fog/.test(lower);
-      weatherTemp.textContent = isNaN(tempC) ? '--' : tempC;
-      weatherCondition.textContent = tr || 'Bilinmiyor';
-      weatherNote.textContent = 'Şu anki hava durumu';
-      weatherIcon.innerHTML = rainy ? ICONS.rain : (cloudy ? ICONS.cloud : ICONS.sun);
-    })
-    .catch(function () { /* varsayılan değerler kalır */ });
+  // WMO hava kodu -> [Türkçe açıklama, ikon]
+  function describe(code) {
+    if (code === 0) return ['Açık', 'sun'];
+    if (code <= 2) return ['Parçalı Bulutlu', 'cloud'];
+    if (code === 3) return ['Kapalı', 'cloud'];
+    if (code === 45 || code === 48) return ['Sisli', 'cloud'];
+    if (code >= 51 && code <= 57) return ['Çiseleyen Yağmur', 'rain'];
+    if (code >= 61 && code <= 67) return ['Yağmurlu', 'rain'];
+    if (code >= 71 && code <= 77) return ['Karlı', 'rain'];
+    if (code >= 80 && code <= 82) return ['Sağanak Yağmur', 'rain'];
+    if (code >= 85 && code <= 86) return ['Kar Sağanağı', 'rain'];
+    if (code >= 95) return ['Gök Gürültülü Fırtına', 'rain'];
+    return ['Bulutlu', 'cloud'];
+  }
+
+  // Open-Meteo yalnızca ~16 gün sonrasına kadar tahmin verir; öncesinde mevsim normali gösterilir.
+  var eventDay = CONFIG.eventDate.slice(0, 10);
+  var daysLeft = (new Date(eventDay + 'T12:00:00+03:00') - Date.now()) / 86400000;
+  if (daysLeft <= 15 && daysLeft > -1) {
+    fetch('https://api.open-meteo.com/v1/forecast?latitude=' + CONFIG.lat + '&longitude=' + CONFIG.lon +
+      '&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Europe%2FIstanbul&start_date=' + eventDay + '&end_date=' + eventDay)
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        var d = data && data.daily;
+        if (!d || !d.time || !d.time.length) return;
+        var info = describe(d.weather_code[0]);
+        var lo = Math.round(d.temperature_2m_min[0]);
+        var hi = Math.round(d.temperature_2m_max[0]);
+        var rain = d.precipitation_probability_max && d.precipitation_probability_max[0];
+        weatherTemp.textContent = lo + '–' + hi;
+        weatherCondition.textContent = info[0];
+        weatherNote.textContent = 'Düğün günü tahmini' + (rain != null ? ' · Yağış ihtimali %' + rain : '');
+        weatherIcon.innerHTML = ICONS[info[1]];
+      })
+      .catch(function () { /* mevsim normali kalır */ });
+  }
 
   /* ---------- Katılım formu (WhatsApp) ---------- */
   document.getElementById('rsvpForm').addEventListener('submit', function (e) {
