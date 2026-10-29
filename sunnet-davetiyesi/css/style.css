@@ -41,13 +41,13 @@ img { max-width: 100%; display: block; }
 }
 
 /* ---------- Frame (telefon genişliği; masaüstünde ortada) ---------- */
+.shell { position: relative; width: 100%; max-width: 460px; height: 100%; box-shadow: 0 0 60px rgba(0,0,0,0.25); }
 .frame {
   position: relative;
   width: 100%;
-  max-width: 460px;
   height: 100%;
+  overscroll-behavior: contain;
   background: var(--cream);
-  box-shadow: 0 0 60px rgba(0,0,0,0.25);
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
