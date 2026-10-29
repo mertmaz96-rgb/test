@@ -35,13 +35,22 @@
     if (introVideo.currentTime >= REVEAL_AT) reveal();
   });
   introVideo.addEventListener('ended', reveal);
-  introVideo.addEventListener('error', reveal);
-  introVideo.querySelector('source').addEventListener('error', reveal);
   intro.addEventListener('click', reveal); // dokununca geç
 
+  // Video oynatılamazsa (otomatik oynatma engeli, yüklenmeme) kapıyı CSS ile aç
+  var fallbackStarted = false;
+  function startFallback() {
+    if (fallbackStarted || revealed) return;
+    fallbackStarted = true;
+    intro.classList.add('intro--fallback');
+    setTimeout(reveal, 1400);
+  }
+  introVideo.addEventListener('error', startFallback);
+  introVideo.querySelector('source').addEventListener('error', startFallback);
+
   var started = introVideo.play();
-  if (started && started.catch) started.catch(reveal); // otomatik oynatma engellenirse atla
-  setTimeout(function () { if (introVideo.paused || introVideo.currentTime === 0) reveal(); }, 3000);
+  if (started && started.catch) started.catch(startFallback);
+  setTimeout(function () { if (!revealed && introVideo.currentTime < 0.05) startFallback(); }, 1200);
   setTimeout(reveal, 8000);
 
   /* ---------- Geri sayım ---------- */
