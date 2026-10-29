@@ -20,13 +20,12 @@
     <div class="curtain curtain-left" id="curtainL"><div class="curtain-shade"></div></div>
     <div class="curtain curtain-right" id="curtainR"><div class="curtain-shade"></div></div>
 
-    <!-- Açılış: kapı videosu -->
+    <!-- Açılış: kapı açılışı (arkadan site görünür) -->
     <div class="intro" id="intro" aria-hidden="true">
-      <video class="intro-video" id="introVideo" autoplay muted playsinline preload="auto" poster="assets/images/intro-poster.jpg">
-        <source src="assets/video/kapi-acilis.mp4" type="video/mp4">
-      </video>
-      <!-- Video oynatılamazsa devreye giren kapı animasyonu -->
-      <div class="door-fallback" aria-hidden="true"><div class="door door-l"></div><div class="door door-r"></div></div>
+      <div class="doors">
+        <div class="door door-l"><img src="assets/images/intro-poster.jpg" alt=""></div>
+        <div class="door door-r"><img src="assets/images/intro-poster.jpg" alt=""></div>
+      </div>
     </div>
 
   <div class="frame is-locked" id="frame">

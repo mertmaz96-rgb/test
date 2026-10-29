@@ -16,42 +16,44 @@
   var bgAudio = document.getElementById('bgAudio');
   var musicBtn = document.getElementById('musicBtn');
 
-  /* ---------- Açılış: kapı videosu ---------- */
+  /* ---------- Açılış: kapı açılışı ---------- */
+  // Kapı iki kanat olarak açılır ve izleyiciye yaklaşır; boşluktan site görünür.
   var intro = document.getElementById('intro');
-  var introVideo = document.getElementById('introVideo');
-  var REVEAL_AT = 2.0; // video bu kadar oynayınca içerik belirmeye başlar (sn); kapılar solarken açılmaya devam eder
-  var revealed = false;
+  var siteShown = false;
+  var ended = false;
 
-  function reveal() {
-    if (revealed) return;
-    revealed = true;
+  function showSite() {
+    if (siteShown) return;
+    siteShown = true;
     document.body.classList.add('is-revealed');
+  }
+  function endIntro() {
+    if (ended) return;
+    ended = true;
+    showSite();
     intro.classList.add('is-fading');
     frame.classList.remove('is-locked');
-    setTimeout(function () { intro.classList.add('is-ended'); }, 1600);
+    setTimeout(function () { intro.classList.add('is-ended'); }, 1100);
   }
 
-  introVideo.addEventListener('timeupdate', function () {
-    if (introVideo.currentTime >= REVEAL_AT) reveal();
-  });
-  introVideo.addEventListener('ended', reveal);
-  intro.addEventListener('click', reveal); // dokununca geç
-
-  // Video oynatılamazsa (otomatik oynatma engeli, yüklenmeme) kapıyı CSS ile aç
-  var fallbackStarted = false;
-  function startFallback() {
-    if (fallbackStarted || revealed) return;
-    fallbackStarted = true;
-    intro.classList.add('intro--fallback');
-    setTimeout(reveal, 1400);
+  var doorsStarted = false;
+  function startDoors() {
+    if (doorsStarted) return;
+    doorsStarted = true;
+    intro.classList.add('is-playing');
+    setTimeout(showSite, 1000);  // kapı aralanırken site belirmeye başlar
+    setTimeout(endIntro, 3100);  // kapılar kadrajdan çıkınca açılış biter
   }
-  introVideo.addEventListener('error', startFallback);
-  introVideo.querySelector('source').addEventListener('error', startFallback);
+  // Kapı görseli yüklenince başlat (yüklenmezse en geç 1,5 sn sonra)
+  var doorImg = new Image();
+  doorImg.onload = startDoors;
+  doorImg.onerror = startDoors;
+  doorImg.src = 'assets/images/intro-poster.jpg';
+  setTimeout(startDoors, 1500);
 
-  var started = introVideo.play();
-  if (started && started.catch) started.catch(startFallback);
-  setTimeout(function () { if (!revealed && introVideo.currentTime < 0.05) startFallback(); }, 1200);
-  setTimeout(reveal, 8000);
+  intro.addEventListener('click', endIntro); // dokununca geç
+  setTimeout(endIntro, 7000);
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) endIntro();
 
   /* ---------- Geri sayım ---------- */
   var cd = {
