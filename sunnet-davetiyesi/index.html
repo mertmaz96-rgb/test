@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<noscript><style>.site-content{opacity:1!important}.intro{display:none}.hero-content>*,.scroll-hint{opacity:1!important;transform:none!important}.frame{overflow-y:auto!important}</style></noscript>
 </head>
 <body>
 
@@ -19,13 +20,20 @@
     <div class="curtain curtain-left" id="curtainL"><div class="curtain-shade"></div></div>
     <div class="curtain curtain-right" id="curtainR"><div class="curtain-shade"></div></div>
 
-  <div class="frame" id="frame">
+    <!-- Açılış: kapı videosu -->
+    <div class="intro" id="intro" aria-hidden="true">
+      <video class="intro-video" id="introVideo" autoplay muted playsinline preload="auto" poster="assets/images/intro-poster.jpg">
+        <source src="assets/video/kapi-acilis.mp4" type="video/mp4">
+      </video>
+    </div>
+
+  <div class="frame is-locked" id="frame">
     <div class="site-content" id="siteContent">
 
       <!-- HERO -->
       <section class="hero">
-        <div class="hero-photo"><img src="assets/images/hero.jpg" alt="Aybek ve Alper"></div>
         <div class="hero-content">
+          <svg viewBox="0 0 60 60" class="hero-moon" aria-hidden="true"><path d="M38 8 A22 22 0 1 0 38 52 A17 17 0 1 1 38 8Z"/><path d="M46 22 l2.2 4.6 5 .7 -3.6 3.5 .9 5 -4.5 -2.4 -4.5 2.4 .9 -5 -3.6 -3.5 5 -.7Z"/></svg>
           <p class="eyebrow">Sünnet Düğünümüze</p>
           <h1 class="hero-title">Davetlisiniz</h1>
           <div class="gold-rule"></div>

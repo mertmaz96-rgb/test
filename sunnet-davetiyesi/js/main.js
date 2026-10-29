@@ -16,6 +16,34 @@
   var bgAudio = document.getElementById('bgAudio');
   var musicBtn = document.getElementById('musicBtn');
 
+  /* ---------- Açılış: kapı videosu ---------- */
+  var intro = document.getElementById('intro');
+  var introVideo = document.getElementById('introVideo');
+  var REVEAL_AT = 3.6; // kapılar açılınca içerik yavaşça belirir (sn)
+  var revealed = false;
+
+  function reveal() {
+    if (revealed) return;
+    revealed = true;
+    document.body.classList.add('is-revealed');
+    intro.classList.add('is-fading');
+    frame.classList.remove('is-locked');
+    setTimeout(function () { intro.classList.add('is-ended'); }, 1600);
+  }
+
+  introVideo.addEventListener('timeupdate', function () {
+    if (introVideo.currentTime >= REVEAL_AT) reveal();
+  });
+  introVideo.addEventListener('ended', reveal);
+  introVideo.addEventListener('error', reveal);
+  introVideo.querySelector('source').addEventListener('error', reveal);
+  intro.addEventListener('click', reveal); // dokununca geç
+
+  var started = introVideo.play();
+  if (started && started.catch) started.catch(reveal); // otomatik oynatma engellenirse atla
+  setTimeout(function () { if (introVideo.paused || introVideo.currentTime === 0) reveal(); }, 3000);
+  setTimeout(reveal, 8000);
+
   /* ---------- Geri sayım ---------- */
   var cd = {
     d: document.getElementById('cd-d'), h: document.getElementById('cd-h'),
