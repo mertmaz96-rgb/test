@@ -1,0 +1,238 @@
+/* ---------- Reset & base ---------- */
+:root {
+  --navy: #14284b;
+  --blue: #2f6fb5;
+  --gold: #b8935a;
+  --gold-light: #e8cb9a;
+  --cream: #faf5ec;
+  --cream-alt: #eef3f9;
+  --ink: #2b2622;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #dfe7f1; width: 100%; height: 100%; }
+body { font-family: 'Cormorant Garamond', serif; color: var(--ink); }
+a { color: var(--gold); }
+a:hover { color: #8a6a3f; }
+img { max-width: 100%; display: block; }
+[hidden] { display: none !important; }
+
+/* ---------- Keyframes ---------- */
+@keyframes curtainSway { 0% { transform: rotate(0deg) translateX(0); } 25% { transform: rotate(-0.7deg) translateX(-2px); } 55% { transform: rotate(0.5deg) translateX(2px); } 80% { transform: rotate(-0.2deg) translateX(-1px); } 100% { transform: rotate(0deg) translateX(0); } }
+@keyframes spinSlow { to { transform: rotate(360deg); } }
+@keyframes eqbar { 0%, 100% { transform: scaleY(.4); } 50% { transform: scaleY(1); } }
+@keyframes floatY { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@keyframes ringLeftBump { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
+@keyframes ringRightBump { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-5px); } }
+@keyframes sway { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+@keyframes pinBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes giftWiggle { 0%, 100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg); } }
+@keyframes frameFloat { 0%, 100% { opacity: 0.85; transform: scale(1); } 50% { opacity: 1; transform: scale(1.04); } }
+
+/* ---------- Page wrapper ---------- */
+.page-wrapper {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* ---------- Frame (telefon genişliği; masaüstünde ortada) ---------- */
+.frame {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  height: 100%;
+  background: var(--cream);
+  box-shadow: 0 0 60px rgba(0,0,0,0.25);
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ---------- Curtains ---------- */
+.curtain {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 22px;
+  z-index: 40;
+  pointer-events: none;
+  background: repeating-linear-gradient(90deg, rgba(255,255,255,0.98) 0px, rgba(240,244,250,0.96) 5px, rgba(214,224,238,0.9) 10px, rgba(250,252,255,0.97) 15px);
+  transform-origin: top center;
+  animation: curtainSway 7s ease-in-out infinite;
+}
+.curtain-left { left: 0; box-shadow: 4px 0 16px rgba(0,0,0,0.15); }
+.curtain-right { right: 0; box-shadow: -4px 0 16px rgba(0,0,0,0.15); }
+.curtain-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.1), transparent 12%, transparent 88%, rgba(0,0,0,0.12)); }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 48px 32px 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: radial-gradient(circle at 25% 15%, #3a7fc9 0, transparent 45%), linear-gradient(165deg, #14284b, #2a5a96);
+}
+.hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.hero-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(10,18,36,0.38) 0%, rgba(10,18,36,0.2) 45%, rgba(10,18,36,0.4) 100%); }
+.hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
+.hero-moon { width: 56px; height: 56px; margin: 4px 0 10px; animation: floatY 3s ease-in-out infinite; }
+
+.eyebrow { font-family: 'Cinzel', serif; letter-spacing: 0.28em; font-size: 11px; color: var(--gold); text-transform: uppercase; margin: 0 0 6px; text-align: center; }
+.eyebrow--light { color: var(--gold-light); margin-bottom: 10px; text-shadow: 0 2px 10px rgba(0,0,0,0.6); }
+.eyebrow--wide { letter-spacing: .24em; margin: 6px 0 16px; }
+
+.script-hero { font-family: 'Great Vibes', cursive; font-size: clamp(48px, 15vw, 68px); font-weight: 400; line-height: 1.05; margin: 6px 0; color: #fff; text-shadow: 0 3px 16px rgba(0,0,0,0.65); }
+.hero-date { font-size: 19px; letter-spacing: .03em; margin: 0 0 30px; color: #f5efe1; text-shadow: 0 2px 10px rgba(0,0,0,0.6); }
+
+.countdown { display: flex; gap: 12px; justify-content: center; margin-bottom: 10px; }
+.countdown-item { display: flex; flex-direction: column; align-items: center; }
+.countdown-item span { font-family: 'Cinzel', serif; font-size: 22px; background: #f2ead9; border: 1px solid rgba(184,147,90,0.4); padding: 8px 10px; min-width: 46px; text-align: center; border-radius: 2px; color: var(--navy); }
+.countdown-item em { font-style: normal; font-size: 10px; letter-spacing: .18em; margin-top: 6px; color: var(--gold-light); font-family: 'Cinzel', serif; text-shadow: 0 2px 8px rgba(0,0,0,0.7); }
+
+.scroll-hint { position: absolute; bottom: 14px; left: 0; right: 0; z-index: 2; height: 92px; display: flex; justify-content: center; }
+.scroll-hint-ring { width: 92px; height: 92px; animation: spinSlow 14s linear infinite; }
+.scroll-hint-btn { position: absolute; top: 0; bottom: 0; margin: auto; width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--gold); background: #fff; box-shadow: 0 4px 14px rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; }
+.scroll-hint-btn svg { width: 16px; height: 16px; }
+
+/* ---------- Reveal sections ---------- */
+.reveal-section { padding: 64px 32px; background: var(--cream); opacity: 0; transform: translateY(24px) scale(0.97); transition: opacity .8s ease, transform .8s ease; }
+.reveal-section.is-visible { opacity: 1; transform: none; }
+.reveal-section.alt-bg { background: var(--cream-alt); }
+
+.script-title { font-family: 'Great Vibes', cursive; font-size: 44px; font-weight: 400; color: var(--navy); margin: 0 0 18px; line-height: 1; }
+.script-title.center { text-align: center; }
+
+.icon-wrap { display: flex; align-items: center; justify-content: center; margin: 0 auto 32px; }
+.icon-moon { width: 70px; height: 32px; animation: floatY 2.4s ease-in-out infinite; }
+.icon-crown { width: 70px; height: 32px; animation: floatY 2.4s ease-in-out infinite; }
+.icon-rings { width: 74px; height: 34px; }
+.ring-left { transform-box: fill-box; transform-origin: center; animation: ringLeftBump 1.3s ease-in-out infinite; }
+.ring-right { transform-box: fill-box; transform-origin: center; animation: ringRightBump 1.3s ease-in-out infinite; }
+.icon-laurel { width: 84px; height: 30px; transform-box: fill-box; transform-origin: center; animation: sway 2.6s ease-in-out infinite; }
+.icon-bow { width: 60px; height: 30px; transform-box: fill-box; transform-origin: center; animation: pulse 1.8s ease-in-out infinite; }
+.icon-pin { width: 40px; height: 40px; animation: pinBounce 1.8s ease-in-out infinite; }
+.icon-note { width: 60px; height: 32px; animation: pinBounce 1.6s ease-in-out infinite; }
+.icon-gift { width: 56px; height: 32px; transform-box: fill-box; transform-origin: center; animation: giftWiggle 2s ease-in-out infinite; }
+.icon-frame { width: 64px; height: 30px; animation: frameFloat 2.4s ease-in-out infinite; }
+
+/* ---------- Invite ---------- */
+.invite-text { text-align: center; font-size: 19px; line-height: 1.7; color: #4f483f; max-width: 320px; margin: 0 auto; }
+.invite-text strong { color: var(--navy); font-weight: 600; }
+
+/* ---------- Story ---------- */
+.story-item { margin-bottom: 34px; }
+.story-item--last { margin-bottom: 0; }
+.story-photo { aspect-ratio: 4/3; margin-bottom: 14px; background: #e6edf6; overflow: hidden; }
+.story-photo img { width: 100%; height: 100%; object-fit: cover; }
+.story-label { margin: 0 0 6px; font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: .16em; color: var(--gold); text-transform: uppercase; text-align: center; }
+.story-text { margin: 0; font-size: 17px; color: #5f584d; line-height: 1.5; text-align: center; font-style: italic; border-bottom: 1px dashed rgba(184,147,90,0.35); padding-bottom: 10px; }
+
+/* ---------- Families ---------- */
+.families-row { display: flex; gap: 14px; }
+.family-card { flex: 1; text-align: center; border: 1px solid rgba(184,147,90,0.35); padding: 22px 10px 26px; min-width: 0; }
+.family-side { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: .2em; color: var(--gold); margin: 0 0 10px; text-transform: uppercase; }
+.family-name { font-family: 'Great Vibes', cursive; font-size: 30px; color: var(--navy); margin: 0 0 14px; }
+.family-parents { font-size: 15px; color: #8a8175; border-bottom: 1px dashed rgba(184,147,90,0.35); padding-bottom: 6px; margin: 0 0 8px; font-style: italic; }
+
+/* ---------- Events ---------- */
+.event-card { border: 1px solid rgba(184,147,90,0.35); padding: 28px 22px; text-align: center; margin-bottom: 22px; background: var(--cream); }
+.event-card--last { margin-bottom: 0; }
+.script-event { font-family: 'Great Vibes', cursive; font-weight: 400; font-size: 32px; color: var(--navy); margin: 0 0 10px; }
+.event-date { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: .08em; color: var(--ink); margin: 0 0 4px; }
+.event-time { font-size: 20px; color: var(--gold); margin: 0 0 10px; }
+.event-place { font-size: 17px; color: #6b6255; margin: 0; font-style: italic; }
+
+/* ---------- Dress ---------- */
+.dress-colors { display: flex; justify-content: center; gap: 16px; margin: 0 0 20px; }
+.dress-swatch { width: 38px; height: 38px; border-radius: 50%; border: 2px solid var(--cream); box-shadow: 0 0 0 1px rgba(184,147,90,0.35); display: inline-block; }
+.dress-note { text-align: center; font-size: 16px; color: #5f584d; font-style: italic; max-width: 280px; margin: 0 auto; }
+
+/* ---------- Location ---------- */
+.location-card { border: 1px solid rgba(184,147,90,0.35); padding: 22px 18px; text-align: center; margin-bottom: 20px; background: var(--cream); }
+.location-card--last { margin-bottom: 0; }
+.location-label { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: .1em; color: var(--gold); margin: 0 0 8px; text-transform: uppercase; }
+.location-place { font-size: 17px; color: #6b6255; margin: 0 0 14px; font-style: italic; }
+.location-map { width: 100%; height: 170px; border: 0; margin-bottom: 16px; filter: grayscale(0.15) sepia(0.1); }
+.btn-outline { display: inline-block; border: 1px solid var(--gold); color: var(--navy); text-decoration: none; font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: .15em; padding: 12px 22px; text-transform: uppercase; transition: background .25s ease, color .25s ease; }
+.btn-outline:hover { background: var(--gold); color: var(--cream); }
+
+/* ---------- Weather ---------- */
+.weather-card { border: 1px solid rgba(184,147,90,0.35); padding: 26px 20px; max-width: 320px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; text-align: center; }
+.weather-date { color: #8a8175; font-family: 'Cinzel', serif; font-size: 12px; margin: 0; text-transform: uppercase; letter-spacing: 0.1em; }
+.weather-main { display: flex; align-items: center; justify-content: center; gap: 16px; }
+.weather-temp { font-family: 'Cinzel', serif; font-size: 56px; color: var(--gold); margin: 0; font-weight: 600; }
+.weather-icon svg { width: 56px; height: 48px; flex-shrink: 0; }
+.weather-condition { font-size: 18px; color: #5f584d; font-style: italic; margin: 0; font-weight: 500; }
+.weather-note { font-size: 13px; color: #a99f8f; font-style: italic; margin: 0; }
+
+/* ---------- Forms (katılım + şarkı) ---------- */
+.song-intro { text-align: center; font-size: 16px; color: #5f584d; font-style: italic; max-width: 280px; margin: 0 auto 20px; }
+.song-thanks { text-align: center; font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: .08em; color: #3f7a55; }
+.song-form { display: flex; flex-direction: column; gap: 12px; max-width: 320px; margin: 0 auto; }
+.song-form input, .song-form select {
+  border: none; border-bottom: 1px solid rgba(184,147,90,0.5); background: transparent; border-radius: 0;
+  font-family: 'Cormorant Garamond', serif; font-size: 18px; padding: 10px 4px; color: var(--ink); outline: none; width: 100%;
+}
+.song-form input:focus, .song-form select:focus { border-bottom-color: var(--navy); }
+.song-form button { align-self: center; margin-top: 6px; background: var(--navy); color: var(--cream); border: 1px solid var(--navy); font-family: 'Cinzel', serif; letter-spacing: .15em; font-size: 11px; text-transform: uppercase; padding: 14px 28px; cursor: pointer; transition: background .25s ease, color .25s ease; }
+.song-form button:hover { background: var(--cream); color: var(--navy); }
+
+/* ---------- Gift ---------- */
+.gift-text { text-align: center; font-size: 17px; color: #5f584d; max-width: 300px; margin: 0 auto 22px; line-height: 1.6; }
+.gift-card { border: 1px solid var(--gold); padding: 18px; text-align: center; max-width: 320px; margin: 0 auto; background: var(--cream); }
+.gift-name { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: .1em; color: var(--gold); margin: 0 0 8px; }
+.gift-iban { font-size: 19px; letter-spacing: .03em; margin: 0 0 12px; color: var(--navy); word-break: break-all; }
+.btn-copy { background: none; border: 1px solid var(--navy); color: var(--navy); font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: .14em; padding: 10px 18px; cursor: pointer; text-transform: uppercase; transition: background .25s ease, color .25s ease, border-color .25s ease; }
+.btn-copy:hover { background: var(--navy); color: var(--cream); }
+.btn-copy.is-copied { background: #3f7a55; border-color: #3f7a55; color: #fff; }
+
+/* ---------- Gallery ---------- */
+.gallery-scroll { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; gap: 12px; padding-bottom: 8px; }
+.gallery-slide { flex: 0 0 100%; scroll-snap-align: center; aspect-ratio: 4/5; border-radius: 16px; overflow: hidden; background: #e6edf6; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+.gallery-slide img { width: 100%; height: 100%; object-fit: cover; }
+
+/* fotoğraf eklenmediğinde gösterilen yer tutucu */
+.img-placeholder { position: relative; background: #e6edf6; }
+.img-placeholder img { visibility: hidden; }
+.img-placeholder::after { content: 'Fotoğraf ekle'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); text-align: center; padding: 12px; }
+
+/* ---------- Footer ---------- */
+.site-footer { background: var(--navy); color: #f2ead9; text-align: center; padding: 50px 24px 80px; }
+.script-footer { font-family: 'Great Vibes', cursive; font-size: 34px; color: #d9bd8b; display: block; margin-bottom: 10px; }
+.footer-tag { font-family: 'Cinzel', serif; letter-spacing: .2em; font-size: 11px; color: var(--gold); }
+
+/* ---------- Music toggle ---------- */
+.music-btn {
+  position: fixed;
+  right: max(18px, calc(50vw - 212px));
+  bottom: max(18px, env(safe-area-inset-bottom));
+  z-index: 50;
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: var(--navy);
+  border: 1px solid var(--gold);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,.35);
+}
+.eq { display: inline-flex; gap: 2px; align-items: flex-end; height: 14px; }
+.eq-bar { width: 2px; background: #d9bd8b; display: block; animation: eqbar 1s ease-in-out infinite; animation-play-state: paused; }
+.eq-bar:nth-child(1) { height: 6px; }
+.eq-bar:nth-child(2) { height: 14px; animation-delay: .2s; }
+.eq-bar:nth-child(3) { height: 9px; animation-delay: .4s; }
+.music-btn.is-playing .eq-bar { animation-play-state: running; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  .reveal-section { opacity: 1; transform: none; }
+}
