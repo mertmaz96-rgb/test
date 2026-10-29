@@ -48,6 +48,10 @@
             <div class="countdown-item"><span id="cd-m">00</span><em>Dakika</em></div>
             <div class="countdown-item"><span id="cd-s">00</span><em>Saniye</em></div>
           </div>
+          <button type="button" class="alarm-btn" id="alarmBtn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 1 0-12 0c0 6-2.5 7.5-2.5 7.5h17S18 15 18 9Z"/><path d="M10.2 20a2 2 0 0 0 3.6 0"/></svg>
+            <span>Alarm Kur</span>
+          </button>
         </div>
 
         <div class="hero-bottom">
@@ -119,14 +123,20 @@
             <span class="map-box-label">Haritada görmek için dokunun</span>
           </a>
           <div class="map-actions">
-            <a class="btn-outline" href="https://maps.google.com/?cid=18140278480995437530" target="_blank" rel="noopener">Google Haritalar'da Aç</a>
             <a class="btn-outline" href="https://www.google.com/maps/dir/?api=1&amp;destination=Seramoni%204%20D%C3%BC%C4%9F%C3%BCn%20Salonu%20Fir%C3%BCzk%C3%B6y%20Avc%C4%B1lar%20%C4%B0stanbul" target="_blank" rel="noopener">Yol Tarifi</a>
           </div>
         </div>
       </section>
 
+      
+
+      <!-- BEKLİYORUZ (karakterler) -->
+      <section class="reveal-section waiting" data-reveal-key="waiting">
+        <img class="waiting-img" src="assets/images/bekliyoruz.webp" alt="Sizleri bekliyoruz" loading="lazy" onerror="this.closest('section').hidden = true">
+      </section>
+
       <!-- HAVA DURUMU -->
-      <section class="reveal-section" data-reveal-key="weather">
+      <section class="reveal-section alt-bg" data-reveal-key="weather">
         <p class="eyebrow">Düğün Günü</p>
         <h2 class="section-title">Hava Durumu</h2>
         <div class="gold-rule"></div>
@@ -142,7 +152,7 @@
       </section>
 
       <!-- KATILIM -->
-      <section class="reveal-section alt-bg" data-reveal-key="rsvp">
+      <section class="reveal-section" data-reveal-key="rsvp">
         <p class="eyebrow">Katılım</p>
         <h2 class="section-title">Geliyor musunuz?</h2>
         <div class="gold-rule"></div>
@@ -160,7 +170,7 @@
       </section>
 
       <!-- ŞARKI İSTEĞİ -->
-      <section class="reveal-section" data-reveal-key="song">
+      <section class="reveal-section alt-bg" data-reveal-key="song">
         <p class="eyebrow">Eğlence</p>
         <h2 class="section-title">Şarkı İsteği</h2>
         <div class="gold-rule"></div>
@@ -178,7 +188,7 @@
       </section>
 
       <!-- HEDİYE -->
-      <section class="reveal-section alt-bg" data-reveal-key="gift">
+      <section class="reveal-section" data-reveal-key="gift">
         <p class="eyebrow">Sevgiyle</p>
         <h2 class="section-title">Hediye</h2>
         <div class="gold-rule"></div>
@@ -191,7 +201,7 @@
       </section>
 
       <!-- GALERİ -->
-      <section class="reveal-section" data-reveal-key="gallery">
+      <section class="reveal-section alt-bg" data-reveal-key="gallery">
         <p class="eyebrow">Anılarımız</p>
         <h2 class="section-title">Galeri</h2>
         <div class="gold-rule"></div>

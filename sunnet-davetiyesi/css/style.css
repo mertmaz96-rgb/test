@@ -45,7 +45,7 @@ img { max-width: 100%; display: block; }
 
 /* ipte sallanan çocuk: sağ üstte, küçük */
 .hero-top { align-self: center; margin-left: 6%; line-height: 0; }
-.hero-rope { height: 17vh; height: 31svh; width: auto; max-height: 295px; transform-origin: 52% 0; animation: swing 4.5s ease-in-out infinite; }
+.hero-rope { height: 17vh; height: 27svh; width: auto; max-height: 260px; transform-origin: 52% 0; animation: swing 4.5s ease-in-out infinite; }
 @keyframes swing { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
 
 .hero-content { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; padding: 4px 0; }
@@ -56,16 +56,24 @@ img { max-width: 100%; display: block; }
 .hero-date { font-family: var(--f-wide); font-weight: 400; font-size: 13px; letter-spacing: .2em; text-transform: uppercase; margin: 0; color: var(--ink); }
 .hero-date { white-space: nowrap; }
 @media (max-width: 380px) { .hero-date { font-size: 12px; letter-spacing: .12em; } }
-@media (max-height: 720px) { .hero-rope { height: 25svh; } .cloud-fig img { height: 26svh; } .cloud-text { font-size: min(2.8svh, 8.4vw); } .hero .countdown { margin-top: 10px; } .hero .gold-rule { margin: 8px auto; } .hero { padding-bottom: 108px; } }
+@media (max-height: 720px) { .hero-rope { height: 22svh; } .cloud-fig img { height: 24svh; } .cloud-text { font-size: min(2.6svh, 8vw); } .hero .countdown { margin-top: 8px; } .alarm-btn { margin-top: 8px; padding: 7px 16px; } .hero .gold-rule { margin: 8px auto; } .hero { padding-bottom: 94px; } }
 .hero .countdown { margin-top: 14px; max-width: 270px; }
 .hero .countdown-item span { padding: 10px 0; font-size: clamp(18px, 5.6vw, 23px); }
 .hero .countdown-item em { margin-top: 6px; }
 
+/* alarm butonu */
+.alarm-btn { margin-top: 12px; display: inline-flex; align-items: center; gap: 8px; padding: 9px 20px; border: 1px solid var(--ink); border-radius: 999px; background: var(--ink); color: var(--cream); font-family: var(--f-wide); font-weight: 500; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; cursor: pointer; transition: background .25s ease, color .25s ease, transform .15s ease; -webkit-tap-highlight-color: transparent; }
+.alarm-btn svg { width: 16px; height: 16px; fill: none; stroke: #d3b57c; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: stroke .25s ease; }
+.alarm-btn:active { transform: scale(.97); }
+.alarm-btn:hover { background: var(--cream); color: var(--ink); }
+.alarm-btn:hover svg { stroke: var(--gold); }
+.alarm-btn.is-done { background: #3f7a55; border-color: #3f7a55; }
+
 /* sohbet balonlu görsel: Davetlisiniz balonun içinde */
 .hero-bottom { margin: 0 -18px 0; max-width: calc(100% + 36px); line-height: 0; }
-.cloud-fig { position: relative; display: inline-block; transform: translateY(-6px); }
-.cloud-fig img { height: 30vh; height: 30svh; width: auto; max-width: 100%; display: block; }
-.cloud-text { position: absolute; left: 13.3%; width: 77.5%; top: 43.5%; height: 33.9%; margin: 0; display: flex; align-items: center; justify-content: center; text-align: center; font-family: 'Bangers', 'Baloo 2', cursive; font-weight: 400; text-transform: uppercase; line-height: 1; color: var(--ink); font-size: min(3.1vh, 8.4vw); font-size: min(3.1svh, 8.4vw); letter-spacing: 0.05em; white-space: nowrap; transform: translateY(-8px) rotate(-2deg); }
+.cloud-fig { position: relative; display: inline-block; transform: translateY(-11px); }
+.cloud-fig img { height: 28vh; height: 28svh; width: auto; max-width: 100%; display: block; }
+.cloud-text { position: absolute; left: 13.3%; width: 77.5%; top: 43.5%; height: 33.9%; margin: 0; display: flex; align-items: center; justify-content: center; text-align: center; font-family: 'Bangers', 'Baloo 2', cursive; font-weight: 400; text-transform: uppercase; line-height: 1; color: var(--ink); font-size: min(2.9vh, 8vw); font-size: min(2.9svh, 8vw); letter-spacing: 0.05em; white-space: nowrap; transform: translateY(-13px) rotate(-2deg); }
 
 .countdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; width: 100%; max-width: 300px; margin: 18px auto 0; }
 .countdown-item { display: flex; flex-direction: column; align-items: center; min-width: 0; }
@@ -166,6 +174,11 @@ img { max-width: 100%; display: block; }
 .gallery-empty svg { width: 46px; height: 46px; fill: none; stroke: var(--gold); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; margin-bottom: 14px; }
 .gallery-empty p { margin: 0; font-size: 18px; line-height: 1.5; font-style: italic; color: var(--muted); max-width: 240px; margin-inline: auto; }
 
+/* ---------- Bekliyoruz (karakterler) ---------- */
+.waiting { padding: 36px 24px 44px; text-align: center; }
+.waiting[hidden] { display: none; }
+.waiting-img { display: block; width: 100%; max-width: 340px; height: auto; margin: 0 auto; }
+
 /* ---------- Footer ---------- */
 .site-footer { background: var(--ink); color: var(--cream); text-align: center; padding: 50px 24px 90px; display: flex; flex-direction: column; gap: 10px; }
 .footer-script { font-family: var(--f-serif); font-style: italic; font-size: 22px; color: #d3b57c; }
@@ -221,7 +234,8 @@ img { max-width: 100%; display: block; }
 .is-revealed .hero-content > :nth-child(3) { animation-delay: 1s; }
 .is-revealed .hero-content > :nth-child(4) { animation-delay: 1.4s; }
 .is-revealed .hero-content > :nth-child(5) { animation-delay: 1.8s; }
-.is-revealed .hero-bottom { animation-delay: 2.2s; }
+.is-revealed .hero-content > :nth-child(6) { animation-delay: 2.2s; }
+.is-revealed .hero-bottom { animation-delay: 2.6s; }
 .is-revealed .scroll-hint { animation-delay: 2.8s; }
 @media (prefers-reduced-motion: reduce) {
   .site-content, .hero-top, .hero-bottom, .hero-content > *, .scroll-hint { opacity: 1 !important; transform: none !important; }

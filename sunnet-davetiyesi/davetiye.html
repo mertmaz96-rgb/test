@@ -57,7 +57,7 @@ img { max-width: 100%; display: block; }
 
 /* ipte sallanan çocuk: sağ üstte, küçük */
 .hero-top { align-self: center; margin-left: 6%; line-height: 0; }
-.hero-rope { height: 17vh; height: 31svh; width: auto; max-height: 295px; transform-origin: 52% 0; animation: swing 4.5s ease-in-out infinite; }
+.hero-rope { height: 17vh; height: 27svh; width: auto; max-height: 260px; transform-origin: 52% 0; animation: swing 4.5s ease-in-out infinite; }
 @keyframes swing { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
 
 .hero-content { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; padding: 4px 0; }
@@ -68,16 +68,24 @@ img { max-width: 100%; display: block; }
 .hero-date { font-family: var(--f-wide); font-weight: 400; font-size: 13px; letter-spacing: .2em; text-transform: uppercase; margin: 0; color: var(--ink); }
 .hero-date { white-space: nowrap; }
 @media (max-width: 380px) { .hero-date { font-size: 12px; letter-spacing: .12em; } }
-@media (max-height: 720px) { .hero-rope { height: 25svh; } .cloud-fig img { height: 26svh; } .cloud-text { font-size: min(2.8svh, 8.4vw); } .hero .countdown { margin-top: 10px; } .hero .gold-rule { margin: 8px auto; } .hero { padding-bottom: 108px; } }
+@media (max-height: 720px) { .hero-rope { height: 22svh; } .cloud-fig img { height: 24svh; } .cloud-text { font-size: min(2.6svh, 8vw); } .hero .countdown { margin-top: 8px; } .alarm-btn { margin-top: 8px; padding: 7px 16px; } .hero .gold-rule { margin: 8px auto; } .hero { padding-bottom: 94px; } }
 .hero .countdown { margin-top: 14px; max-width: 270px; }
 .hero .countdown-item span { padding: 10px 0; font-size: clamp(18px, 5.6vw, 23px); }
 .hero .countdown-item em { margin-top: 6px; }
 
+/* alarm butonu */
+.alarm-btn { margin-top: 12px; display: inline-flex; align-items: center; gap: 8px; padding: 9px 20px; border: 1px solid var(--ink); border-radius: 999px; background: var(--ink); color: var(--cream); font-family: var(--f-wide); font-weight: 500; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; cursor: pointer; transition: background .25s ease, color .25s ease, transform .15s ease; -webkit-tap-highlight-color: transparent; }
+.alarm-btn svg { width: 16px; height: 16px; fill: none; stroke: #d3b57c; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: stroke .25s ease; }
+.alarm-btn:active { transform: scale(.97); }
+.alarm-btn:hover { background: var(--cream); color: var(--ink); }
+.alarm-btn:hover svg { stroke: var(--gold); }
+.alarm-btn.is-done { background: #3f7a55; border-color: #3f7a55; }
+
 /* sohbet balonlu görsel: Davetlisiniz balonun içinde */
 .hero-bottom { margin: 0 -18px 0; max-width: calc(100% + 36px); line-height: 0; }
-.cloud-fig { position: relative; display: inline-block; transform: translateY(-6px); }
-.cloud-fig img { height: 30vh; height: 30svh; width: auto; max-width: 100%; display: block; }
-.cloud-text { position: absolute; left: 13.3%; width: 77.5%; top: 43.5%; height: 33.9%; margin: 0; display: flex; align-items: center; justify-content: center; text-align: center; font-family: 'Bangers', 'Baloo 2', cursive; font-weight: 400; text-transform: uppercase; line-height: 1; color: var(--ink); font-size: min(3.1vh, 8.4vw); font-size: min(3.1svh, 8.4vw); letter-spacing: 0.05em; white-space: nowrap; transform: translateY(-8px) rotate(-2deg); }
+.cloud-fig { position: relative; display: inline-block; transform: translateY(-11px); }
+.cloud-fig img { height: 28vh; height: 28svh; width: auto; max-width: 100%; display: block; }
+.cloud-text { position: absolute; left: 13.3%; width: 77.5%; top: 43.5%; height: 33.9%; margin: 0; display: flex; align-items: center; justify-content: center; text-align: center; font-family: 'Bangers', 'Baloo 2', cursive; font-weight: 400; text-transform: uppercase; line-height: 1; color: var(--ink); font-size: min(2.9vh, 8vw); font-size: min(2.9svh, 8vw); letter-spacing: 0.05em; white-space: nowrap; transform: translateY(-13px) rotate(-2deg); }
 
 .countdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; width: 100%; max-width: 300px; margin: 18px auto 0; }
 .countdown-item { display: flex; flex-direction: column; align-items: center; min-width: 0; }
@@ -178,6 +186,11 @@ img { max-width: 100%; display: block; }
 .gallery-empty svg { width: 46px; height: 46px; fill: none; stroke: var(--gold); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; margin-bottom: 14px; }
 .gallery-empty p { margin: 0; font-size: 18px; line-height: 1.5; font-style: italic; color: var(--muted); max-width: 240px; margin-inline: auto; }
 
+/* ---------- Bekliyoruz (karakterler) ---------- */
+.waiting { padding: 36px 24px 44px; text-align: center; }
+.waiting[hidden] { display: none; }
+.waiting-img { display: block; width: 100%; max-width: 340px; height: auto; margin: 0 auto; }
+
 /* ---------- Footer ---------- */
 .site-footer { background: var(--ink); color: var(--cream); text-align: center; padding: 50px 24px 90px; display: flex; flex-direction: column; gap: 10px; }
 .footer-script { font-family: var(--f-serif); font-style: italic; font-size: 22px; color: #d3b57c; }
@@ -233,7 +246,8 @@ img { max-width: 100%; display: block; }
 .is-revealed .hero-content > :nth-child(3) { animation-delay: 1s; }
 .is-revealed .hero-content > :nth-child(4) { animation-delay: 1.4s; }
 .is-revealed .hero-content > :nth-child(5) { animation-delay: 1.8s; }
-.is-revealed .hero-bottom { animation-delay: 2.2s; }
+.is-revealed .hero-content > :nth-child(6) { animation-delay: 2.2s; }
+.is-revealed .hero-bottom { animation-delay: 2.6s; }
 .is-revealed .scroll-hint { animation-delay: 2.8s; }
 @media (prefers-reduced-motion: reduce) {
   .site-content, .hero-top, .hero-bottom, .hero-content > *, .scroll-hint { opacity: 1 !important; transform: none !important; }
@@ -279,6 +293,10 @@ img { max-width: 100%; display: block; }
             <div class="countdown-item"><span id="cd-m">00</span><em>Dakika</em></div>
             <div class="countdown-item"><span id="cd-s">00</span><em>Saniye</em></div>
           </div>
+          <button type="button" class="alarm-btn" id="alarmBtn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 1 0-12 0c0 6-2.5 7.5-2.5 7.5h17S18 15 18 9Z"/><path d="M10.2 20a2 2 0 0 0 3.6 0"/></svg>
+            <span>Alarm Kur</span>
+          </button>
         </div>
 
         <div class="hero-bottom">
@@ -350,14 +368,20 @@ img { max-width: 100%; display: block; }
             <span class="map-box-label">Haritada görmek için dokunun</span>
           </a>
           <div class="map-actions">
-            <a class="btn-outline" href="https://maps.google.com/?cid=18140278480995437530" target="_blank" rel="noopener">Google Haritalar'da Aç</a>
             <a class="btn-outline" href="https://www.google.com/maps/dir/?api=1&amp;destination=Seramoni%204%20D%C3%BC%C4%9F%C3%BCn%20Salonu%20Fir%C3%BCzk%C3%B6y%20Avc%C4%B1lar%20%C4%B0stanbul" target="_blank" rel="noopener">Yol Tarifi</a>
           </div>
         </div>
       </section>
 
+      
+
+      <!-- BEKLİYORUZ (karakterler) -->
+      <section class="reveal-section waiting" data-reveal-key="waiting">
+        <img class="waiting-img" src="assets/images/bekliyoruz.webp" alt="Sizleri bekliyoruz" loading="lazy" onerror="this.closest('section').hidden = true">
+      </section>
+
       <!-- HAVA DURUMU -->
-      <section class="reveal-section" data-reveal-key="weather">
+      <section class="reveal-section alt-bg" data-reveal-key="weather">
         <p class="eyebrow">Düğün Günü</p>
         <h2 class="section-title">Hava Durumu</h2>
         <div class="gold-rule"></div>
@@ -373,7 +397,7 @@ img { max-width: 100%; display: block; }
       </section>
 
       <!-- KATILIM -->
-      <section class="reveal-section alt-bg" data-reveal-key="rsvp">
+      <section class="reveal-section" data-reveal-key="rsvp">
         <p class="eyebrow">Katılım</p>
         <h2 class="section-title">Geliyor musunuz?</h2>
         <div class="gold-rule"></div>
@@ -391,7 +415,7 @@ img { max-width: 100%; display: block; }
       </section>
 
       <!-- ŞARKI İSTEĞİ -->
-      <section class="reveal-section" data-reveal-key="song">
+      <section class="reveal-section alt-bg" data-reveal-key="song">
         <p class="eyebrow">Eğlence</p>
         <h2 class="section-title">Şarkı İsteği</h2>
         <div class="gold-rule"></div>
@@ -409,7 +433,7 @@ img { max-width: 100%; display: block; }
       </section>
 
       <!-- HEDİYE -->
-      <section class="reveal-section alt-bg" data-reveal-key="gift">
+      <section class="reveal-section" data-reveal-key="gift">
         <p class="eyebrow">Sevgiyle</p>
         <h2 class="section-title">Hediye</h2>
         <div class="gold-rule"></div>
@@ -422,7 +446,7 @@ img { max-width: 100%; display: block; }
       </section>
 
       <!-- GALERİ -->
-      <section class="reveal-section" data-reveal-key="gallery">
+      <section class="reveal-section alt-bg" data-reveal-key="gallery">
         <p class="eyebrow">Anılarımız</p>
         <h2 class="section-title">Galeri</h2>
         <div class="gold-rule"></div>
@@ -462,6 +486,7 @@ img { max-width: 100%; display: block; }
     eventDate: '2026-11-21T19:00:00+03:00',
     lat: 40.98,   // Avcılar
     lon: 28.72,
+    venue: 'Seramoni 4 Düğün Salonu, Firüzköy / Avcılar, İstanbul',
     whatsapp: '905336665791' // ülke kodu ile, + olmadan
   };
 
@@ -634,6 +659,41 @@ img { max-width: 100%; display: block; }
       })
       .catch(function () { /* mevsim normali kalır */ });
   }
+
+  /* ---------- Alarm kur (takvim hatırlatıcısı .ics) ---------- */
+  // Tarayıcılar belirli bir tarihe alarm kurdurmaz; telefonun takvimine hatırlatıcılı
+  // etkinlik eklenir (1 gün ve 3 saat önce bildirim).
+  var alarmBtn = document.getElementById('alarmBtn');
+  function icsStamp(d) { return d.toISOString().replace(/[-:]|\.\d{3}/g, ''); }
+  function icsEscape(s) { return String(s).replace(/([,;])/g, '\\$1').replace(/\n/g, '\\n'); }
+  alarmBtn.addEventListener('click', function () {
+    var start = new Date(CONFIG.eventDate);
+    var end = new Date(start.getTime() + 5 * 3600000);
+    var title = 'Alper & Aybek Sünnet Düğünü';
+    var lines = [
+      'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Sunnet Davetiyesi//TR', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
+      'BEGIN:VEVENT',
+      'UID:sunnet-' + start.getTime() + '@davetiye',
+      'DTSTAMP:' + icsStamp(new Date()),
+      'DTSTART:' + icsStamp(start),
+      'DTEND:' + icsStamp(end),
+      'SUMMARY:' + icsEscape(title),
+      'LOCATION:' + icsEscape(CONFIG.venue),
+      'DESCRIPTION:' + icsEscape('Sünnet düğünümüze davetlisiniz.'),
+      'BEGIN:VALARM', 'TRIGGER:-P1D', 'ACTION:DISPLAY', 'DESCRIPTION:' + icsEscape('Yarın ' + title), 'END:VALARM',
+      'BEGIN:VALARM', 'TRIGGER:-PT3H', 'ACTION:DISPLAY', 'DESCRIPTION:' + icsEscape(title + ' 3 saat sonra'), 'END:VALARM',
+      'END:VEVENT', 'END:VCALENDAR'
+    ];
+    var blob = new Blob([lines.join('\r\n')], { type: 'text/calendar;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url; a.download = 'sunnet-davetiyesi.ics';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
+    var label = alarmBtn.querySelector('span');
+    alarmBtn.classList.add('is-done'); label.textContent = 'Takvime Eklendi';
+    setTimeout(function () { alarmBtn.classList.remove('is-done'); label.textContent = 'Alarm Kur'; }, 2600);
+  });
 
   /* ---------- Katılım formu (WhatsApp) ---------- */
   document.getElementById('rsvpForm').addEventListener('submit', function (e) {

@@ -7,6 +7,7 @@
     eventDate: '2026-11-21T19:00:00+03:00',
     lat: 40.98,   // Avcılar
     lon: 28.72,
+    venue: 'Seramoni 4 Düğün Salonu, Firüzköy / Avcılar, İstanbul',
     whatsapp: '905336665791' // ülke kodu ile, + olmadan
   };
 
@@ -179,6 +180,41 @@
       })
       .catch(function () { /* mevsim normali kalır */ });
   }
+
+  /* ---------- Alarm kur (takvim hatırlatıcısı .ics) ---------- */
+  // Tarayıcılar belirli bir tarihe alarm kurdurmaz; telefonun takvimine hatırlatıcılı
+  // etkinlik eklenir (1 gün ve 3 saat önce bildirim).
+  var alarmBtn = document.getElementById('alarmBtn');
+  function icsStamp(d) { return d.toISOString().replace(/[-:]|\.\d{3}/g, ''); }
+  function icsEscape(s) { return String(s).replace(/([,;])/g, '\\$1').replace(/\n/g, '\\n'); }
+  alarmBtn.addEventListener('click', function () {
+    var start = new Date(CONFIG.eventDate);
+    var end = new Date(start.getTime() + 5 * 3600000);
+    var title = 'Alper & Aybek Sünnet Düğünü';
+    var lines = [
+      'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Sunnet Davetiyesi//TR', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
+      'BEGIN:VEVENT',
+      'UID:sunnet-' + start.getTime() + '@davetiye',
+      'DTSTAMP:' + icsStamp(new Date()),
+      'DTSTART:' + icsStamp(start),
+      'DTEND:' + icsStamp(end),
+      'SUMMARY:' + icsEscape(title),
+      'LOCATION:' + icsEscape(CONFIG.venue),
+      'DESCRIPTION:' + icsEscape('Sünnet düğünümüze davetlisiniz.'),
+      'BEGIN:VALARM', 'TRIGGER:-P1D', 'ACTION:DISPLAY', 'DESCRIPTION:' + icsEscape('Yarın ' + title), 'END:VALARM',
+      'BEGIN:VALARM', 'TRIGGER:-PT3H', 'ACTION:DISPLAY', 'DESCRIPTION:' + icsEscape(title + ' 3 saat sonra'), 'END:VALARM',
+      'END:VEVENT', 'END:VCALENDAR'
+    ];
+    var blob = new Blob([lines.join('\r\n')], { type: 'text/calendar;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url; a.download = 'sunnet-davetiyesi.ics';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
+    var label = alarmBtn.querySelector('span');
+    alarmBtn.classList.add('is-done'); label.textContent = 'Takvime Eklendi';
+    setTimeout(function () { alarmBtn.classList.remove('is-done'); label.textContent = 'Alarm Kur'; }, 2600);
+  });
 
   /* ---------- Katılım formu (WhatsApp) ---------- */
   document.getElementById('rsvpForm').addEventListener('submit', function (e) {
