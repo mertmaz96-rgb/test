@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sünnet Davetiyesi</title>
+<meta name="description" content="Ahmet Efe'nin sünnet düğününe davetlisiniz - 15 Kasım 2026, İstanbul">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light}
+/* ---------- Reset & base ---------- */
+:root {
+  --navy: #14284b;
+  --blue: #2f6fb5;
+  --gold: #b8935a;
+  --gold-light: #e8cb9a;
+  --cream: #faf5ec;
+  --cream-alt: #eef3f9;
+  --ink: #2b2622;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #dfe7f1; width: 100%; height: 100%; }
+body { font-family: 'Cormorant Garamond', serif; color: var(--ink); }
+a { color: var(--gold); }
+a:hover { color: #8a6a3f; }
+img { max-width: 100%; display: block; }
+[hidden] { display: none !important; }
+
+/* ---------- Keyframes ---------- */
+@keyframes curtainSway { 0% { transform: rotate(0deg) translateX(0); } 25% { transform: rotate(-0.7deg) translateX(-2px); } 55% { transform: rotate(0.5deg) translateX(2px); } 80% { transform: rotate(-0.2deg) translateX(-1px); } 100% { transform: rotate(0deg) translateX(0); } }
+@keyframes spinSlow { to { transform: rotate(360deg); } }
+@keyframes eqbar { 0%, 100% { transform: scaleY(.4); } 50% { transform: scaleY(1); } }
+@keyframes floatY { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@keyframes ringLeftBump { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
+@keyframes ringRightBump { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-5px); } }
+@keyframes sway { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+@keyframes pinBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes giftWiggle { 0%, 100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg); } }
+@keyframes frameFloat { 0%, 100% { opacity: 0.85; transform: scale(1); } 50% { opacity: 1; transform: scale(1.04); } }
+
+/* ---------- Page wrapper ---------- */
+.page-wrapper {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* ---------- Frame (telefon genişliği; masaüstünde ortada) ---------- */
+.shell { position: relative; width: 100%; max-width: 460px; height: 100%; box-shadow: 0 0 60px rgba(0,0,0,0.25); }
+.frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overscroll-behavior: contain;
+  background: var(--cream);
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ---------- Curtains ---------- */
+.curtain {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 22px;
+  z-index: 40;
+  pointer-events: none;
+  background: repeating-linear-gradient(90deg, rgba(255,255,255,0.98) 0px, rgba(240,244,250,0.96) 5px, rgba(214,224,238,0.9) 10px, rgba(250,252,255,0.97) 15px);
+  transform-origin: top center;
+  animation: curtainSway 7s ease-in-out infinite;
+}
+.curtain-left { left: 0; box-shadow: 4px 0 16px rgba(0,0,0,0.15); }
+.curtain-right { right: 0; box-shadow: -4px 0 16px rgba(0,0,0,0.15); }
+.curtain-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.1), transparent 12%, transparent 88%, rgba(0,0,0,0.12)); }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 48px 32px 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: radial-gradient(circle at 25% 15%, #3a7fc9 0, transparent 45%), linear-gradient(165deg, #14284b, #2a5a96);
+}
+.hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.hero-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(10,18,36,0.38) 0%, rgba(10,18,36,0.2) 45%, rgba(10,18,36,0.4) 100%); }
+.hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
+.hero-moon { width: 56px; height: 56px; margin: 4px 0 10px; animation: floatY 3s ease-in-out infinite; }
+
+.eyebrow { font-family: 'Cinzel', serif; letter-spacing: 0.28em; font-size: 11px; color: var(--gold); text-transform: uppercase; margin: 0 0 6px; text-align: center; }
+.eyebrow--light { color: var(--gold-light); margin-bottom: 10px; text-shadow: 0 2px 10px rgba(0,0,0,0.6); }
+.eyebrow--wide { letter-spacing: .24em; margin: 6px 0 16px; }
+
+.script-hero { font-family: 'Great Vibes', cursive; font-size: clamp(48px, 15vw, 68px); font-weight: 400; line-height: 1.05; margin: 6px 0; color: #fff; text-shadow: 0 3px 16px rgba(0,0,0,0.65); }
+.hero-date { font-size: 19px; letter-spacing: .03em; margin: 0 0 30px; color: #f5efe1; text-shadow: 0 2px 10px rgba(0,0,0,0.6); }
+
+.countdown { display: flex; gap: 12px; justify-content: center; margin-bottom: 10px; }
+.countdown-item { display: flex; flex-direction: column; align-items: center; }
+.countdown-item span { font-family: 'Cinzel', serif; font-size: 22px; background: #f2ead9; border: 1px solid rgba(184,147,90,0.4); padding: 8px 10px; min-width: 46px; text-align: center; border-radius: 2px; color: var(--navy); }
+.countdown-item em { font-style: normal; font-size: 10px; letter-spacing: .18em; margin-top: 6px; color: var(--gold-light); font-family: 'Cinzel', serif; text-shadow: 0 2px 8px rgba(0,0,0,0.7); }
+
+.scroll-hint { position: absolute; bottom: 14px; left: 0; right: 0; z-index: 2; height: 92px; display: flex; justify-content: center; }
+.scroll-hint-ring { width: 92px; height: 92px; animation: spinSlow 14s linear infinite; }
+.scroll-hint-btn { position: absolute; top: 0; bottom: 0; margin: auto; width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--gold); background: #fff; box-shadow: 0 4px 14px rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; }
+.scroll-hint-btn svg { width: 16px; height: 16px; }
+
+/* ---------- Reveal sections ---------- */
+.reveal-section { padding: 64px 32px; background: var(--cream); opacity: 0; transform: translateY(24px) scale(0.97); transition: opacity .8s ease, transform .8s ease; }
+.reveal-section.is-visible { opacity: 1; transform: none; }
+.reveal-section.alt-bg { background: var(--cream-alt); }
+
+.script-title { font-family: 'Great Vibes', cursive; font-size: 44px; font-weight: 400; color: var(--navy); margin: 0 0 18px; line-height: 1; }
+.script-title.center { text-align: center; }
+
+.icon-wrap { display: flex; align-items: center; justify-content: center; margin: 0 auto 32px; }
+.icon-moon { width: 70px; height: 32px; animation: floatY 2.4s ease-in-out infinite; }
+.icon-crown { width: 70px; height: 32px; animation: floatY 2.4s ease-in-out infinite; }
+.icon-rings { width: 74px; height: 34px; }
+.ring-left { transform-box: fill-box; transform-origin: center; animation: ringLeftBump 1.3s ease-in-out infinite; }
+.ring-right { transform-box: fill-box; transform-origin: center; animation: ringRightBump 1.3s ease-in-out infinite; }
+.icon-laurel { width: 84px; height: 30px; transform-box: fill-box; transform-origin: center; animation: sway 2.6s ease-in-out infinite; }
+.icon-bow { width: 60px; height: 30px; transform-box: fill-box; transform-origin: center; animation: pulse 1.8s ease-in-out infinite; }
+.icon-pin { width: 40px; height: 40px; animation: pinBounce 1.8s ease-in-out infinite; }
+.icon-note { width: 60px; height: 32px; animation: pinBounce 1.6s ease-in-out infinite; }
+.icon-gift { width: 56px; height: 32px; transform-box: fill-box; transform-origin: center; animation: giftWiggle 2s ease-in-out infinite; }
+.icon-frame { width: 64px; height: 30px; animation: frameFloat 2.4s ease-in-out infinite; }
+
+/* ---------- Invite ---------- */
+.invite-text { text-align: center; font-size: 19px; line-height: 1.7; color: #4f483f; max-width: 320px; margin: 0 auto; }
+.invite-text strong { color: var(--navy); font-weight: 600; }
+
+/* ---------- Story ---------- */
+.story-item { margin-bottom: 34px; }
+.story-item--last { margin-bottom: 0; }
+.story-photo { aspect-ratio: 4/3; margin-bottom: 14px; background: #e6edf6; overflow: hidden; }
+.story-photo img { width: 100%; height: 100%; object-fit: cover; }
+.story-label { margin: 0 0 6px; font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: .16em; color: var(--gold); text-transform: uppercase; text-align: center; }
+.story-text { margin: 0; font-size: 17px; color: #5f584d; line-height: 1.5; text-align: center; font-style: italic; border-bottom: 1px dashed rgba(184,147,90,0.35); padding-bottom: 10px; }
+
+/* ---------- Families ---------- */
+.families-row { display: flex; gap: 14px; }
+.family-card { flex: 1; text-align: center; border: 1px solid rgba(184,147,90,0.35); padding: 22px 10px 26px; min-width: 0; }
+.family-side { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: .2em; color: var(--gold); margin: 0 0 10px; text-transform: uppercase; }
+.family-name { font-family: 'Great Vibes', cursive; font-size: 30px; color: var(--navy); margin: 0 0 14px; }
+.family-parents { font-size: 15px; color: #8a8175; border-bottom: 1px dashed rgba(184,147,90,0.35); padding-bottom: 6px; margin: 0 0 8px; font-style: italic; }
+
+/* ---------- Events ---------- */
+.event-card { border: 1px solid rgba(184,147,90,0.35); padding: 28px 22px; text-align: center; margin-bottom: 22px; background: var(--cream); }
+.event-card--last { margin-bottom: 0; }
+.script-event { font-family: 'Great Vibes', cursive; font-weight: 400; font-size: 32px; color: var(--navy); margin: 0 0 10px; }
+.event-date { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: .08em; color: var(--ink); margin: 0 0 4px; }
+.event-time { font-size: 20px; color: var(--gold); margin: 0 0 10px; }
+.event-place { font-size: 17px; color: #6b6255; margin: 0; font-style: italic; }
+
+/* ---------- Dress ---------- */
+.dress-colors { display: flex; justify-content: center; gap: 16px; margin: 0 0 20px; }
+.dress-swatch { width: 38px; height: 38px; border-radius: 50%; border: 2px solid var(--cream); box-shadow: 0 0 0 1px rgba(184,147,90,0.35); display: inline-block; }
+.dress-note { text-align: center; font-size: 16px; color: #5f584d; font-style: italic; max-width: 280px; margin: 0 auto; }
+
+/* ---------- Location ---------- */
+.location-card { border: 1px solid rgba(184,147,90,0.35); padding: 22px 18px; text-align: center; margin-bottom: 20px; background: var(--cream); }
+.location-card--last { margin-bottom: 0; }
+.location-label { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: .1em; color: var(--gold); margin: 0 0 8px; text-transform: uppercase; }
+.location-place { font-size: 17px; color: #6b6255; margin: 0 0 14px; font-style: italic; }
+.location-map { width: 100%; height: 170px; border: 0; margin-bottom: 16px; filter: grayscale(0.15) sepia(0.1); }
+.btn-outline { display: inline-block; border: 1px solid var(--gold); color: var(--navy); text-decoration: none; font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: .15em; padding: 12px 22px; text-transform: uppercase; transition: background .25s ease, color .25s ease; }
+.btn-outline:hover { background: var(--gold); color: var(--cream); }
+
+/* ---------- Weather ---------- */
+.weather-card { border: 1px solid rgba(184,147,90,0.35); padding: 26px 20px; max-width: 320px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; text-align: center; }
+.weather-date { color: #8a8175; font-family: 'Cinzel', serif; font-size: 12px; margin: 0; text-transform: uppercase; letter-spacing: 0.1em; }
+.weather-main { display: flex; align-items: center; justify-content: center; gap: 16px; }
+.weather-temp { font-family: 'Cinzel', serif; font-size: 56px; color: var(--gold); margin: 0; font-weight: 600; }
+.weather-icon svg { width: 56px; height: 48px; flex-shrink: 0; }
+.weather-condition { font-size: 18px; color: #5f584d; font-style: italic; margin: 0; font-weight: 500; }
+.weather-note { font-size: 13px; color: #a99f8f; font-style: italic; margin: 0; }
+
+/* ---------- Forms (katılım + şarkı) ---------- */
+.song-intro { text-align: center; font-size: 16px; color: #5f584d; font-style: italic; max-width: 280px; margin: 0 auto 20px; }
+.song-thanks { text-align: center; font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: .08em; color: #3f7a55; }
+.song-form { display: flex; flex-direction: column; gap: 12px; max-width: 320px; margin: 0 auto; }
+.song-form input, .song-form select {
+  border: none; border-bottom: 1px solid rgba(184,147,90,0.5); background: transparent; border-radius: 0;
+  font-family: 'Cormorant Garamond', serif; font-size: 18px; padding: 10px 4px; color: var(--ink); outline: none; width: 100%;
+}
+.song-form input:focus, .song-form select:focus { border-bottom-color: var(--navy); }
+.song-form button { align-self: center; margin-top: 6px; background: var(--navy); color: var(--cream); border: 1px solid var(--navy); font-family: 'Cinzel', serif; letter-spacing: .15em; font-size: 11px; text-transform: uppercase; padding: 14px 28px; cursor: pointer; transition: background .25s ease, color .25s ease; }
+.song-form button:hover { background: var(--cream); color: var(--navy); }
+
+/* ---------- Gift ---------- */
+.gift-text { text-align: center; font-size: 17px; color: #5f584d; max-width: 300px; margin: 0 auto 22px; line-height: 1.6; }
+.gift-card { border: 1px solid var(--gold); padding: 18px; text-align: center; max-width: 320px; margin: 0 auto; background: var(--cream); }
+.gift-name { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: .1em; color: var(--gold); margin: 0 0 8px; }
+.gift-iban { font-size: 19px; letter-spacing: .03em; margin: 0 0 12px; color: var(--navy); word-break: break-all; }
+.btn-copy { background: none; border: 1px solid var(--navy); color: var(--navy); font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: .14em; padding: 10px 18px; cursor: pointer; text-transform: uppercase; transition: background .25s ease, color .25s ease, border-color .25s ease; }
+.btn-copy:hover { background: var(--navy); color: var(--cream); }
+.btn-copy.is-copied { background: #3f7a55; border-color: #3f7a55; color: #fff; }
+
+/* ---------- Gallery ---------- */
+.gallery-scroll { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; gap: 12px; padding-bottom: 8px; }
+.gallery-slide { flex: 0 0 100%; scroll-snap-align: center; aspect-ratio: 4/5; border-radius: 16px; overflow: hidden; background: #e6edf6; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+.gallery-slide img { width: 100%; height: 100%; object-fit: cover; }
+
+/* fotoğraf eklenmediğinde gösterilen yer tutucu */
+.img-placeholder { position: relative; background: #e6edf6; }
+.img-placeholder img { visibility: hidden; }
+.img-placeholder::after { content: 'Fotoğraf ekle'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); text-align: center; padding: 12px; }
+
+/* ---------- Footer ---------- */
+.site-footer { background: var(--navy); color: #f2ead9; text-align: center; padding: 50px 24px 80px; }
+.script-footer { font-family: 'Great Vibes', cursive; font-size: 34px; color: #d9bd8b; display: block; margin-bottom: 10px; }
+.footer-tag { font-family: 'Cinzel', serif; letter-spacing: .2em; font-size: 11px; color: var(--gold); }
+
+/* ---------- Music toggle ---------- */
+.music-btn {
+  position: fixed;
+  right: max(18px, calc(50vw - 212px));
+  bottom: max(18px, env(safe-area-inset-bottom));
+  z-index: 50;
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: var(--navy);
+  border: 1px solid var(--gold);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,.35);
+}
+.eq { display: inline-flex; gap: 2px; align-items: flex-end; height: 14px; }
+.eq-bar { width: 2px; background: #d9bd8b; display: block; animation: eqbar 1s ease-in-out infinite; animation-play-state: paused; }
+.eq-bar:nth-child(1) { height: 6px; }
+.eq-bar:nth-child(2) { height: 14px; animation-delay: .2s; }
+.eq-bar:nth-child(3) { height: 9px; animation-delay: .4s; }
+.music-btn.is-playing .eq-bar { animation-play-state: running; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  .reveal-section { opacity: 1; transform: none; }
+}
+
+</style>
+</head>
+<body>
+
+<div class="page-wrapper">
+  <div class="shell">
+
+    <!-- Perdeler (kaydırılan alanın dışında, sabit) -->
+    <div class="curtain curtain-left" id="curtainL"><div class="curtain-shade"></div></div>
+    <div class="curtain curtain-right" id="curtainR"><div class="curtain-shade"></div></div>
+
+  <div class="frame" id="frame">
+
+    <div class="site-content" id="siteContent">
+
+      <!-- HERO -->
+      <section class="hero">
+        <video class="hero-bg" autoplay muted loop playsinline poster="assets/images/hero-poster.jpg">
+          <source src="assets/video/anasayfa.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow eyebrow--light">Bismillahirrahmanirrahim</p>
+          <svg viewBox="0 0 60 60" class="hero-moon" aria-hidden="true"><path d="M38 8 A22 22 0 1 0 38 52 A17 17 0 1 1 38 8Z" fill="none" stroke="#e8cb9a" stroke-width="1.4"/><path d="M46 22 l2.2 4.6 5 .7 -3.6 3.5 .9 5 -4.5 -2.4 -4.5 2.4 .9 -5 -3.6 -3.5 5 -.7Z" fill="none" stroke="#e8cb9a" stroke-width="1.2"/></svg>
+          <p class="eyebrow eyebrow--light">Küçük Prensimiz</p>
+          <h1 class="script-hero" id="childName">Ahmet Efe</h1>
+          <p class="eyebrow eyebrow--light eyebrow--wide">Sünnet Düğününe Davetlisiniz</p>
+          <p class="hero-date" id="heroDate">15 Kasım 2026 · Pazar · 13:00</p>
+          <div class="countdown">
+            <div class="countdown-item"><span id="cd-d">00</span><em>Gün</em></div>
+            <div class="countdown-item"><span id="cd-h">00</span><em>Saat</em></div>
+            <div class="countdown-item"><span id="cd-m">00</span><em>Dakika</em></div>
+            <div class="countdown-item"><span id="cd-s">00</span><em>Saniye</em></div>
+          </div>
+        </div>
+        <div class="scroll-hint">
+          <svg viewBox="0 0 92 92" class="scroll-hint-ring">
+            <defs><path id="scrollCirclePath" d="M46,46 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0" fill="none"></path></defs>
+            <text font-family="Cinzel, serif" font-size="7.4" letter-spacing="2.4" fill="#e8cb9a">
+              <textPath href="#scrollCirclePath" startOffset="0%">AŞAĞI KAYDIRIN &#8226; AŞAĞI KAYDIRIN &#8226; </textPath>
+            </text>
+          </svg>
+          <div class="scroll-hint-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#14284b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- DAVET -->
+      <section class="reveal-section" data-reveal-key="invite">
+        <p class="eyebrow">Davet</p>
+        <h2 class="script-title center">Hoş Geldiniz</h2>
+        <div class="icon-wrap">
+          <svg viewBox="0 0 90 40" class="icon-moon"><path d="M52 6 A15 15 0 1 0 52 34 A11.5 11.5 0 1 1 52 6Z" fill="none" stroke="#b8935a" stroke-width="1.3"/><path d="M60 14 l1.6 3.3 3.6 .5 -2.6 2.5 .6 3.6 -3.2 -1.7 -3.2 1.7 .6 -3.6 -2.6 -2.5 3.6 -.5Z" fill="none" stroke="#b8935a" stroke-width="1"/></svg>
+        </div>
+        <p class="invite-text">Oğlumuz <strong>Ahmet Efe</strong>'nin sünnet sevincini sizlerle paylaşmak istiyoruz. Dualarınız ve varlığınızla bu mutlu günümüzü tamamlamanızı dileriz.</p>
+      </section>
+
+      <!-- KÜÇÜK PRENSİMİZ -->
+      <section class="reveal-section alt-bg" data-reveal-key="story">
+        <p class="eyebrow">Anılar</p>
+        <h2 class="script-title center">Küçük Prensimiz</h2>
+        <div class="icon-wrap">
+          <svg viewBox="0 0 90 40" class="icon-crown"><path d="M22 30 L26 12 L36 22 L45 8 L54 22 L64 12 L68 30Z" fill="none" stroke="#b8935a" stroke-width="1.2"/><path d="M22 34 H68" stroke="#b8935a" stroke-width="1.2"/></svg>
+        </div>
+
+        <div class="story-item">
+          <div class="story-photo"><img src="assets/images/story1.jpg" alt="Bebeklik fotoğrafı" loading="lazy" onerror="this.parentElement.classList.add('img-placeholder')"></div>
+          <p class="story-label">Dünyaya Geldi</p>
+          <p class="story-text">Ahmet Efe'nin doğduğu gün ve ailemize kattığı neşe hakkında birkaç cümle.</p>
+        </div>
+        <div class="story-item">
+          <div class="story-photo"><img src="assets/images/story2.jpg" alt="Büyürken fotoğrafı" loading="lazy" onerror="this.parentElement.classList.add('img-placeholder')"></div>
+          <p class="story-label">Büyüyor</p>
+          <p class="story-text">İlk adımları, sevdiği oyunlar, hayalleri — onu anlatan küçük bir not.</p>
+        </div>
+        <div class="story-item story-item--last">
+          <div class="story-photo"><img src="assets/images/story3.jpg" alt="Sünnet kıyafeti fotoğrafı" loading="lazy" onerror="this.parentElement.classList.add('img-placeholder')"></div>
+          <p class="story-label">Büyük Gün</p>
+          <p class="story-text">Sünnet günü heyecanı ve sizlerle paylaşma isteğimiz.</p>
+        </div>
+      </section>
+
+      <!-- AİLE -->
+      <section class="reveal-section" data-reveal-key="families">
+        <p class="eyebrow">Sevdiklerimiz</p>
+        <h2 class="script-title center">Ailemiz</h2>
+        <div class="icon-wrap">
+          <svg viewBox="0 0 90 40" class="icon-rings"><circle cx="38" cy="20" r="14" fill="none" stroke="#b8935a" stroke-width="1.3" class="ring-left"></circle><circle cx="52" cy="20" r="14" fill="none" stroke="#b8935a" stroke-width="1.3" class="ring-right"></circle></svg>
+        </div>
+        <div class="families-row">
+          <div class="family-card">
+            <p class="family-side">Anne &amp; Baba</p>
+            <p class="family-name">Ahmet Efe</p>
+            <p class="family-parents">Ayşe &amp; Mehmet Yılmaz</p>
+          </div>
+          <div class="family-card">
+            <p class="family-side">Kardeşleri</p>
+            <p class="family-name">Zeynep</p>
+            <p class="family-parents">Büyük ablası</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ETKİNLİKLER -->
+      <section class="reveal-section alt-bg" data-reveal-key="events">
+        <p class="eyebrow">Programımız</p>
+        <h2 class="script-title center">Etkinlikler</h2>
+        <div class="icon-wrap">
+          <svg viewBox="0 0 90 40" class="icon-laurel"><path d="M8 20 Q30 4 45 20 Q60 36 82 20" fill="none" stroke="#b8935a" stroke-width="1.1"></path><path d="M18 14 q-6 4 -4 10 M26 9 q-6 3 -5 10 M64 9 q6 3 5 10 M72 14 q6 4 4 10" fill="none" stroke="#b8935a" stroke-width="1"></path></svg>
+        </div>
+        <div class="event-card">
+          <h3 class="script-event">Mevlit &amp; Dua</h3>
+          <p class="event-date">15 KASIM 2026 · PAZAR</p>
+          <p class="event-time">11:00</p>
+          <p class="event-place">Merkez Camii, Kadıköy, İstanbul</p>
+        </div>
+        <div class="event-card event-card--last">
+          <h3 class="script-event">Sünnet Düğünü</h3>
+          <p class="event-date">15 KASIM 2026 · PAZAR</p>
+          <p class="event-time">13:00</p>
+          <p class="event-place">Gül Düğün Salonu, Kadıköy, İstanbul</p>
+        </div>
+      </section>
+
+      <!-- KIYAFET -->
+      <section class="reveal-section" data-reveal-key="dress">
+        <p class="eyebrow">Kıyafet</p>
+        <h2 class="script-title center">Renklerimiz</h2>
+        <div class="icon-wrap">
+          <svg viewBox="0 0 90 40" class="icon-bow"><path d="M45 20 C34 8 18 10 18 20 C18 30 34 32 45 20 C56 32 72 30 72 20 C72 10 56 8 45 20Z" fill="none" stroke="#b8935a" stroke-width="1.2"></path><circle cx="45" cy="20" r="3" fill="#b8935a"></circle></svg>
+        </div>
+        <div class="dress-colors">
+          <span class="dress-swatch" style="background:#14284b;"></span>
+          <span class="dress-swatch" style="background:#2f6fb5;"></span>
+          <span class="dress-swatch" style="background:#b8935a;"></span>
+          <span class="dress-swatch" style="background:#f2ead9;"></span>
+        </div>
+        <p class="dress-note">Günümüze bu tonlardaki kıyafetlerinizle eşlik ederseniz seviniriz.</p>
+      </section>
+
+      <!-- KONUM -->
+      <section class="reveal-section alt-bg" data-reveal-key="location">
+        <p class="eyebrow">Nasıl Ulaşılır</p>
+        <h2 class="script-title center">Konum Bilgisi</h2>
+        <div class="icon-wrap">
+          <svg viewBox="0 0 90 50" class="icon-pin"><path d="M45 6 C34 6 27 15 27 24 C27 34 45 46 45 46 C45 46 63 34 63 24 C63 15 56 6 45 6Z" fill="none" stroke="#b8935a" stroke-width="1.3"></path><circle cx="45" cy="23" r="6" fill="none" stroke="#b8935a" stroke-width="1.2"></circle></svg>
+        </div>
+        <div class="location-card">
+          <p class="location-label">Mevlit &amp; Dua</p>
+          <p class="location-place">Merkez Camii, Kadıköy, İstanbul</p>
+          <iframe class="location-map" title="Harita: Merkez Camii" src="https://www.google.com/maps?q=Kad%C4%B1k%C3%B6y%20Merkez%20Camii%20%C4%B0stanbul&output=embed" loading="lazy"></iframe>
+          <a class="btn-outline" href="https://www.google.com/maps/search/?api=1&query=Kad%C4%B1k%C3%B6y%20Merkez%20Camii%20%C4%B0stanbul" target="_blank" rel="noopener">Yol Tarifi</a>
+        </div>
+        <div class="location-card location-card--last">
+          <p class="location-label">Sünnet Düğünü</p>
+          <p class="location-place">Gül Düğün Salonu, Kadıköy, İstanbul</p>
+          <iframe class="location-map" title="Harita: Düğün Salonu" src="https://www.google.com/maps?q=G%C3%BCl%20D%C3%BC%C4%9F%C3%BCn%20Salonu%20Kad%C4%B1k%C3%B6y%20%C4%B0stanbul&output=embed" loading="lazy"></iframe>
+          <a class="btn-outline" href="https://www.google.com/maps/search/?api=1&query=G%C3%BCl%20D%C3%BC%C4%9F%C3%BCn%20Salonu%20Kad%C4%B1k%C3%B6y%20%C4%B0stanbul" target="_blank" rel="noopener">Yol Tarifi</a>
+        </div>
+      </section>
+
+      <!-- HAVA DURUMU -->
+      <section class="reveal-section" data-reveal-key="weather">
+        <p class="eyebrow">Şu An</p>
+        <h2 class="script-title center">Hava Durumu</h2>
+        <div class="weather-card">
+          <p class="weather-date" id="weatherDate">15 KASIM 2026 · İSTANBUL</p>
+          <div class="weather-main">
+            <p class="weather-temp"><span id="weatherTemp">16</span>°</p>
+            <span id="weatherIcon" class="weather-icon"></span>
+          </div>
+          <p class="weather-condition" id="weatherCondition">Bulutlu</p>
+          <p class="weather-note" id="weatherNote">Güncel veriye bağlı</p>
+        </div>
+      </section>
+
+      <!-- KATILIM -->
+      <section class="reveal-section alt-bg" data-reveal-key="rsvp">
+        <p class="eyebrow">Katılım</p>
+        <h2 class="script-title center">Geliyor musunuz?</h2>
+        <div class="icon-wrap">
+          <svg viewBox="0 0 90 40" class="icon-laurel"><path d="M20 12 H70 V30 H20Z M20 12 L45 24 L70 12" fill="none" stroke="#b8935a" stroke-width="1.2"/></svg>
+        </div>
+        <p class="song-intro">Hazırlıklarımız için katılım durumunuzu bildirirseniz seviniriz.</p>
+        <form class="song-form" id="rsvpForm">
+          <input type="text" id="rsvpName" placeholder="Adınız Soyadınız" required>
+          <select id="rsvpCount" aria-label="Kişi sayısı">
+            <option>1 kişi</option><option>2 kişi</option><option>3 kişi</option><option>4 kişi</option><option>5+ kişi</option>
+          </select>
+          <select id="rsvpStatus" aria-label="Katılım durumu">
+            <option>Katılacağım</option><option>Katılamayacağım</option>
+          </select>
+          <button type="submit">WhatsApp ile Gönder</button>
+        </form>
+      </section>
+
+      <!-- ŞARKI İSTEĞİ -->
+      <section class="reveal-section" data-reveal-key="song">
+        <p class="eyebrow">Eğlence</p>
+        <h2 class="script-title center">Şarkı İsteği</h2>
+        <div class="icon-wrap">
+          <svg viewBox="0 0 90 40" class="icon-note"><path d="M40 8 L40 26 M40 8 L58 4 L58 22" fill="none" stroke="#b8935a" stroke-width="1.2"></path><circle cx="36" cy="27" r="4" fill="none" stroke="#b8935a" stroke-width="1.2"></circle><circle cx="54" cy="23" r="4" fill="none" stroke="#b8935a" stroke-width="1.2"></circle></svg>
+        </div>
+        <p class="song-intro">Çocuklar ve büyükler için çalmasını istediğin şarkıyı bırak.</p>
+        <p class="song-thanks" id="songThanks" hidden>Teşekkürler! İsteğin alındı.</p>
+        <!--
+          Bu form Formspree kullanır (https://formspree.io). Ücretsiz hesap açıp
+          "New Form" oluşturduktan sonra aşağıdaki YOUR_FORM_ID kısmını form ID ile değiştirin.
+        -->
+        <form class="song-form" id="songForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <input type="text" name="Adı" placeholder="Adın" required>
+          <input type="text" name="Şarkı" placeholder="Şarkı adı / sanatçı" required>
+          <button type="submit">Gönder</button>
+        </form>
+      </section>
+
+      <!-- HEDİYE -->
+      <section class="reveal-section alt-bg" data-reveal-key="gift">
+        <p class="eyebrow">Sevgiyle</p>
+        <h2 class="script-title center">Hediye</h2>
+        <div class="icon-wrap">
+          <svg viewBox="0 0 90 40" class="icon-gift"><rect x="24" y="14" width="42" height="20" fill="none" stroke="#b8935a" stroke-width="1.2"></rect><path d="M45 14 L45 34 M24 22 L66 22" fill="none" stroke="#b8935a" stroke-width="1"></path><path d="M45 14 C38 4 30 4 33 12 C36 18 45 14 45 14 C45 14 54 18 57 12 C60 4 52 4 45 14Z" fill="none" stroke="#b8935a" stroke-width="1"></path></svg>
+        </div>
+        <p class="gift-text">Varlığınız ve duanız bizim için en değerli hediyedir. Dilerseniz Ahmet Efe'nin geleceğine küçük bir katkıda bulunabilirsiniz.</p>
+        <div class="gift-card">
+          <p class="gift-name">Mehmet Yılmaz</p>
+          <p class="gift-iban" id="ibanText">TR00 0000 0000 0000 0000 0000 00</p>
+          <button class="btn-copy" id="copyIbanBtn">Kopyala</button>
+        </div>
+      </section>
+
+      <!-- GALERİ -->
+      <section class="reveal-section" data-reveal-key="gallery">
+        <p class="eyebrow">Anılarımız</p>
+        <h2 class="script-title center">Galeri</h2>
+        <div class="icon-wrap">
+          <svg viewBox="0 0 90 40" class="icon-frame"><path d="M45 8 C40 16 40 24 45 32 M45 8 C50 16 50 24 45 32" fill="none" stroke="#b8935a" stroke-width="1"></path><path d="M20 20 Q32 10 45 20 Q58 30 70 20" fill="none" stroke="#b8935a" stroke-width="1.1"></path></svg>
+        </div>
+        <div class="gallery-scroll">
+          <div class="gallery-slide"><img src="assets/images/gallery1.jpg" alt="Galeri fotoğrafı 1" loading="lazy" onerror="this.parentElement.classList.add('img-placeholder')"></div>
+          <div class="gallery-slide"><img src="assets/images/gallery2.jpg" alt="Galeri fotoğrafı 2" loading="lazy" onerror="this.parentElement.classList.add('img-placeholder')"></div>
+          <div class="gallery-slide"><img src="assets/images/gallery3.jpg" alt="Galeri fotoğrafı 3" loading="lazy" onerror="this.parentElement.classList.add('img-placeholder')"></div>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <span class="script-footer">Sevgiyle bekliyoruz</span>
+        <span class="footer-tag">#AhmetEfeSünnet2026</span>
+      </footer>
+
+    </div>
+
+    <!-- Müzik açma/kapama (assets/audio/muzik.mp3 varsa görünür) -->
+    <button class="music-btn" id="musicBtn" aria-label="Müziği çal / durdur" hidden>
+      <span class="eq"><i class="eq-bar"></i><i class="eq-bar"></i><i class="eq-bar"></i></span>
+    </button>
+    <audio id="bgAudio" preload="none" loop playsinline src="assets/audio/muzik.mp3"></audio>
+
+  </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- Düzenlenecek bilgiler ---------- */
+  var CONFIG = {
+    childName: 'Ahmet Efe',
+    eventDate: '2026-11-15T13:00:00+03:00',
+    city: 'Istanbul',
+    cityLabel: 'İSTANBUL',
+    whatsapp: '905551112233' // ülke kodu ile, + olmadan
+  };
+
+  var frame = document.getElementById('frame');
+  var curtainL = document.getElementById('curtainL');
+  var curtainR = document.getElementById('curtainR');
+  var bgAudio = document.getElementById('bgAudio');
+  var musicBtn = document.getElementById('musicBtn');
+
+  /* ---------- Geri sayım ---------- */
+  var cd = {
+    d: document.getElementById('cd-d'), h: document.getElementById('cd-h'),
+    m: document.getElementById('cd-m'), s: document.getElementById('cd-s')
+  };
+  var target = new Date(CONFIG.eventDate).getTime();
+  function pad(n) { return String(n).padStart(2, '0'); }
+  function tickCountdown() {
+    var diff = Math.max(0, target - Date.now());
+    cd.d.textContent = pad(Math.floor(diff / 86400000));
+    cd.h.textContent = pad(Math.floor((diff % 86400000) / 3600000));
+    cd.m.textContent = pad(Math.floor((diff % 3600000) / 60000));
+    cd.s.textContent = pad(Math.floor((diff % 60000) / 1000));
+  }
+  tickCountdown();
+  setInterval(tickCountdown, 1000);
+
+  /* ---------- Bölüm görünürlük animasyonu ---------- */
+  var revealSections = document.querySelectorAll('.reveal-section');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) entry.target.classList.add('is-visible');
+      });
+    }, { root: frame, threshold: 0.12 });
+    revealSections.forEach(function (el) { io.observe(el); });
+  } else {
+    revealSections.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  /* ---------- Perde efekti (scroll) ---------- */
+  function handleFrameScroll() {
+    var scrollable = frame.scrollHeight - frame.clientHeight;
+    var p = scrollable > 0 ? frame.scrollTop / scrollable : 0;
+    var y = p * 10 + Math.sin(p * Math.PI * 2) * 3;
+    var r = Math.sin(p * Math.PI) * 1.2;
+    [curtainL, curtainR].forEach(function (el) {
+      el.style.animation = 'none';
+      el.style.transform = 'translateY(' + y + 'px) rotate(' + r + 'deg)';
+    });
+  }
+  frame.addEventListener('scroll', handleFrameScroll, { passive: true });
+
+  /* ---------- Müzik (assets/audio/muzik.mp3 varsa) ---------- */
+  var musicPlaying = false;
+  function setMusicState(on) {
+    musicPlaying = on;
+    musicBtn.classList.toggle('is-playing', on);
+  }
+  bgAudio.addEventListener('loadedmetadata', function () { musicBtn.hidden = false; });
+  bgAudio.load();
+
+  function startMusic() {
+    var p = bgAudio.play();
+    if (p && p.then) {
+      p.then(function () { setMusicState(true); }).catch(function () { setMusicState(false); });
+    } else {
+      setMusicState(true);
+    }
+  }
+  musicBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    if (musicPlaying) { bgAudio.pause(); setMusicState(false); } else { startMusic(); }
+  });
+
+  // İlk dokunuşta müziği başlat (tarayıcılar otomatik çalmaya izin vermez)
+  var gestureDone = false;
+  function firstGesture() {
+    if (gestureDone) return;
+    gestureDone = true;
+    if (!musicBtn.hidden) startMusic();
+  }
+  window.addEventListener('click', firstGesture, { once: true, passive: true });
+  window.addEventListener('touchend', firstGesture, { once: true, passive: true });
+
+  /* ---------- Hava durumu (wttr.in) ---------- */
+  var weatherTemp = document.getElementById('weatherTemp');
+  var weatherCondition = document.getElementById('weatherCondition');
+  var weatherDate = document.getElementById('weatherDate');
+  var weatherNote = document.getElementById('weatherNote');
+  var weatherIcon = document.getElementById('weatherIcon');
+
+  var WEATHER_TR = [
+    ['partly', 'Kısmen Bulutlu'], ['overcast', 'Kapalı'], ['drizzle', 'Çiseleyen Yağmur'],
+    ['rain', 'Yağmurlu'], ['snow', 'Karlı'], ['cloud', 'Bulutlu'], ['clear', 'Açık'], ['sunny', 'Güneşli'], ['mist', 'Sisli'], ['fog', 'Sisli']
+  ];
+
+  var ICONS = {
+    rain: '<svg viewBox="0 0 100 80"><ellipse cx="50" cy="25" rx="22" ry="15" fill="#5a8fb8"/><ellipse cx="30" cy="28" rx="16" ry="12" fill="#5a8fb8" opacity="0.8"/><circle cx="20" cy="50" r="3" fill="#5a8fb8"/><circle cx="35" cy="58" r="3" fill="#5a8fb8"/><circle cx="50" cy="55" r="3" fill="#5a8fb8"/><circle cx="65" cy="60" r="3" fill="#5a8fb8"/><circle cx="80" cy="52" r="3" fill="#5a8fb8"/></svg>',
+    cloud: '<svg viewBox="0 0 100 80"><ellipse cx="55" cy="32" rx="28" ry="18" fill="#a8c5e0"/><ellipse cx="28" cy="38" rx="20" ry="14" fill="#7fa8d1" opacity="0.9"/></svg>',
+    sun: '<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="25" fill="#f4b860"/><g stroke="#f4a460" stroke-width="3" stroke-linecap="round"><path d="M50 12V2M50 98V88M88 50h10M12 50H2M75 25l7-7M25 75l-7 7M25 25l-7-7M75 75l7 7"/></g></svg>'
+  };
+
+  weatherDate.textContent = new Date(CONFIG.eventDate).toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' }).toUpperCase() + ' · ' + CONFIG.cityLabel;
+  weatherIcon.innerHTML = ICONS.cloud;
+
+  fetch('https://wttr.in/' + encodeURIComponent(CONFIG.city) + '?format=j1')
+    .then(function (res) { return res.json(); })
+    .then(function (data) {
+      var cond = data && data.current_condition && data.current_condition[0];
+      if (!cond) return;
+      var tempC = parseInt(cond.temp_C, 10);
+      var desc = (cond.weatherDesc && cond.weatherDesc[0] && cond.weatherDesc[0].value) || '';
+      var lower = desc.toLowerCase();
+      var tr = desc;
+      for (var i = 0; i < WEATHER_TR.length; i++) {
+        if (lower.indexOf(WEATHER_TR[i][0]) !== -1) { tr = WEATHER_TR[i][1]; break; }
+      }
+      var rainy = /rain|drizzle|snow/.test(lower);
+      var cloudy = /cloud|overcast|mist|fog/.test(lower);
+      weatherTemp.textContent = isNaN(tempC) ? '--' : tempC;
+      weatherCondition.textContent = tr || 'Bilinmiyor';
+      weatherNote.textContent = 'Şu anki hava durumu';
+      weatherIcon.innerHTML = rainy ? ICONS.rain : (cloudy ? ICONS.cloud : ICONS.sun);
+    })
+    .catch(function () { /* varsayılan değerler kalır */ });
+
+  /* ---------- Katılım formu (WhatsApp) ---------- */
+  document.getElementById('rsvpForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var text = CONFIG.childName + ' sünnet düğünü katılım bildirimi:\n' +
+      'Ad: ' + document.getElementById('rsvpName').value + '\n' +
+      'Kişi sayısı: ' + document.getElementById('rsvpCount').value + '\n' +
+      'Durum: ' + document.getElementById('rsvpStatus').value;
+    window.open('https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
+  });
+
+  /* ---------- Şarkı isteği formu (Formspree) ---------- */
+  var songForm = document.getElementById('songForm');
+  var songThanks = document.getElementById('songThanks');
+  songForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    fetch(songForm.action, {
+      method: 'POST',
+      body: new FormData(songForm),
+      headers: { Accept: 'application/json' }
+    }).then(function (res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      songForm.reset();
+      songForm.hidden = true;
+      songThanks.hidden = false;
+      setTimeout(function () { songThanks.hidden = true; songForm.hidden = false; }, 3000);
+    }).catch(function () {
+      alert('İstek gönderilemedi, lütfen tekrar deneyin.');
+    });
+  });
+
+  /* ---------- IBAN kopyalama ---------- */
+  var copyBtn = document.getElementById('copyIbanBtn');
+  copyBtn.addEventListener('click', function () {
+    var text = document.getElementById('ibanText').textContent.trim();
+    var done = function () {
+      copyBtn.textContent = 'Kopyalandı';
+      copyBtn.classList.add('is-copied');
+      setTimeout(function () { copyBtn.textContent = 'Kopyala'; copyBtn.classList.remove('is-copied'); }, 1800);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done);
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text; document.body.appendChild(ta); ta.select();
+      document.execCommand('copy'); document.body.removeChild(ta); done();
+    }
+  });
+})();
+
+</script>
+</body>
+</html>
