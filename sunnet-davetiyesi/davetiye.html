@@ -51,15 +51,16 @@ img { max-width: 100%; display: block; }
 .gold-rule { width: 120px; height: 1px; background: var(--gold); margin: 14px auto 22px; }
 
 /* ---------- Hero ---------- */
-.hero { position: relative; min-height: 100vh; min-height: 100svh; padding: 40px 24px 120px; text-align: center; background: var(--cream); display: flex; flex-direction: column; }
-.hero-content { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-.hero-moon { width: 54px; height: 54px; fill: none; stroke: var(--gold); stroke-width: 1.4; margin-bottom: 18px; }
-.hero-title { font-family: var(--f-display); font-weight: 700; font-size: clamp(34px, 11.4vw, 52px); letter-spacing: 0.01em; text-transform: uppercase; line-height: 1; margin: 0; color: var(--ink); }
-.hero-names { font-family: var(--f-display); font-weight: 500; font-size: clamp(30px, 10vw, 44px); margin: 0 0 18px; display: flex; align-items: baseline; justify-content: center; gap: 8px; white-space: nowrap; line-height: 1.1; }
+.hero { position: relative; min-height: 100vh; min-height: 100svh; padding: 40px 36px 120px; text-align: center; background: var(--cream); display: flex; flex-direction: column; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 0; }
+.hero-content { position: relative; z-index: 1; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; }
+.hero-title { font-family: var(--f-display); font-weight: 700; font-size: clamp(30px, 9.6vw, 42px); letter-spacing: 0.01em; text-transform: uppercase; line-height: 1.2; margin: 0; color: var(--ink); max-width: 100%; }
+.hero .eyebrow { margin-bottom: 18px; }
+.hero-names { font-family: var(--f-display); font-weight: 500; font-size: clamp(28px, 8.6vw, 38px); margin: 0 0 20px; display: flex; align-items: baseline; justify-content: center; gap: 8px; white-space: nowrap; line-height: 1.1; }
 .hero-names b { color: var(--gold); font-size: 1.4em; font-weight: 500; font-style: normal; }
+.hero .countdown { margin-top: 30px; max-width: 280px; }
 .hero-date { font-family: var(--f-wide); font-weight: 400; font-size: 13px; letter-spacing: .2em; text-transform: uppercase; margin: 0; color: var(--ink); }
 
-.countdown-section { padding: 48px 36px; text-align: center; }
 .countdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; width: 100%; max-width: 300px; margin: 18px auto 0; }
 .countdown-item { display: flex; flex-direction: column; align-items: center; min-width: 0; }
 .countdown-item span { width: 100%; font-family: var(--f-display); font-weight: 600; font-size: clamp(20px, 6.2vw, 26px); line-height: 1; background: #fff; border: 1px solid var(--line); padding: 14px 0; text-align: center; color: var(--ink); }
@@ -220,13 +221,19 @@ img { max-width: 100%; display: block; }
 
       <!-- HERO -->
       <section class="hero">
+        <img class="hero-bg" src="assets/images/hero-bg.jpg" alt="" onerror="this.remove()">
         <div class="hero-content">
-          <svg viewBox="0 0 60 60" class="hero-moon" aria-hidden="true"><path d="M38 8 A22 22 0 1 0 38 52 A17 17 0 1 1 38 8Z"/><path d="M46 22 l2.2 4.6 5 .7 -3.6 3.5 .9 5 -4.5 -2.4 -4.5 2.4 .9 -5 -3.6 -3.5 5 -.7Z"/></svg>
           <p class="eyebrow">Sünnet Düğünümüze</p>
           <h1 class="hero-title">Davetlisiniz</h1>
           <div class="gold-rule"></div>
           <p class="hero-names"><span>ALPER</span><b>&amp;</b><span>AYBEK</span></p>
           <p class="hero-date" id="heroDate">21 Kasım 2026 · Cumartesi · 19.00</p>
+          <div class="countdown">
+            <div class="countdown-item"><span id="cd-d">00</span><em>Gün</em></div>
+            <div class="countdown-item"><span id="cd-h">00</span><em>Saat</em></div>
+            <div class="countdown-item"><span id="cd-m">00</span><em>Dakika</em></div>
+            <div class="countdown-item"><span id="cd-s">00</span><em>Saniye</em></div>
+          </div>
         </div>
         <div class="scroll-hint">
           <svg viewBox="0 0 92 92" class="scroll-hint-ring">
@@ -242,16 +249,6 @@ img { max-width: 100%; display: block; }
       </section>
 
 
-      <!-- GERİ SAYIM -->
-      <section class="reveal-section countdown-section" data-reveal-key="countdown">
-        <p class="eyebrow">Büyük Güne Kalan Süre</p>
-        <div class="countdown">
-          <div class="countdown-item"><span id="cd-d">00</span><em>Gün</em></div>
-          <div class="countdown-item"><span id="cd-h">00</span><em>Saat</em></div>
-          <div class="countdown-item"><span id="cd-m">00</span><em>Dakika</em></div>
-          <div class="countdown-item"><span id="cd-s">00</span><em>Saniye</em></div>
-        </div>
-      </section>
 
       <!-- KÜÇÜK ADAMLARIMIZ -->
       <section class="reveal-section alt-bg" data-reveal-key="story">
