@@ -3,8 +3,8 @@
 
   /* ---------- Düzenlenecek bilgiler ---------- */
   var CONFIG = {
-    childName: 'Ahmet Efe',
-    eventDate: '2026-11-15T13:00:00+03:00',
+    childName: 'Aybek & Alper Özkan',
+    eventDate: '2026-11-21T19:00:00+03:00',
     city: 'Istanbul',
     cityLabel: 'İSTANBUL',
     whatsapp: '905551112233' // ülke kodu ile, + olmadan
