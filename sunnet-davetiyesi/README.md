@@ -5,12 +5,12 @@ Statik HTML/CSS/JS, mobil uyumlu tek sayfalık davetiye. Build adımı yok.
 ## Yapı
 
 ```
-index.html     Tüm metinler (isim, adres, aile, program)
-css/style.css  Stiller
-js/main.js     Geri sayım, perde efekti, müzik, hava durumu, formlar, IBAN kopyalama
-assets/images/ story1-3.jpg, gallery1-3.jpg, hero-poster.jpg (isteğe bağlı)
-assets/video/  anasayfa.mp4 (isteğe bağlı, açılış arka planı)
-assets/audio/  muzik.mp3 (isteğe bağlı; varsa müzik butonu görünür)
+index.html       Tüm metinler (isim, adres, aile)
+css/style.css    Stiller
+js/main.js       Kapı açılışı, geri sayım, hava durumu, alarm (.ics), WhatsApp formu, IBAN kopyalama
+assets/images/   rope-boy, boys-cloud, bekliyoruz (.webp); story1-2, intro-poster (.jpg)
+davetiye.html    Hepsi içine gömülü, küçültülmüş tek dosya sürüm (index.html'den üretilir)
+_headers         Netlify/Cloudflare Pages için önbellek ayarları
 ```
 
 ## Yapılacaklar

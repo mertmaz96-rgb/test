@@ -7,7 +7,8 @@
 <meta name="description" content="Aybek &amp; Alper Özkan'ın sünnet düğününe davetlisiniz - 21 Kasım 2026, Seramoni 4 Düğün Salonu, Firüzköy / Avcılar">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Bodoni+Moda:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Bodoni+Moda:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;1,400&family=Montserrat:wght@300;400;500&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/images/intro-poster.jpg" fetchpriority="high">
 <link rel="stylesheet" href="css/style.css">
 <noscript><style>.site-content{opacity:1!important}.intro{display:none}.hero-top,.hero-bottom,.hero-content>*,.scroll-hint{opacity:1!important;transform:none!important}.frame{overflow-y:auto!important}</style></noscript>
 </head>
@@ -23,8 +24,8 @@
     <!-- Açılış: kapı açılışı (arkadan site görünür) -->
     <div class="intro" id="intro" aria-hidden="true">
       <div class="doors">
-        <div class="door door-l"><img src="assets/images/intro-poster.jpg" alt=""></div>
-        <div class="door door-r"><img src="assets/images/intro-poster.jpg" alt=""></div>
+        <div class="door door-l"><img src="assets/images/intro-poster.jpg" alt="" width="720" height="1280" decoding="async" fetchpriority="high"></div>
+        <div class="door door-r"><img src="assets/images/intro-poster.jpg" alt="" width="720" height="1280" decoding="async" fetchpriority="high"></div>
       </div>
     </div>
 
@@ -33,9 +34,8 @@
 
       <!-- HERO -->
       <section class="hero">
-        <img class="hero-bg" src="assets/images/hero-bg.jpg" alt="" onerror="this.remove()">
 
-        <div class="hero-top"><img class="hero-rope" src="assets/images/rope-boy.webp" alt=""></div>
+        <div class="hero-top"><img class="hero-rope" src="assets/images/rope-boy.webp" alt="" width="560" height="750" decoding="async" fetchpriority="high"></div>
 
         <div class="hero-content">
           <p class="eyebrow">Sünnet Düğünümüze</p>
@@ -56,7 +56,7 @@
 
         <div class="hero-bottom">
           <div class="cloud-fig">
-            <img src="assets/images/boys-cloud.webp" alt="Alper ve Aybek">
+            <img src="assets/images/boys-cloud.webp" alt="Alper ve Aybek" width="860" height="996" decoding="async" fetchpriority="high">
             <h1 class="cloud-text">Davetlisiniz</h1>
           </div>
         </div>
@@ -83,12 +83,12 @@
         <div class="gold-rule"></div>
 
         <div class="story-item">
-          <div class="story-photo"><img src="assets/images/story1.jpg" alt="Alper" loading="lazy" onerror="this.parentElement.classList.add('img-placeholder')"></div>
+          <div class="story-photo"><img src="assets/images/story1.jpg" alt="Alper" width="900" height="600" loading="lazy" decoding="async" onerror="this.parentElement.classList.add('img-placeholder')"></div>
           <p class="story-label">Alper</p>
           <p class="story-text">Bu özel günün kahramanlarından biri. Sizlerle paylaşmak için sabırsızlanıyor.</p>
         </div>
         <div class="story-item story-item--last">
-          <div class="story-photo"><img src="assets/images/story2.jpg" alt="Aybek" loading="lazy" onerror="this.parentElement.classList.add('img-placeholder')"></div>
+          <div class="story-photo"><img src="assets/images/story2.jpg" alt="Aybek" width="900" height="600" loading="lazy" decoding="async" onerror="this.parentElement.classList.add('img-placeholder')"></div>
           <p class="story-label">Aybek</p>
           <p class="story-text">Bu özel günün diğer kahramanı. Sizleri aramızda görmekten mutlu olacak.</p>
         </div>
@@ -132,7 +132,7 @@
 
       <!-- BEKLİYORUZ (karakterler) -->
       <section class="reveal-section waiting" data-reveal-key="waiting">
-        <img class="waiting-img" src="assets/images/bekliyoruz.webp" alt="Sizleri bekliyoruz" loading="lazy" onerror="this.closest('section').hidden = true">
+        <img class="waiting-img" src="assets/images/bekliyoruz.webp" alt="Sizleri bekliyoruz" width="900" height="646" loading="lazy" decoding="async" onerror="this.closest('section').hidden = true">
       </section>
 
       <!-- HAVA DURUMU -->
@@ -204,16 +204,10 @@
 
     </div>
 
-    <!-- Müzik açma/kapama (assets/audio/muzik.mp3 varsa görünür) -->
-    <button class="music-btn" id="musicBtn" aria-label="Müziği çal / durdur" hidden>
-      <span class="eq"><i class="eq-bar"></i><i class="eq-bar"></i><i class="eq-bar"></i></span>
-    </button>
-    <audio id="bgAudio" preload="none" loop playsinline src="assets/audio/muzik.mp3"></audio>
-
   </div>
   </div>
 </div>
 
-<script src="js/main.js"></script>
+<script src="js/main.js" defer></script>
 </body>
 </html>

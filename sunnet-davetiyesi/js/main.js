@@ -12,8 +12,6 @@
   };
 
   var frame = document.getElementById('frame');
-  var bgAudio = document.getElementById('bgAudio');
-  var musicBtn = document.getElementById('musicBtn');
 
   /* ---------- Açılış: kapı açılışı ---------- */
   // Kapı iki kanat olarak açılır ve izleyiciye yaklaşır; boşluktan site görünür.
@@ -83,38 +81,6 @@
   } else {
     revealSections.forEach(function (el) { el.classList.add('is-visible'); });
   }
-
-  /* ---------- Müzik (assets/audio/muzik.mp3 varsa) ---------- */
-  var musicPlaying = false;
-  function setMusicState(on) {
-    musicPlaying = on;
-    musicBtn.classList.toggle('is-playing', on);
-  }
-  bgAudio.addEventListener('loadedmetadata', function () { musicBtn.hidden = false; });
-  bgAudio.load();
-
-  function startMusic() {
-    var p = bgAudio.play();
-    if (p && p.then) {
-      p.then(function () { setMusicState(true); }).catch(function () { setMusicState(false); });
-    } else {
-      setMusicState(true);
-    }
-  }
-  musicBtn.addEventListener('click', function (e) {
-    e.stopPropagation();
-    if (musicPlaying) { bgAudio.pause(); setMusicState(false); } else { startMusic(); }
-  });
-
-  // İlk dokunuşta müziği başlat (tarayıcılar otomatik çalmaya izin vermez)
-  var gestureDone = false;
-  function firstGesture() {
-    if (gestureDone) return;
-    gestureDone = true;
-    if (!musicBtn.hidden) startMusic();
-  }
-  window.addEventListener('click', firstGesture, { once: true, passive: true });
-  window.addEventListener('touchend', firstGesture, { once: true, passive: true });
 
   /* ---------- Hava durumu (Open-Meteo, düğün günü tahmini) ---------- */
   var weatherTemp = document.getElementById('weatherTemp');
