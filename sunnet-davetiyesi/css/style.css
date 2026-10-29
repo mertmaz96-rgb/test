@@ -180,7 +180,7 @@ img { max-width: 100%; display: block; }
 .gallery-empty p { margin: 0; font-size: 18px; line-height: 1.5; font-style: italic; color: var(--muted); max-width: 240px; margin-inline: auto; }
 
 /* ---------- Bekliyoruz (karakterler) ---------- */
-.waiting { padding: 36px 24px 44px; text-align: center; }
+.waiting { padding: 0 24px 48px; text-align: center; background: var(--cream-alt); }
 .waiting[hidden] { display: none; }
 .waiting-img { display: block; width: 100%; max-width: 340px; height: auto; margin: 0 auto; }
 
