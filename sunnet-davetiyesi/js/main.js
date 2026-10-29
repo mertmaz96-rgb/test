@@ -19,7 +19,7 @@
   /* ---------- Açılış: kapı videosu ---------- */
   var intro = document.getElementById('intro');
   var introVideo = document.getElementById('introVideo');
-  var REVEAL_AT = 0.9; // video bu kadar oynayınca içerik belirmeye başlar (sn); kapılar solarken açılmaya devam eder
+  var REVEAL_AT = 2.0; // video bu kadar oynayınca içerik belirmeye başlar (sn); kapılar solarken açılmaya devam eder
   var revealed = false;
 
   function reveal() {
