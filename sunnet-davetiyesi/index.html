@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sünnet Düğünü Davetiyesi</title>
+<meta name="description" content="Sünnet düğünümüze davetlisiniz.">
+<style>
+  :root {
+    --navy: #14284b; --blue: #2f6fb5; --sky: #e8f1fb; --gold: #c9a24b; --ink: #1d2433; --bg: #fffdf8;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: Georgia, "Times New Roman", serif; color: var(--ink); background: var(--bg); line-height: 1.6; }
+  section { padding: 64px 20px; max-width: 760px; margin: 0 auto; text-align: center; }
+  h2 { font-size: 1.8rem; color: var(--navy); margin-bottom: 24px; }
+  h2::after { content: ""; display: block; width: 56px; height: 3px; background: var(--gold); margin: 12px auto 0; }
+
+  .hero { max-width: none; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+    color: #fff; background: radial-gradient(circle at 20% 20%, #3a7fc9 0, transparent 40%), linear-gradient(160deg, var(--navy), var(--blue)); }
+  .hero .bismillah { color: var(--gold); letter-spacing: .15em; font-size: 1.1rem; margin-bottom: 20px; }
+  .hero h1 { font-size: clamp(2.6rem, 10vw, 5rem); font-weight: normal; }
+  .hero p { margin-top: 12px; font-size: 1.15rem; opacity: .92; }
+  .btn { display: inline-block; margin-top: 32px; padding: 12px 28px; border: 2px solid var(--gold); color: #fff; text-decoration: none;
+    border-radius: 999px; transition: background .2s; background: transparent; font: inherit; cursor: pointer; }
+  .btn:hover { background: var(--gold); color: var(--navy); }
+  .btn.solid { background: var(--navy); border-color: var(--navy); }
+  .btn.solid:hover { background: var(--gold); border-color: var(--gold); }
+
+  .countdown { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .countdown div { background: var(--sky); border-radius: 12px; padding: 16px 18px; min-width: 84px; }
+  .countdown b { display: block; font-size: 2rem; color: var(--navy); }
+  .countdown span { font-size: .85rem; text-transform: uppercase; letter-spacing: .08em; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .card { background: #fff; border: 1px solid #e6dfcc; border-radius: 14px; padding: 24px 16px; }
+  .card h3 { color: var(--blue); margin-bottom: 6px; }
+
+  ul.program { list-style: none; padding: 0; text-align: left; max-width: 420px; margin: 0 auto; }
+  ul.program li { display: flex; gap: 16px; padding: 12px 0; border-bottom: 1px dashed #d8cfb6; }
+  ul.program time { font-weight: bold; color: var(--blue); min-width: 56px; }
+
+  .alt { background: var(--sky); max-width: none; }
+  .alt > * { max-width: 760px; margin-left: auto; margin-right: auto; }
+  iframe { width: 100%; height: 320px; border: 0; border-radius: 14px; margin-top: 20px; }
+
+  form { display: grid; gap: 12px; text-align: left; max-width: 420px; margin: 0 auto; }
+  label { font-size: .9rem; color: var(--navy); }
+  input, select, textarea { width: 100%; padding: 10px 12px; border: 1px solid #c9d4e4; border-radius: 8px; font: inherit; background: #fff; }
+  form .btn { justify-self: center; }
+  footer { text-align: center; padding: 32px 20px; color: #666; font-size: .9rem; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="bismillah">BİSMİLLAHİRRAHMANİRRAHİM</div>
+  <p>Küçük prensimiz</p>
+  <h1 id="childName">Ahmet Efe</h1>
+  <p>sünnet düğününe davetlisiniz</p>
+  <p id="heroDate">15 Kasım 2026 · Pazar</p>
+  <a class="btn" href="#detay">Detaylar</a>
+</header>
+
+<section>
+  <h2>Büyük Güne Kalan Süre</h2>
+  <div class="countdown" id="countdown" aria-live="off">
+    <div><b id="d">0</b><span>Gün</span></div>
+    <div><b id="h">0</b><span>Saat</span></div>
+    <div><b id="m">0</b><span>Dakika</span></div>
+    <div><b id="s">0</b><span>Saniye</span></div>
+  </div>
+</section>
+
+<section class="alt" id="detay">
+  <h2>Davet Bilgileri</h2>
+  <div class="cards">
+    <div class="card"><h3>Tarih</h3><p id="dDate">15 Kasım 2026, Pazar</p></div>
+    <div class="card"><h3>Saat</h3><p id="dTime">13:00</p></div>
+    <div class="card"><h3>Mekan</h3><p id="dVenue">Gül Düğün Salonu<br>Örnek Mah. Örnek Cad. No:1</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Program</h2>
+  <ul class="program">
+    <li><time>13:00</time><span>Misafirlerin karşılanması</span></li>
+    <li><time>13:30</time><span>Dua ve açılış</span></li>
+    <li><time>14:00</time><span>Yemek ikramı</span></li>
+    <li><time>15:00</time><span>Eğlence ve pasta kesimi</span></li>
+  </ul>
+</section>
+
+<section class="alt">
+  <h2>Konum</h2>
+  <p>Mekana ulaşım için haritayı kullanabilirsiniz.</p>
+  <iframe title="Harita" loading="lazy" id="map"
+    src="https://www.google.com/maps?q=Istanbul&output=embed"></iframe>
+  <a class="btn solid" id="mapLink" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Istanbul">Yol Tarifi Al</a>
+</section>
+
+<section>
+  <h2>Katılım Bildirimi</h2>
+  <form id="rsvp">
+    <div><label for="name">Adınız Soyadınız</label><input id="name" required></div>
+    <div><label for="count">Kaç kişi geleceksiniz?</label>
+      <select id="count"><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select></div>
+    <div><label for="status">Katılım durumu</label>
+      <select id="status"><option>Katılacağım</option><option>Katılamayacağım</option></select></div>
+    <div><label for="note">Not (isteğe bağlı)</label><textarea id="note" rows="3"></textarea></div>
+    <button class="btn solid" type="submit">WhatsApp ile Gönder</button>
+  </form>
+</section>
+
+<footer>Katılımınızla bizi onurlandıracağınız için teşekkür ederiz.<br>Aile: Yılmaz</footer>
+
+<script>
+  // ---- Düzenlenecek bilgiler ----
+  const CONFIG = {
+    childName: "Ahmet Efe",
+    eventDate: "2026-11-15T13:00:00",   // yerel saat
+    venue: "Gül Düğün Salonu, Örnek Mah. Örnek Cad. No:1",
+    whatsapp: "905551112233"            // ülke kodu ile, + olmadan
+  };
+  // --------------------------------
+
+  const date = new Date(CONFIG.eventDate);
+  const fmt = (o) => date.toLocaleDateString("tr-TR", o);
+  document.title = `${CONFIG.childName} - Sünnet Düğünü Davetiyesi`;
+  childName.textContent = CONFIG.childName;
+  heroDate.textContent = fmt({ day: "numeric", month: "long", year: "numeric", weekday: "long" });
+  dDate.textContent = fmt({ day: "numeric", month: "long", year: "numeric", weekday: "long" });
+  dTime.textContent = date.toLocaleTimeString("tr-TR", { hour: "2-digit", minute: "2-digit" });
+  dVenue.textContent = CONFIG.venue;
+  const q = encodeURIComponent(CONFIG.venue);
+  map.src = `https://www.google.com/maps?q=${q}&output=embed`;
+  mapLink.href = `https://www.google.com/maps/search/?api=1&query=${q}`;
+
+  function tick() {
+    let diff = Math.max(0, date - Date.now());
+    const set = (el, v) => (el.textContent = v);
+    set(d, Math.floor(diff / 864e5)); diff %= 864e5;
+    set(h, Math.floor(diff / 36e5)); diff %= 36e5;
+    set(m, Math.floor(diff / 6e4));
+    set(s, Math.floor((diff % 6e4) / 1e3));
+  }
+  tick(); setInterval(tick, 1000);
+
+  rsvp.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const text = `Merhaba, ${CONFIG.childName} sünnet düğünü için katılım bildirimi:\n` +
+      `Ad: ${name.value}\nKişi sayısı: ${count.value}\nDurum: ${status.value}` +
+      (note.value ? `\nNot: ${note.value}` : "");
+    window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
+  });
+</script>
+</body>
+</html>
