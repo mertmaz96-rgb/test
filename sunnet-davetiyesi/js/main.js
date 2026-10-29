@@ -7,7 +7,7 @@
     eventDate: '2026-11-21T19:00:00+03:00',
     lat: 40.98,   // Avcılar
     lon: 28.72,
-    whatsapp: '905551112233' // ülke kodu ile, + olmadan
+    whatsapp: '905336665791' // ülke kodu ile, + olmadan
   };
 
   var frame = document.getElementById('frame');
