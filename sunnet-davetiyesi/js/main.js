@@ -12,8 +12,6 @@
   };
 
   var frame = document.getElementById('frame');
-  var curtainL = document.getElementById('curtainL');
-  var curtainR = document.getElementById('curtainR');
   var bgAudio = document.getElementById('bgAudio');
   var musicBtn = document.getElementById('musicBtn');
 
@@ -85,19 +83,6 @@
   } else {
     revealSections.forEach(function (el) { el.classList.add('is-visible'); });
   }
-
-  /* ---------- Perde efekti (scroll) ---------- */
-  function handleFrameScroll() {
-    var scrollable = frame.scrollHeight - frame.clientHeight;
-    var p = scrollable > 0 ? frame.scrollTop / scrollable : 0;
-    var y = p * 10 + Math.sin(p * Math.PI * 2) * 3;
-    var r = Math.sin(p * Math.PI) * 1.2;
-    [curtainL, curtainR].forEach(function (el) {
-      el.style.animation = 'none';
-      el.style.transform = 'translateY(' + y + 'px) rotate(' + r + 'deg)';
-    });
-  }
-  frame.addEventListener('scroll', handleFrameScroll, { passive: true });
 
   /* ---------- Müzik (assets/audio/muzik.mp3 varsa) ---------- */
   var musicPlaying = false;
