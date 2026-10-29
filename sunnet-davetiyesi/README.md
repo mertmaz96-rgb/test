@@ -18,7 +18,6 @@ assets/audio/  muzik.mp3 (isteğe bağlı; varsa müzik butonu görünür)
 1. `js/main.js` başındaki `CONFIG`: çocuğun adı, tarih/saat, şehir, WhatsApp numarası.
 2. `index.html`: isim, aile, program saatleri, mekanlar, harita adresleri (Google Haritalar bağlantılarındaki `q=` / `query=`), IBAN.
 3. Galeri: düğünden sonra `index.html` içindeki `gallery-empty` bloğunu silip yorumdaki galeri kodunu ekleyin; fotoğrafları `assets/images/gallery1-3.jpg` olarak koyun.
-4. Şarkı isteği: formspree.io'da form açıp `YOUR_FORM_ID` değerini değiştirin.
 
 ## Yayınlama
 

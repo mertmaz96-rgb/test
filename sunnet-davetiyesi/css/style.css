@@ -42,10 +42,11 @@ img { max-width: 100%; display: block; }
 .hero { position: relative; min-height: 100vh; min-height: 100svh; padding: 0 36px 112px; text-align: center; background: var(--cream); display: flex; flex-direction: column; align-items: center; overflow: hidden; }
 .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 0; }
 .hero-top, .hero-content, .hero-bottom { position: relative; z-index: 1; }
+.hero-content { top: -16px; }
 
 /* ipte sallanan çocuk: sağ üstte, küçük */
 .hero-top { align-self: center; margin-left: 6%; line-height: 0; }
-.hero-rope { height: 17vh; height: 27svh; width: auto; max-height: 260px; transform-origin: 52% 0; animation: swing 4.5s ease-in-out infinite; }
+.hero-rope { height: 17vh; height: 23svh; width: auto; max-height: 220px; transform-origin: 52% 0; animation: swing 4.5s ease-in-out infinite; }
 @keyframes swing { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
 
 .hero-content { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; padding: 4px 0; }
@@ -56,7 +57,7 @@ img { max-width: 100%; display: block; }
 .hero-date { font-family: var(--f-wide); font-weight: 400; font-size: 13px; letter-spacing: .2em; text-transform: uppercase; margin: 0; color: var(--ink); }
 .hero-date { white-space: nowrap; }
 @media (max-width: 380px) { .hero-date { font-size: 12px; letter-spacing: .12em; } }
-@media (max-height: 720px) { .hero-rope { height: 22svh; } .cloud-fig img { height: 24svh; } .cloud-text { font-size: min(2.6svh, 8vw); } .hero .countdown { margin-top: 8px; } .alarm-btn { margin-top: 8px; padding: 7px 16px; } .hero .gold-rule { margin: 8px auto; } .hero { padding-bottom: 94px; } }
+@media (max-height: 720px) { .hero-rope { height: 17svh; } .hero-content { top: -18px; } .cloud-fig img { height: 22svh; } .cloud-text { font-size: min(2.6svh, 8vw); } .hero .countdown { margin-top: 8px; } .alarm-btn { margin-top: 8px; padding: 7px 16px; } .hero .gold-rule { margin: 8px auto; } .hero { padding-bottom: 94px; } }
 .hero .countdown { margin-top: 14px; max-width: 270px; }
 .hero .countdown-item span { padding: 10px 0; font-size: clamp(18px, 5.6vw, 23px); }
 .hero .countdown-item em { margin-top: 6px; }
@@ -71,7 +72,7 @@ img { max-width: 100%; display: block; }
 
 /* sohbet balonlu görsel: Davetlisiniz balonun içinde */
 .hero-bottom { margin: 0 -18px 0; max-width: calc(100% + 36px); line-height: 0; }
-.cloud-fig { position: relative; display: inline-block; transform: translateY(-11px); }
+.cloud-fig { position: relative; display: inline-block; transform: translateY(-31px); }
 .cloud-fig img { height: 28vh; height: 28svh; width: auto; max-width: 100%; display: block; }
 .cloud-text { position: absolute; left: 13.3%; width: 77.5%; top: 43.5%; height: 33.9%; margin: 0; display: flex; align-items: center; justify-content: center; text-align: center; font-family: 'Bangers', 'Baloo 2', cursive; font-weight: 400; text-transform: uppercase; line-height: 1; color: var(--ink); font-size: min(2.9vh, 8vw); font-size: min(2.9svh, 8vw); letter-spacing: 0.05em; white-space: nowrap; transform: translateY(-13px) rotate(-2deg); }
 

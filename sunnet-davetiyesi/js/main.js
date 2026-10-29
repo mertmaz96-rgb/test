@@ -226,26 +226,6 @@
     window.open('https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
   });
 
-  /* ---------- Şarkı isteği formu (Formspree) ---------- */
-  var songForm = document.getElementById('songForm');
-  var songThanks = document.getElementById('songThanks');
-  songForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-    fetch(songForm.action, {
-      method: 'POST',
-      body: new FormData(songForm),
-      headers: { Accept: 'application/json' }
-    }).then(function (res) {
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      songForm.reset();
-      songForm.hidden = true;
-      songThanks.hidden = false;
-      setTimeout(function () { songThanks.hidden = true; songForm.hidden = false; }, 3000);
-    }).catch(function () {
-      alert('İstek gönderilemedi, lütfen tekrar deneyin.');
-    });
-  });
-
   /* ---------- IBAN kopyalama ---------- */
   var copyBtn = document.getElementById('copyIbanBtn');
   copyBtn.addEventListener('click', function () {
