@@ -44,8 +44,8 @@ img { max-width: 100%; display: block; }
 .hero-top, .hero-content, .hero-bottom { position: relative; z-index: 1; }
 
 /* ipte sallanan çocuk: sağ üstte, küçük */
-.hero-top { align-self: flex-end; margin-right: 2%; line-height: 0; }
-.hero-rope { height: 17vh; height: 16svh; width: auto; max-height: 140px; transform-origin: 52% 0; animation: swing 4.5s ease-in-out infinite; }
+.hero-top { align-self: center; margin-left: 6%; line-height: 0; }
+.hero-rope { height: 17vh; height: 19svh; width: auto; max-height: 170px; transform-origin: 52% 0; animation: swing 4.5s ease-in-out infinite; }
 @keyframes swing { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
 
 .hero-content { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; padding: 8px 0; }
@@ -56,16 +56,16 @@ img { max-width: 100%; display: block; }
 .hero-date { font-family: var(--f-wide); font-weight: 400; font-size: 13px; letter-spacing: .2em; text-transform: uppercase; margin: 0; color: var(--ink); }
 .hero-date { white-space: nowrap; }
 @media (max-width: 380px) { .hero-date { font-size: 12px; letter-spacing: .12em; } }
-@media (max-height: 720px) { .hero-rope { height: 13svh; } .cloud-fig img { height: 34svh; } .cloud-text { font-size: min(2.5svh, 7.4vw); } .hero .countdown { margin-top: 14px; } .hero .gold-rule { margin: 10px auto; } .hero { padding-bottom: 96px; } }
+@media (max-height: 720px) { .hero-rope { height: 15svh; } .cloud-fig img { height: 30svh; } .cloud-text { font-size: min(2.2svh, 7.4vw); } .hero .countdown { margin-top: 14px; } .hero .gold-rule { margin: 10px auto; } .hero { padding-bottom: 96px; } }
 .hero .countdown { margin-top: 20px; max-width: 270px; }
 .hero .countdown-item span { padding: 10px 0; font-size: clamp(18px, 5.6vw, 23px); }
 .hero .countdown-item em { margin-top: 6px; }
 
 /* sohbet balonlu görsel: Davetlisiniz balonun içinde */
-.hero-bottom { margin: 0 -18px; max-width: calc(100% + 36px); line-height: 0; }
+.hero-bottom { margin: 0 -18px 28px; max-width: calc(100% + 36px); line-height: 0; }
 .cloud-fig { position: relative; display: inline-block; }
-.cloud-fig img { height: 38vh; height: 38svh; width: auto; max-width: 100%; display: block; }
-.cloud-text { position: absolute; left: 15%; width: 74%; top: 47%; height: 27%; margin: 0; display: flex; align-items: center; justify-content: center; font-family: var(--f-display); font-weight: 700; text-transform: uppercase; line-height: 1; color: var(--ink); font-size: min(2.75vh, 7.4vw); font-size: min(2.75svh, 7.4vw); letter-spacing: 0.01em; white-space: nowrap; }
+.cloud-fig img { height: 34vh; height: 34svh; width: auto; max-width: 100%; display: block; }
+.cloud-text { position: absolute; left: 15%; width: 74%; top: 47%; height: 27%; margin: 0; display: flex; align-items: center; justify-content: center; font-family: var(--f-display); font-weight: 700; text-transform: uppercase; line-height: 1; color: var(--ink); font-size: min(2.46vh, 7.4vw); font-size: min(2.46svh, 7.4vw); letter-spacing: 0.01em; white-space: nowrap; }
 
 .countdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; width: 100%; max-width: 300px; margin: 18px auto 0; }
 .countdown-item { display: flex; flex-direction: column; align-items: center; min-width: 0; }
