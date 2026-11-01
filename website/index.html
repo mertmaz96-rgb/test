@@ -672,27 +672,37 @@
       .mm-yt-videos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     }
 
-    .mm-kit { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+    .mm-kit { display: flex; flex-wrap: wrap; gap: 8px; }
     .mm-row {
-      display: flex; align-items: center; gap: 8px; min-width: 0;
-      background: var(--mm-chip); border: 1px solid var(--mm-border); border-radius: 16px;
-      padding: 14px 16px; font-weight: 600; font-size: 13px; color: var(--mm-ink);
-      cursor: default;
+      display: inline-flex; align-items: center; gap: 8px; min-width: 0; max-width: 100%;
+      background: transparent; border: 1px solid var(--mm-border); border-radius: 999px;
+      padding: 7px 14px 7px 8px; font-weight: 600; font-size: 13px; line-height: 1.2; color: var(--mm-ink);
+      cursor: default; transition: background 0.2s ease;
     }
+    .mm-row:hover { background: var(--mm-chip); }
     .mm-row-ico {
-      flex: 0 0 auto; width: 30px; height: 30px; border-radius: 8px;
+      flex: 0 0 auto; width: 24px; height: 24px; border-radius: 50%;
       background: var(--mm-wash); display: flex; align-items: center; justify-content: center; overflow: hidden;
     }
-    .mm-row-ico img { width: 18px; height: 18px; object-fit: contain; display: block; }
-    .mm-row > span:last-child { min-width: 0; }
+    .mm-row-ico img { width: 15px; height: 15px; object-fit: contain; display: block; }
+    .mm-row > span:last-child { min-width: 0; white-space: nowrap; }
+    .mm-bento { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: 20px; }
+    .mm-bento-card { border-radius: 32px; padding: 32px; }
+    .mm-bento-card h3 { font-size: 20px; font-weight: 700; margin: 0 0 6px; letter-spacing: -0.01em; color: var(--mm-ink); }
+    .mm-bento-card p { color: var(--mm-muted); font-size: 14px; line-height: 1.5; margin: 0 0 20px; }
+    @media (max-width: 600px) {
+      .mm-bento-card { border-radius: 24px; padding: 22px 18px; }
+      .mm-bento-card p { margin-bottom: 16px; }
+      .mm-kit { gap: 6px; }
+      .mm-row { font-size: 12px; padding: 5px 11px 5px 6px; gap: 6px; }
+      .mm-row-ico { width: 20px; height: 20px; }
+      .mm-row-ico img { width: 13px; height: 13px; }
+    }
     @media (prefers-reduced-motion: no-preference) {
       .mm-kit:not(.is-in) .mm-row { opacity: 0; }
       .mm-kit.is-in .mm-row {
         animation: mmKitRise 0.72s cubic-bezier(0.16, 1, 0.3, 1) both;
-        animation-delay: calc(var(--i, 0) * 48ms);
-      }
-      .mm-kit.is-in .mm-row-ico img {
-        animation: mmIcoFloat 5.6s ease-in-out calc(0.9s + var(--i, 0) * 0.38s) infinite;
+        animation-delay: calc(var(--i, 0) * 30ms);
       }
     }
     @keyframes mmKitRise {
@@ -892,11 +902,11 @@
 
   <!-- BENTO -->
   <section id="yetenekler" data-screen-label="Yetenekler ve Deneyim" style="position:relative; z-index:1; padding:40px 6vw;">
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(360px,1fr)); gap:20px;">
+    <div class="mm-bento">
 
-      <div class="mm-glass" style="border-radius:32px; padding:36px;">
-        <h3 style="font-size:22px; font-weight:700; margin:0 0 8px; letter-spacing:-0.01em; color:var(--mm-ink);">{{ copy.toolsTitle }}</h3>
-        <p style="color:var(--mm-muted); font-size:14px; margin:0 0 24px;">{{ copy.toolsLead }}</p>
+      <div class="mm-glass mm-bento-card">
+        <h3>{{ copy.toolsTitle }}</h3>
+        <p>{{ copy.toolsLead }}</p>
         <div class="mm-kit {{ kitInClass }}">
           <sc-for list="{{ tools }}" as="tool" hint-placeholder-count="10">
             <div class="mm-row" style="--i: {{ $index }}">
@@ -909,9 +919,9 @@
         </div>
       </div>
 
-      <div class="mm-glass" style="border-radius:32px; padding:36px;">
-        <h3 style="font-size:22px; font-weight:700; margin:0 0 8px; letter-spacing:-0.01em; color:var(--mm-ink);">{{ copy.aiTitle }}</h3>
-        <p style="color:var(--mm-muted); font-size:14px; margin:0 0 24px;">{{ copy.aiLead }}</p>
+      <div class="mm-glass mm-bento-card">
+        <h3>{{ copy.aiTitle }}</h3>
+        <p>{{ copy.aiLead }}</p>
         <div class="mm-kit {{ kitInClass }}">
           <sc-for list="{{ aiTools }}" as="ai" hint-placeholder-count="15">
             <div class="mm-row" style="--i: {{ $index }}">
