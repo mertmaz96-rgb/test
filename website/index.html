@@ -1,0 +1,2667 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mert Mazalı — Grafik Tasarımcı</title>
+<meta name="description" content="İstanbul'da grafik tasarımcı. Marka kimliği, etiket ve baskı, sosyal medya ve arayüz tasarımı.">
+<link rel="canonical" href="https://mertmazali.art/">
+<meta property="og:title" content="Mert Mazalı — Grafik Tasarımcı">
+<meta property="og:description" content="Görsel hikayeler ve dijital deneyimler tasarlıyorum. Marka, baskı ve arayüz.">
+<meta property="og:url" content="https://mertmazali.art/">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="favicon.png">
+<script src="favicon.js"></script>
+<script defer="" src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preload" as="image" href="uploads/mrt-hero.webp" fetchpriority="high">
+  <link rel="preload" as="font" type="font/woff2" href="fonts/f8.woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="fonts.css"></noscript>
+  <style>
+    html.theme-light, html:not(.theme-dark) {
+      --mm-bg: #F5F5F7;
+      --mm-ink: #1D1D1F;
+      --mm-muted: #6e6e73;
+      --mm-faint: #86868B;
+      --mm-body: #3a3a3d;
+      --mm-wash: rgba(255,255,255,0.55);
+      --mm-glass: rgba(255,255,255,0.42);
+      --mm-chip: rgba(255,255,255,0.55);
+      --mm-border: rgba(255,255,255,0.72);
+      --mm-glass-shadow: 0 1px 0 rgba(255,255,255,0.85) inset, 0 18px 48px rgba(0,0,0,0.06);
+      --mm-cta: #1D1D1F;
+      --mm-cta-text: #ffffff;
+      --mm-line: rgba(0,0,0,0.08);
+      --mm-nav: rgba(255,255,255,0.55);
+      --mm-nav-scrolled: rgba(255,255,255,0.4);
+      --mm-hover: #000000;
+      --mm-solid: #ffffff;
+      --mm-solid-muted: #6e6e73;
+      --mm-solid-line: rgba(0,0,0,0.1);
+      --mm-solid-hover: #f5f5f7;
+    }
+    html.theme-dark {
+      --mm-bg: #000000;
+      --mm-ink: #f5f5f7;
+      --mm-muted: #a1a1a6;
+      --mm-faint: #86868b;
+      --mm-body: #d2d2d7;
+      --mm-wash: rgba(255,255,255,0.06);
+      --mm-glass: rgba(28,28,30,0.38);
+      --mm-chip: rgba(255,255,255,0.1);
+      --mm-border: rgba(255,255,255,0.18);
+      --mm-glass-shadow: 0 1px 0 rgba(255,255,255,0.12) inset, 0 18px 48px rgba(0,0,0,0.35);
+      --mm-cta: #f5f5f7;
+      --mm-cta-text: #000000;
+      --mm-line: rgba(255,255,255,0.1);
+      --mm-nav: rgba(22,22,24,0.45);
+      --mm-nav-scrolled: rgba(22,22,24,0.32);
+      --mm-hover: #ffffff;
+      --mm-solid: #2c2c2e;
+      --mm-solid-muted: #a1a1a6;
+      --mm-solid-line: rgba(255,255,255,0.14);
+      --mm-solid-hover: #3a3a3c;
+    }
+    body { margin: 0; background: var(--mm-bg); color: var(--mm-ink); -webkit-font-smoothing: antialiased; }
+    * { box-sizing: border-box; }
+    ::selection { background: var(--mm-ink); color: var(--mm-bg); }
+    html { scroll-behavior: smooth; }
+    section[id] { scroll-margin-top: 88px; }
+    a { color: var(--mm-ink); text-decoration: none; }
+    a:hover { color: var(--mm-hover); }
+    .mm-glass {
+      background: var(--mm-glass);
+      backdrop-filter: blur(28px) saturate(180%);
+      -webkit-backdrop-filter: blur(28px) saturate(180%);
+      border: 1px solid var(--mm-border);
+      box-shadow: var(--mm-glass-shadow);
+    }
+    .pref-btn { width:34px; height:34px; padding:0; border:0; background:transparent; color:var(--mm-ink); border-radius:999px; display:inline-flex; align-items:center; justify-content:center; cursor:pointer; transition:background 0.2s ease; }
+    .pref-btn:hover { background: var(--mm-chip); }
+    .pref-btn svg { display:block; }
+    .pref-flag { width:18px; height:12px; border-radius:2px; box-shadow:0 0 0 1px rgba(0,0,0,0.12); }
+    .pref-btn .flag-tr { display:none; }
+    html[lang="en"] .pref-btn .flag-tr { display:block; }
+    html[lang="en"] .pref-btn .flag-en { display:none; }
+    .pref-btn .icon-sun { display:none; }
+    html.theme-dark .pref-btn .icon-moon { display:none; }
+    html.theme-dark .pref-btn .icon-sun { display:block; }
+    .mm-nav {
+      --mm-c: 0;
+      position:fixed;
+      top:14px;
+      left:50%;
+      transform:translateX(-50%);
+      z-index:50;
+      width:calc((1 - var(--mm-c)) * min(572px, 100vw - 28px) + var(--mm-c) * 280px);
+      max-width:calc(100% - 28px);
+      border-radius:999px;
+      overflow:hidden;
+    }
+    .mm-nav-bar {
+      height:58px;
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      column-gap:14px;
+      padding:0 14px 0 22px;
+      box-sizing:border-box;
+    }
+    .mm-logo-wrap {
+      flex:0 0 auto;
+      display:flex;
+      align-items:center;
+      gap:calc((1 - var(--mm-c)) * 16px);
+      z-index:2;
+    }
+    .mm-logo-wrap a { font-size:22px; font-weight:800; letter-spacing:-0.03em; color:var(--mm-ink); text-decoration:none; line-height:1; display:block; padding:2px 0; }
+    .mm-logo-div {
+      width:calc((1 - var(--mm-c)) * 1px);
+      max-width:calc((1 - var(--mm-c)) * 1px);
+      height:16px;
+      background:var(--mm-line);
+      opacity:calc(1 - var(--mm-c));
+      overflow:hidden;
+    }
+    .mm-nav-links {
+      flex:1 1 auto;
+      min-width:0;
+      max-width:calc((1 - var(--mm-c)) * 720px);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-wrap:nowrap;
+      gap:14px;
+      overflow:hidden;
+      opacity:calc(1 - var(--mm-c));
+      pointer-events:auto;
+    }
+    .mm-nav.is-compact .mm-nav-links { pointer-events:none; }
+    .mm-nav-links a { flex:0 0 auto; color:var(--mm-muted); font-size:13.5px; font-weight:500; padding:9px 12px; border-radius:999px; white-space:nowrap; transition:color 0.2s ease, background 0.2s ease; }
+    .mm-nav-links a:hover { color:var(--mm-ink); background:var(--mm-chip); }
+    .mm-nav-prefs { flex:0 0 auto; margin-left:auto; display:flex; align-items:center; gap:calc(1px + (1 - var(--mm-c)) * 3px); }
+    .mm-works { display:grid; grid-template-columns:repeat(12, 1fr); gap:16px; }
+    .mm-work { grid-column: span 4; position:relative; border-radius:28px; overflow:hidden; cursor:pointer; isolation:isolate; min-height:240px; border:1px solid var(--mm-border); background:var(--mm-wash); box-shadow:var(--mm-glass-shadow); transition:transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease; }
+    .mm-work:hover { transform:translateY(-4px) scale(1.01); }
+    .mm-work.is-wide { grid-column: span 8; min-height:340px; }
+    .mm-work.is-tall { grid-column: span 4; min-height:340px; }
+    .mm-work img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+    .mm-work img + img { z-index:1; }
+    .mm-nav-cta { flex:0 0 auto; border:0; cursor:pointer; color:var(--mm-ink); font:600 13px Inter,sans-serif; padding:8px 14px; border-radius:999px; background:var(--mm-chip); white-space:nowrap; }
+    .mm-nav-cta:hover, .mm-nav-cta.is-open { background:var(--mm-cta); color:var(--mm-cta-text); }
+    .mm-contact-scrim { position:fixed; inset:0; z-index:90; display:flex; align-items:center; justify-content:center; padding:20px; background:rgba(0,0,0,0.52); animation:lbFade 0.2s ease; }
+    .mm-contact-panel { width:min(400px,100%); background:var(--mm-solid); color:var(--mm-ink); border:1px solid var(--mm-solid-line); border-radius:28px; padding:28px 24px 18px; box-shadow:0 28px 80px rgba(0,0,0,0.45); animation:popIn 0.28s cubic-bezier(0.16,1,0.3,1); backdrop-filter:none; -webkit-backdrop-filter:none; opacity:1; }
+    .mm-contact-panel h3 { margin:0 0 6px; font-size:22px; font-weight:800; letter-spacing:-0.03em; text-align:center; color:var(--mm-ink); }
+    .mm-contact-panel .lead { margin:0 0 22px; text-align:center; color:var(--mm-solid-muted); font-size:13px; line-height:1.45; }
+    .mm-contact-list { display:flex; flex-direction:column; gap:6px; margin-bottom:14px; }
+    .mm-contact-item { display:flex; align-items:center; gap:14px; padding:14px 14px; border-radius:16px; color:var(--mm-ink); text-decoration:none; background:transparent; border:1px solid var(--mm-solid-line); transition:background 0.15s ease, transform 0.15s ease; }
+    .mm-contact-item:hover { background:var(--mm-solid-hover); color:var(--mm-ink); transform:translateY(-1px); }
+    .mm-contact-item svg { flex:0 0 auto; color:var(--mm-solid-muted); }
+    .mm-contact-item .meta { display:flex; flex-direction:column; gap:2px; min-width:0; }
+    .mm-contact-item .meta strong { font-size:14px; font-weight:600; letter-spacing:-0.01em; }
+    .mm-contact-item .meta small { font-size:12px; color:var(--mm-solid-muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .mm-contact-close { width:100%; border:0; border-radius:999px; padding:12px 16px; font:700 14px Inter,sans-serif; cursor:pointer; background:var(--mm-cta); color:var(--mm-cta-text); }
+    .mm-process { position:relative; }
+    .mm-process-head { max-width:640px; margin:0 0 40px; }
+    .mm-process-kicker { font-size:11px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--mm-faint); margin:0 0 10px; }
+    .mm-process-title { font-size:clamp(32px,4.5vw,48px); font-weight:800; letter-spacing:-0.03em; margin:0 0 14px; color:var(--mm-ink); line-height:1.05; }
+    .mm-process-lead { font-size:17px; line-height:1.65; color:var(--mm-body); margin:0; max-width:52ch; }
+    .mm-process-track { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:0; position:relative; }
+    .mm-process-track::before {
+      content:"";
+      position:absolute;
+      left:6%;
+      right:6%;
+      top:28px;
+      height:1px;
+      background:var(--mm-line);
+      pointer-events:none;
+    }
+    .mm-process-track::after {
+      content:"";
+      position:absolute;
+      left:6%;
+      width:88%;
+      top:27px;
+      height:1px;
+      background:#fff;
+      box-shadow:
+        0 0 6px 1px rgba(255,255,255,0.9),
+        0 0 14px rgba(255,255,255,0.4);
+      transform-origin:left center;
+      transform:scaleX(0);
+      pointer-events:none;
+      z-index:0;
+      animation:processLineTravel 4.8s cubic-bezier(0.45,0,0.15,1) infinite;
+    }
+    .mm-process-step { position:relative; padding:0 14px 8px; }
+    .mm-process-num { font-size:12px; font-weight:700; letter-spacing:0.08em; color:var(--mm-faint); margin:0 0 18px; display:flex; align-items:center; gap:10px; }
+    .mm-process-num::before {
+      content:"";
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.14);
+      border:1px solid rgba(255,255,255,0.22);
+      box-shadow:0 0 0 6px var(--mm-bg);
+      flex:0 0 auto;
+      position:relative;
+      z-index:1;
+      animation:processDotGlow 4.8s ease-in-out infinite;
+    }
+    .mm-process-step:nth-child(1) .mm-process-num::before { animation-delay:0.05s; }
+    .mm-process-step:nth-child(2) .mm-process-num::before { animation-delay:0.75s; }
+    .mm-process-step:nth-child(3) .mm-process-num::before { animation-delay:1.45s; }
+    .mm-process-step:nth-child(4) .mm-process-num::before { animation-delay:2.15s; }
+    .mm-process-step:nth-child(5) .mm-process-num::before { animation-delay:2.85s; }
+    .mm-process-name { font-family:'Caveat',cursive; font-weight:700; font-size:clamp(26px,2.4vw,34px); line-height:1; color:var(--mm-ink); margin:0 0 10px; }
+    .mm-process-text { font-size:14px; line-height:1.55; color:var(--mm-body); margin:0; max-width:22ch; }
+    @keyframes processLineTravel {
+      0% { transform:scaleX(0); opacity:0; }
+      5% { opacity:1; }
+      58% { transform:scaleX(1); opacity:1; }
+      72% { transform:scaleX(1); opacity:0.7; }
+      88%,100% { transform:scaleX(0); opacity:0; }
+    }
+    @keyframes processDotGlow {
+      0%,14%,100% {
+        background:rgba(255,255,255,0.12);
+        border-color:rgba(255,255,255,0.2);
+        box-shadow:0 0 0 6px var(--mm-bg), 0 0 0 0 rgba(255,255,255,0);
+      }
+      24%,40% {
+        background:#fff;
+        border-color:#fff;
+        box-shadow:
+          0 0 0 6px var(--mm-bg),
+          0 0 14px 3px rgba(255,255,255,1),
+          0 0 28px 8px rgba(255,255,255,0.5);
+      }
+      52% {
+        background:rgba(255,255,255,0.3);
+        border-color:rgba(255,255,255,0.4);
+        box-shadow:0 0 0 6px var(--mm-bg), 0 0 8px rgba(255,255,255,0.28);
+      }
+    }
+    @keyframes popIn { from { opacity:0; transform:translateY(10px) scale(0.98); } to { opacity:1; transform:translateY(0) scale(1); } }
+    .mm-cta-row { display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+    .mm-cta-ghost { display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:700; color:var(--mm-ink); padding:12px 22px; border-radius:999px; background:var(--mm-chip); border:1px solid var(--mm-border); text-decoration:none; transition:transform 0.25s ease; }
+    .mm-cta-ghost:hover { transform:translateY(-1px); color:var(--mm-ink); }
+    .mm-work-meta { position:absolute; left:0; right:0; bottom:0; z-index:2; padding:18px 18px 16px; background:linear-gradient(180deg, transparent, rgba(0,0,0,0.55)); display:flex; align-items:flex-end; justify-content:space-between; gap:12px; }
+    .mm-work-meta .name { font-weight:700; font-size:16px; color:#fff; letter-spacing:-0.01em; }
+    .mm-work-meta .cat { color:rgba(255,255,255,0.72); font-size:12px; margin-top:3px; }
+    .mm-work-count { flex:0 0 auto; font-size:11px; font-weight:700; color:var(--mm-ink); padding:6px 10px; border-radius:999px; background:var(--mm-glass); backdrop-filter:blur(14px) saturate(180%); -webkit-backdrop-filter:blur(14px) saturate(180%); border:1px solid var(--mm-border); }
+    @media (max-width: 980px) {
+      .mm-work, .mm-work.is-wide, .mm-work.is-tall { grid-column: span 6; min-height:240px; }
+      .mm-nav-links a { padding:7px 8px; font-size:12px; }
+      .mm-process-track { grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px 18px; }
+      .mm-process-track::before,
+      .mm-process-track::after { display:none; }
+      .mm-process-step:last-child { grid-column: 1 / -1; max-width:50%; }
+    }
+    @media (max-width: 860px) {
+      .mm-nav {
+        top:10px;
+        width:fit-content;
+        max-width:calc(100% - 20px);
+      }
+      .mm-nav-links { display:none; }
+      .mm-nav-bar {
+        padding:0 12px 0 18px;
+        column-gap:10px;
+      }
+      .mm-nav-prefs { gap:2px; }
+      .mm-nav-cta { padding:7px 12px; font-size:12px; }
+      .mm-work, .mm-work.is-wide, .mm-work.is-tall { grid-column: span 12; min-height:220px; }
+      .mm-process-track { grid-template-columns:1fr; gap:22px; }
+      .mm-process-step:last-child { max-width:none; }
+      .mm-process-text { max-width:none; }
+    }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes dotBlink { 0%,45% { opacity:1; } 50%,95% { opacity:0.15; } 100% { opacity:1; } }
+    @keyframes handwriteReveal { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+    @keyframes underlineDraw { from { stroke-dashoffset: 300; } to { stroke-dashoffset: 0; } }
+    @keyframes bobArrow { 0%,100% { transform:translate(-50%,0); } 50% { transform:translate(-50%,8px); } }
+    @keyframes spinRecord { from { transform:translate(-50%,-50%) rotate(0deg); } to { transform:translate(-50%,-50%) rotate(360deg); } }
+    @keyframes blobFloat1 { 0%,100% { transform:translate(0,0) scale(1); } 50% { transform:translate(40px,60px) scale(1.08); } }
+    @keyframes blobFloat2 { 0%,100% { transform:translate(0,0) scale(1); } 50% { transform:translate(-50px,30px) scale(1.1); } }
+    @keyframes blobFloat3 { 0%,100% { transform:translate(0,0) scale(1); } 50% { transform:translate(30px,-40px) scale(1.05); } }
+    @keyframes phoneFloat { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-6px); } }
+    @keyframes lbFade { from { opacity:0; } to { opacity:1; } }
+    @keyframes workFadeIn { from { opacity:0; } to { opacity:1; } }
+    @media (max-width: 860px), (prefers-reduced-motion: reduce) {
+      .ambient-blob, .hero-caption-spin, .website-phone { animation: none !important; }
+    }
+
+
+    .mm-hero-visual { overflow: visible; }
+    .mm-portrait { z-index: 6; }
+
+
+    html.mm-intro:not(.mm-done) { overflow: hidden; }
+    html.mm-intro:not(.mm-done) body { overflow: hidden; }
+    html.mm-intro:not(.mm-done) .mm-root { opacity: 0; }
+    .mm-intro-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      background: #F5F5F7;
+      overflow: hidden;
+      pointer-events: auto;
+    }
+    .mm-intro-scene {
+      --intro-radius: clamp(350px, 48vw, 680px);
+      width: 100%;
+      height: 85vh;
+      margin-top: 12vh;
+      perspective: 1500px;
+      perspective-origin: 50% 40%;
+      position: relative;
+    }
+    .mm-intro-ring {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 0;
+      height: 0;
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+    .mm-intro-card {
+      position: absolute;
+      width: clamp(240px, 30vw, 420px);
+      height: clamp(250px, 28vw, 370px);
+      left: calc(clamp(240px, 30vw, 420px) / -2);
+      top: calc(clamp(250px, 28vw, 370px) / -2);
+      border-radius: 22px;
+      padding: 12px 12px 45px;
+      box-sizing: border-box;
+      overflow: hidden;
+      background: linear-gradient(145deg, rgba(255,255,255,.88), rgba(255,255,255,.32));
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,.95);
+      box-shadow: inset 0 1px 0 #fff, inset 0 -1px 0 rgba(255,255,255,.5), 0 22px 55px rgba(35,45,70,.16);
+      backface-visibility: hidden;
+    }
+    .mm-intro-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 12px;
+      display: block;
+      pointer-events: none;
+    }
+    .mm-intro-skip {
+      position: absolute; right: max(24px, env(safe-area-inset-right));
+      bottom: max(24px, env(safe-area-inset-bottom)); z-index: 5;
+      padding: 12px 20px; border-radius: 999px; border: 1px solid rgba(29,29,31,.15);
+      background: rgba(255,255,255,.9); color: #1d1d1f;
+      font: 500 13px/1.3 Inter,sans-serif; cursor: pointer;
+      box-shadow: 0 4px 18px rgba(29,29,31,.06);
+    }
+    .mm-intro-skip:hover { background: #fff; }
+    .mm-intro-skip:focus-visible { outline: 2px solid #1d1d1f; outline-offset: 4px; }
+    .mm-intro-category {
+      position: absolute; bottom: 15px; left: 18px;
+      color: #45454b; font: 500 11px/1.2 Inter,sans-serif; letter-spacing: .07em;
+    }
+    .mm-intro-card::after {
+      content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+      background: linear-gradient(125deg, rgba(255,255,255,.24), transparent 35%, transparent 70%, rgba(255,255,255,.16));
+    }
+    .mm-intro-glow {
+      position: absolute; inset: 8% -15%; pointer-events: none;
+      background: radial-gradient(ellipse at center, rgba(174,188,220,.28), rgba(245,245,247,0) 65%);
+    }
+    .mm-intro-heading {
+      position: absolute; top: 10%; left: 0; width: 100%; text-align: center;
+      z-index: 2; color: #1D1D1F; pointer-events: none;
+    }
+    .mm-intro-eyebrow { font: 500 10px/1.6 Inter,sans-serif; letter-spacing: .28em; margin-bottom: 16px; color: #6e6e73; }
+    .mm-intro-name { font: 600 clamp(56px, 10vw, 150px)/1.1 Inter,sans-serif; letter-spacing: -.065em; perspective: 900px; }
+    .mm-intro-name span { display: inline-block; }
+    .mm-intro-line { width: 56px; height: 2px; margin: 25px auto 0; background: #1d1d1f; transform-origin: center; }
+    @media (max-width: 640px) {
+      .mm-intro-scene { --intro-radius: 330px; perspective: 1100px; height: 72vh; margin-top: 20vh; }
+      .mm-intro-card { width: 230px; height: 260px; left: -115px; top: -130px; padding: 9px 9px 40px;
+        backdrop-filter: none; -webkit-backdrop-filter: none; background: rgba(255,255,255,.86); }
+      .mm-intro-heading { top: 12%; }
+      .mm-intro-eyebrow { font-size: 8px; letter-spacing: .16em; }
+    }
+
+    .mm-hero-actions { display:flex; flex-direction:column; align-items:flex-start; gap:18px; }
+    .mm-lets { display:inline-flex; align-items:center; justify-content:center; width:fit-content; font:700 16px Inter,sans-serif; letter-spacing:-0.01em; color:var(--mm-cta-text); padding:13px 26px; border-radius:999px; background:var(--mm-cta); text-decoration:none; transition:transform 0.25s ease; }
+    .mm-lets:hover { transform:translateY(-1px); color:var(--mm-cta-text); }
+    
+    .mm-mac-stage { perspective: 1600px; position: relative; z-index: 1; }
+    .mm-mac-float { animation: macFloat 7.5s ease-in-out infinite; }
+    .mm-mac { width: 100%; margin: 0 auto; animation: macIn 1s cubic-bezier(0.16,1,0.3,1) both; filter: drop-shadow(0 22px 28px rgba(0,0,0,0.28)); }
+    .mm-mac-lid {
+      background: linear-gradient(180deg, #3a3a3e 0%, #1d1d1f 18%, #141416 100%);
+      border-radius: 22px 22px 0 0;
+      padding: 14px 14px 0;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.28); position: relative; z-index: 3;
+    }
+    .mm-mac-cam { width: 7px; height: 7px; border-radius: 50%; margin: 0 auto 10px; background: #0e0e10; box-shadow: inset 0 0 0 1px #4a4a4e, 0 0 0 3px #1a1a1c; }
+    .mm-mac-screen {
+      background: var(--mm-bg);
+      border-radius: 10px 10px 0 0;
+      height: min(68vh, 680px);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      animation: screenWake 1.15s ease 0.2s both;
+    }
+    .mm-mac-chrome {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      height: 42px;
+      padding: 0 12px;
+      background: color-mix(in srgb, var(--mm-bg) 82%, #8e8e93);
+      border-bottom: 1px solid var(--mm-line);
+    }
+    .mm-mac-dots { display: flex; gap: 6px; }
+    .mm-mac-dots i { width: 10px; height: 10px; border-radius: 50%; display: block; }
+    .mm-mac-dots i:nth-child(1) { background: #ff5f57; }
+    .mm-mac-dots i:nth-child(2) { background: #febc2e; }
+    .mm-mac-dots i:nth-child(3) { background: #28c840; }
+    .mm-mac-tab {
+      flex: 1 1 auto;
+      min-width: 0;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      border-radius: 8px;
+      background: var(--mm-bg);
+      color: var(--mm-ink);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    .mm-mac-pop {
+      flex: 0 0 auto;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--mm-ink);
+      text-decoration: none;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--mm-chip);
+    }
+    .mm-mac-pop:hover { color: var(--mm-ink); }
+    .mm-mac-scroll { flex: 1 1 auto; overflow: auto; padding: 16px 16px 20px; }
+    .mm-mac-scroll .mm-works { gap: 12px; }
+    .mm-mac-scroll .mm-work,
+    .mm-mac-scroll .mm-work.is-wide,
+    .mm-mac-scroll .mm-work.is-tall { min-height: 168px; border-radius: 18px; }
+    .mm-mac-deck {
+      height: 13px;
+      margin-top: -1px;
+      background: linear-gradient(180deg, #f4f4f6 0%, #d8d8dc 55%, #c8c8cc 100%);
+      position: relative;
+      z-index: 2;
+    }
+    .mm-mac-hinge {
+      position: absolute; left: 50%; top: 0; transform: translateX(-50%);
+      width: min(156px, 18%); height: 8px; border-radius: 0 0 8px 8px;
+      background: #141416;
+    }
+    .mm-mac-foot {
+      height: 14px;
+      margin-top: -1px;
+      background: linear-gradient(180deg, #c8c8cc 0%, #9b9ba0 55%, #7d7d82 100%);
+      border-radius: 0 0 18px 18px;
+      position: relative;
+      z-index: 1;
+    }
+    @keyframes macIn { from { opacity: 0; transform: translateY(36px) scale(0.98); } to { opacity: 1; transform: none; } }
+    @keyframes macFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    @keyframes screenWake { from { filter: brightness(0.35); } to { filter: none; } }
+    .mm-mac-tab { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .mm-mac-back {
+      width: 26px; height: 26px; flex: 0 0 auto; border: 0; border-radius: 50%;
+      background: var(--mm-chip); color: var(--mm-ink); cursor: pointer;
+      display: inline-flex; align-items: center; justify-content: center; padding: 0;
+    }
+    .mm-mac-back:hover { background: var(--mm-border); }
+    .mm-mac-scroll {
+      background:
+        radial-gradient(120% 90% at 0% 0%, rgba(120, 180, 255, 0.28), transparent 52%),
+        radial-gradient(90% 80% at 100% 100%, rgba(190, 150, 255, 0.16), transparent 48%),
+        var(--mm-bg);
+    }
+    .mm-finder-home, .mm-finder-files { animation: finderIn 0.42s cubic-bezier(0.16,1,0.3,1) both; }
+    .mm-folders { display: grid; grid-template-columns: repeat(auto-fill, minmax(108px, 1fr)); gap: 8px 6px; padding: 8px 22px 16px; }
+    .mm-folder {
+      appearance: none; border: 0; background: transparent; color: var(--mm-ink);
+      font: inherit; cursor: pointer; display: flex; flex-direction: column; align-items: center;
+      gap: 7px; padding: 10px 6px 8px; border-radius: 14px; overflow: hidden;
+    }
+    .mm-folder:hover, .mm-folder:focus-visible { background: color-mix(in srgb, var(--mm-ink) 8%, transparent); outline: none; }
+    .mm-folder:active .mm-folder-ico { transform: scale(0.94); }
+    .mm-folder-ico { position: relative; width: 92px; height: 74px; display: block; transition: transform 0.25s ease; }
+    .mm-folder:hover .mm-folder-ico { transform: translateY(-3px); }
+    .mm-folder-tab {
+      position: absolute; left: 4px; top: 1px; width: 36px; height: 14px; border-radius: 7px 8px 0 0;
+      background: linear-gradient(180deg, #8fd0ff, #4ea2f5);
+    }
+    .mm-folder-body {
+      position: absolute; inset: 10px 0 0 0; border-radius: 10px 14px 14px 14px; overflow: hidden;
+      background: linear-gradient(165deg, #9ad4ff 0%, #5eb0fb 28%, #2f86f3 70%, #1f6fe0 100%);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 10px 16px rgba(16, 72, 150, 0.28);
+    }
+    .mm-folder-body::after {
+      content: ""; position: absolute; left: 0; right: 0; top: 0; height: 42%; z-index: 3;
+      background: linear-gradient(180deg, rgba(255,255,255,0.42), transparent); pointer-events: none;
+    }
+    .mm-folder-stack { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+    .mm-folder-peek {
+      position: absolute; width: 54%; height: 56%; object-fit: cover; border-radius: 4px;
+      background: #f4f4f6; border: 1px solid rgba(255,255,255,0.88);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.28); pointer-events: none;
+    }
+    .mm-folder-peek:nth-child(1) { left: 8%; top: 28%; transform: rotate(-8deg); }
+    .mm-folder-peek:nth-child(2) { left: 34%; top: 16%; transform: rotate(7deg); z-index: 1; }
+    .mm-folder-peek:nth-child(3) { left: 18%; top: 32%; transform: rotate(-1.5deg); z-index: 2; }
+    .mm-folder-name {
+      font-size: 12px; font-weight: 600; letter-spacing: -0.01em; text-align: center;
+      line-height: 1.25; max-width: 108px;
+    }
+    html.theme-dark .mm-folder-name { text-shadow: 0 1px 2px rgba(0,0,0,0.55); }
+    .mm-folder-meta { font-size: 10px; color: var(--mm-faint); margin-top: -4px; }
+    .mm-folder-tab, .mm-folder-body { z-index: 1; animation: mmFolderLife 8.4s ease-in-out infinite; }
+    .mm-folder-ico::before {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      left: -6px;
+      right: -6px;
+      top: -2px;
+      bottom: 0;
+      border-radius: 20px;
+      pointer-events: none;
+      background: radial-gradient(ellipse at 50% 58%, rgba(130, 170, 214, 0.28), rgba(90, 140, 200, 0.08) 58%, transparent 74%);
+      filter: blur(8px);
+      animation: mmFolderGlow 7.6s ease-in-out infinite;
+    }
+    html.theme-dark .mm-folder-ico::before {
+      background: radial-gradient(ellipse at 50% 58%, rgba(186, 220, 255, 0.5), rgba(80, 150, 255, 0.14) 56%, transparent 74%);
+    }
+    .mm-folder:nth-child(2n) .mm-folder-tab,
+    .mm-folder:nth-child(2n) .mm-folder-body,
+    .mm-folder:nth-child(2n) .mm-folder-ico::before { animation-delay: -2.7s; }
+    .mm-folder:nth-child(3n) .mm-folder-tab,
+    .mm-folder:nth-child(3n) .mm-folder-body,
+    .mm-folder:nth-child(3n) .mm-folder-ico::before { animation-delay: -5.2s; }
+    .mm-folder:nth-child(4n) .mm-folder-tab,
+    .mm-folder:nth-child(4n) .mm-folder-body { animation-duration: 9.8s; }
+    .mm-folder:nth-child(5n) .mm-folder-ico::before { animation-duration: 8.8s; }
+    @keyframes mmFolderLife {
+      0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+      50% { transform: translate3d(1px, -2px, 0) rotate(1.1deg); }
+    }
+    @keyframes mmFolderGlow {
+      0%, 100% { opacity: 0.45; transform: translate3d(0, 1px, 0) scale(0.94); }
+      50% { opacity: 0.92; transform: translate3d(0, -2px, 0) scale(1.06); }
+    }
+    .mm-files { display: grid; grid-template-columns: repeat(auto-fill, minmax(168px, 1fr)); gap: 14px; padding: 4px 22px 18px; }
+    .mm-file {
+      position: relative; aspect-ratio: 4 / 3; border: 0; padding: 0; border-radius: 16px; overflow: hidden;
+      cursor: pointer; background: rgba(255,255,255,0.08); box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+      animation: filePop 0.48s cubic-bezier(0.16,1,0.3,1) both;
+    }
+    .mm-file img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.45s ease; }
+    .mm-file.is-video { background: #141416; }
+    .mm-file.is-video img { object-fit: contain; background: #111; }
+    .mm-file-play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 36px; height: 36px; border-radius: 50%; background: rgba(0,0,0,0.5); color: #fff; display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .mm-file:hover img { transform: scale(1.05); }
+    @keyframes finderIn { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: none; } }
+    @keyframes filePop { from { opacity: 0; transform: scale(0.9) translateY(8px); } to { opacity: 1; transform: none; } }
+    @media (max-width: 860px) {
+      .mm-mac-screen { height: 72vh; }
+      .mm-folders { grid-template-columns: repeat(3, minmax(0, 1fr)); padding-left: 10px; padding-right: 10px; }
+      .mm-files { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); padding-left: 10px; padding-right: 10px; }
+    }
+    @media (max-width: 560px) {
+      .mm-folders { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .mm-mac, .mm-mac-float, .mm-mac-screen, .mm-finder-home, .mm-finder-files, .mm-file { animation: none; }
+      .mm-folder-ico, .mm-file img { transition: none; }
+      .mm-folder-tab, .mm-folder-body, .mm-folder-ico::before { animation: none; }
+      .mm-folder-ico::before { opacity: 0.22; }
+    }
+
+
+    .mm-mac-scroll { display: flex; flex-direction: column; }
+    .mm-finder-home { margin-top: auto; margin-bottom: auto; width: 100%; }
+    @media (min-width: 1100px) {
+      .mm-folders { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 22px 16px; padding: 12px 32px 20px; }
+      .mm-folder-ico { width: 120px; height: 98px; }
+      .mm-folder-tab { width: 46px; height: 16px; }
+      .mm-folder-name { font-size: 14px; max-width: 140px; }
+      .mm-folder-meta { font-size: 12px; }
+    }
+    .mm-duo {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 16px;
+      padding: 4px 6vw 6px;
+      align-items: stretch;
+      min-width: 0;
+    }
+    .mm-duo > section { min-width: 0; display: flex; flex-direction: column; }
+    .mm-duo .mm-glass { min-width: 0; flex: 1 1 auto; display: flex; flex-direction: column; height: auto; }
+    .mm-duo-screens { margin-top: auto; }
+    @media (max-width: 980px) {
+      .mm-duo { grid-template-columns: minmax(0, 1fr); }
+    }
+
+
+    .mm-yt { position: relative; z-index: 1; padding: 20px 6vw 56px; }
+    .mm-yt-head-title { font-size: clamp(28px, 3.6vw, 40px); font-weight: 800; letter-spacing: -0.03em; margin: 0 0 18px; color: var(--mm-ink); }
+    .mm-yt-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px; align-items: start; }
+    .mm-yt-card { border-radius: 28px; padding: 22px 20px 18px; overflow: hidden; }
+    .mm-yt-idrow { display: flex; align-items: center; gap: 12px; }
+    .mm-yt-avatar { width: 54px; height: 54px; border-radius: 50%; object-fit: cover; object-position: center center; flex: 0 0 auto; box-shadow: 0 0 0 1px var(--mm-border); }
+    .mm-yt-id { min-width: 0; flex: 1 1 auto; }
+    .mm-yt-name { display: block; font-weight: 800; font-size: 17px; letter-spacing: -0.03em; color: var(--mm-ink); line-height: 1.15; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .mm-yt-name:hover { color: var(--mm-hover); }
+    .mm-yt-handle { color: var(--mm-muted); font-size: 13px; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .mm-yt-cta { flex: 0 0 auto; font-size: 12px; font-weight: 700; color: var(--mm-cta-text); background: var(--mm-cta); padding: 8px 14px; border-radius: 999px; }
+    .mm-yt-cta:hover { color: var(--mm-cta-text); }
+    .mm-yt-stats { display: flex; flex-wrap: nowrap; align-items: flex-start; justify-content: flex-start; width: 100%; column-gap: 36px; row-gap: 14px; margin-top: 20px; }
+    .mm-yt-stat { display: flex; flex-direction: column; align-items: flex-start; flex: 0 0 auto; gap: 4px; color: var(--mm-ink); }
+    .mm-yt-stat-num { display: flex; align-items: center; gap: 5px; color: var(--mm-ink); }
+    .mm-yt-ico { width: 24px; height: 24px; flex: 0 0 24px; display: block; color: currentColor; overflow: hidden; }
+    .mm-yt-stats strong { display: block; margin: 0; font-size: 22px; font-weight: 800; letter-spacing: -0.045em; line-height: 1; color: var(--mm-ink); font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .mm-yt-stat > span { display: block; margin: 0 0 0 29px; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; line-height: 1.15; text-transform: uppercase; color: var(--mm-body); white-space: nowrap; }
+    html.theme-dark .mm-yt-stat,
+    html.theme-dark .mm-yt-stat-num,
+    html.theme-dark .mm-yt-stats strong,
+    html.theme-dark .mm-yt-stat > span { color: #ffffff; }
+    .mm-yt-stat.is-rise > span { margin-left: 0; }
+    .mm-yt-stat.is-rise strong { font-size: 18px; }
+    .mm-yt-rise-up strong { color: #1f8a4c; }
+    .mm-yt-rise-down strong { color: #b42318; }
+    .mm-yt-rise-zero strong { color: var(--mm-faint); }
+    html.theme-dark .mm-yt-rise-up strong { color: #8ed4a8; }
+    html.theme-dark .mm-yt-rise-down strong { color: #f0a8a4; }
+    html.theme-dark .mm-yt-rise-zero strong { color: rgba(255,255,255,0.62); }
+    .mm-yt-kicker { margin: 14px 0 8px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mm-faint); }
+    .mm-yt-videos { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+    .mm-yt-shot { border-radius: 10px; overflow: hidden; aspect-ratio: 16 / 9; background: var(--mm-wash); border: 1px solid var(--mm-border); }
+    .mm-yt-shot a { display: block; width: 100%; height: 100%; }
+    .mm-yt-shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    @media (max-width: 860px) {
+      .mm-yt-list { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      .mm-yt-idrow { flex-wrap: wrap; }
+      .mm-yt-videos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+    .mm-kit { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+    .mm-row {
+      display: flex; align-items: center; gap: 8px; min-width: 0;
+      background: var(--mm-chip); border: 1px solid var(--mm-border); border-radius: 16px;
+      padding: 14px 16px; font-weight: 600; font-size: 13px; color: var(--mm-ink);
+      cursor: default;
+    }
+    .mm-row-ico {
+      flex: 0 0 auto; width: 30px; height: 30px; border-radius: 8px;
+      background: var(--mm-wash); display: flex; align-items: center; justify-content: center; overflow: hidden;
+    }
+    .mm-row-ico img { width: 18px; height: 18px; object-fit: contain; display: block; }
+    .mm-row > span:last-child { min-width: 0; }
+    @media (prefers-reduced-motion: no-preference) {
+      .mm-kit:not(.is-in) .mm-row { opacity: 0; }
+      .mm-kit.is-in .mm-row {
+        animation: mmKitRise 0.72s cubic-bezier(0.16, 1, 0.3, 1) both;
+        animation-delay: calc(var(--i, 0) * 48ms);
+      }
+      .mm-kit.is-in .mm-row-ico img {
+        animation: mmIcoFloat 5.6s ease-in-out calc(0.9s + var(--i, 0) * 0.38s) infinite;
+      }
+    }
+    @keyframes mmKitRise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: none; }
+    }
+    @keyframes mmIcoFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-1.5px); }
+    }
+
+    .mm-quotes { position:relative; z-index:1; padding:72px 6vw 36px; width:100%; max-width:100%; min-width:0; overflow:hidden; contain:inline-size; }
+    .mm-quotes-head { padding:0 0 22px; max-width:760px; }
+    .mm-quotes-kicker { font-size:11px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--mm-faint); margin:0 0 8px; }
+    .mm-quotes-title { font-size:clamp(28px,3.6vw,40px); font-weight:800; letter-spacing:-0.03em; margin:0; color:var(--mm-ink); }
+    .mm-quotes-lead { margin:12px 0 0; max-width:520px; font-size:16px; line-height:1.55; color:var(--mm-muted); }
+    .mm-quotes-bar { display:flex; align-items:center; gap:12px; min-width:0; width:100%; }
+    .mm-quotes-view { flex:1 1 auto; min-width:0; overflow:hidden; cursor:grab; touch-action:pan-y; container-type:inline-size; }
+    .mm-quotes-view:active { cursor:grabbing; }
+    .mm-quotes-track { display:flex; gap:18px; width:max-content; max-width:none; padding:8px 0 20px; transition:transform 0.4s ease; }
+    .mm-quotes-arrow { flex:0 0 auto; width:42px; height:42px; border-radius:50%; border:1px solid var(--mm-border); background:var(--mm-chip); color:var(--mm-ink); display:inline-flex; align-items:center; justify-content:center; cursor:pointer; padding:0; }
+    .mm-quotes-arrow[aria-disabled="true"] { opacity:0.35; cursor:default; pointer-events:none; }
+    .mm-quote { flex:0 0 auto; width:calc(100cqi - 1px); margin:0; border-radius:28px; padding:26px 26px 20px; display:flex; flex-direction:column; min-height:248px; box-sizing:border-box; }
+    @container (min-width: 760px) {
+      .mm-quote { width: calc((100cqi - 18px) / 2 - 1px); }
+    }
+    @container (min-width: 1120px) {
+      .mm-quote { width: calc((100cqi - 36px) / 3 - 1px); }
+    }
+    .mm-quote-mark { font-family:'Caveat',cursive; font-size:56px; line-height:0.7; font-weight:600; color:var(--mm-faint); margin:0 0 14px; }
+    .mm-quote blockquote { margin:0; font-size:17px; line-height:1.62; letter-spacing:-0.011em; color:var(--mm-ink); font-weight:500; flex:1; }
+    .mm-quote figcaption { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-top:22px; padding-top:14px; border-top:1px solid var(--mm-line); }
+    .mm-quote-person { display:flex; align-items:center; gap:10px; min-width:0; }
+    .mm-quote-avatar { width:36px; height:36px; border-radius:50%; object-fit:cover; flex:0 0 auto; display:block; box-shadow:0 0 0 1px var(--mm-border); }
+    .mm-quote-who { font-size:13px; font-weight:700; letter-spacing:-0.01em; color:var(--mm-ink); }
+    .mm-stars { color:#f5b82e; letter-spacing:2px; font-style:normal; text-shadow:0 0 12px rgba(245,184,46,0.35); }
+    .mm-bn { display:flex; align-items:center; flex-wrap:wrap; gap:18px 28px; margin:22px 0 0; padding:16px 20px; border-radius:24px; max-width:880px; }
+    .mm-bn-logo { flex:0 0 auto; display:inline-flex; }
+    .mm-bn-score { display:flex; flex-direction:column; gap:2px; }
+    .mm-bn-score strong { font-size:34px; line-height:1; font-weight:800; letter-spacing:-0.03em; color:var(--mm-ink); }
+    .mm-bn-score .mm-stars { font-size:15px; }
+    .mm-bn-score small { font-size:12px; font-weight:600; color:var(--mm-faint); }
+    .mm-bn-cats { display:flex; flex-wrap:wrap; gap:8px 22px; flex:1 1 220px; }
+    .mm-bn-cats span { display:flex; flex-direction:column; gap:2px; }
+    .mm-bn-cats em { font-style:normal; font-size:12px; font-weight:600; color:var(--mm-muted); }
+    .mm-bn-cats .mm-stars { font-size:12px; letter-spacing:1px; }
+    .mm-bn-go { margin-left:auto; display:inline-flex; align-items:center; gap:6px; padding:11px 20px; border-radius:999px; border:1px solid var(--mm-border); background:var(--mm-chip); color:var(--mm-ink); font-size:14px; font-weight:700; text-decoration:none; }
+    .mm-bn-go:hover { background:var(--mm-ink); color:var(--mm-bg, #fff); }
+    .mm-quote-focus { font-size:12px; font-weight:600; color:var(--mm-faint); text-align:right; }
+    @media (prefers-reduced-motion: reduce) {
+      .mm-process-track::after,
+      .mm-process-num::before { animation: none !important; }
+      .mm-process-num::before {
+        background:#fff;
+        border-color:#fff;
+        box-shadow:0 0 0 6px var(--mm-bg), 0 0 10px rgba(255,255,255,0.55);
+      }
+      .mm-quotes-track { transition:none !important; }
+      .mm-row, .mm-row-ico img { animation: none !important; }
+      .mm-row { opacity: 1; transform: none; }
+    }
+  </style>
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem('mm-theme') === 'dark') document.documentElement.classList.add('theme-dark');
+        var lang = localStorage.getItem('mm-lang');
+        if (lang === 'en' || lang === 'tr') document.documentElement.lang = lang;
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var seen = false;
+        var introDay = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Istanbul', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+        try { seen = localStorage.getItem('mm-intro-last-day') === introDay; } catch (err) {}
+        if (reduce || seen) {
+          document.documentElement.classList.add('mm-place', 'mm-done');
+        } else {
+          document.documentElement.classList.add('mm-intro');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <template id="__bundler_thumbnail" data-bg-color="#FFFFFF">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <rect width="100" height="100" fill="#FFFFFF"/>
+      <text x="50" y="58" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="800" fill="#1D1D1F" text-anchor="middle">mm<tspan fill="#6e6e73">.</tspan></text>
+    </svg>
+  </template>
+</helmet>
+
+<main class="mm-root" style="font-family:'Inter',sans-serif; background:var(--mm-bg); color:var(--mm-ink); width:100%; min-height:100vh; overflow-x:hidden; position:relative;">
+
+  <!-- AMBIENT BACKGROUND (gives the glass panels something to refract) -->
+  <div style="position:fixed; inset:0; z-index:0; overflow:hidden; pointer-events:none;">
+    <div class="ambient-blob" style="position:absolute; top:-10%; left:-8%; width:46vw; height:46vw; min-width:340px; min-height:340px; border-radius:50%; background:radial-gradient(circle,rgba(120,170,255,0.35),rgba(120,170,255,0) 70%); filter:blur(40px); animation:blobFloat1 22s ease-in-out infinite;"></div>
+    <div class="ambient-blob" style="position:absolute; top:20%; right:-10%; width:40vw; height:40vw; min-width:300px; min-height:300px; border-radius:50%; background:radial-gradient(circle,rgba(255,150,200,0.3),rgba(255,150,200,0) 70%); filter:blur(40px); animation:blobFloat2 26s ease-in-out infinite;"></div>
+    <div class="ambient-blob" style="position:absolute; bottom:-12%; left:24%; width:44vw; height:44vw; min-width:320px; min-height:320px; border-radius:50%; background:radial-gradient(circle,rgba(180,150,255,0.28),rgba(180,150,255,0) 70%); filter:blur(40px); animation:blobFloat3 24s ease-in-out infinite;"></div>
+  </div>
+
+  <nav class="{{ navBarClass }} mm-glass" style="{{ navChromeStyle }}" aria-label="{{ copy.prefs }}">
+    <div class="mm-nav-bar">
+      <div class="mm-logo-wrap">
+        <a href="#hero" aria-label="{{ copy.home }}">mm<span style="color:var(--mm-muted); animation:dotBlink 1.6s ease-in-out infinite;">.</span></a>
+        <div class="mm-logo-div"></div>
+      </div>
+      <div class="mm-nav-links" style="{{ linksWrapStyle }}">
+        <sc-for list="{{ navLinks }}" as="link" hint-placeholder-count="6">
+          <a href="{{ link.href }}">{{ link.label }}</a>
+        </sc-for>
+      </div>
+      <div class="mm-nav-prefs">
+        <button type="button" class="mm-nav-cta {{ contact.openClass }}" onclick="{{ contact.toggle }}" aria-expanded="{{ contact.open }}">{{ copy.contact }}</button>
+        <button type="button" class="pref-btn" onclick="{{ toggleLang }}" aria-label="{{ copy.switchLang }}" title="{{ copy.switchLang }}">
+          <svg class="pref-flag flag-tr" viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#E30A17"/><circle cx="12" cy="10" r="6" fill="#fff"/><circle cx="13.5" cy="10" r="4.7" fill="#E30A17"/><polygon fill="#fff" points="18.2,10 15.2,11.1 16.4,8.3 16.4,11.7 15.2,8.9"/></svg>
+          <svg class="pref-flag flag-en" viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#012169"/><path d="M0,0 L30,20 M30,0 L0,20" stroke="#fff" stroke-width="4"/><path d="M0,0 L30,20 M30,0 L0,20" stroke="#C8102E" stroke-width="2"/><path d="M15,0 V20 M0,10 H30" stroke="#fff" stroke-width="6"/><path d="M15,0 V20 M0,10 H30" stroke="#C8102E" stroke-width="3"/></svg>
+        </button>
+        <button type="button" class="pref-btn" onclick="{{ toggleTheme }}" aria-label="{{ copy.theme }}" title="{{ copy.theme }}">
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 14.3A8.5 8.5 0 0 1 9.7 3 7.5 7.5 0 1 0 21 14.3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/><path d="M12 3v2.2M12 18.8V21M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M3 12h2.2M18.8 12H21M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <a href="#hero" aria-label="{{ copy.top }}" style="position:fixed; right:28px; bottom:28px; z-index:60; width:52px; height:52px; border-radius:50%; background:rgba(29,29,31,0.6); backdrop-filter:blur(18px) saturate(180%); -webkit-backdrop-filter:blur(18px) saturate(180%); border:1px solid rgba(255,255,255,0.25); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(0,0,0,0.22), 0 1px 0 rgba(255,255,255,0.3) inset; transition:opacity 0.4s ease, transform 0.4s ease, background 0.25s ease; {{ topBtnStyle }}" style-hover="background:rgba(29,29,31,0.85);">
+    <div style="width:0; height:0; border-left:7px solid transparent; border-right:7px solid transparent; border-bottom:10px solid #ffffff;"></div>
+  </a>
+
+  <!-- HERO -->
+  <section id="hero" data-screen-label="Hero" style="position:relative; z-index:1; min-height:100vh; display:flex; align-items:center; padding:{{ heroPadding }};">
+    <div style="display:grid; {{ heroGridStyle }} gap:40px; width:100%; align-items:center;">
+      <div style="{{ heroTextAlign }}">
+        <h1 class="mm-name" aria-label="Mert Mazalı." style="font-size:clamp(48px,6.5vw,96px); font-weight:800; line-height:0.98; letter-spacing:-0.03em; margin:0 0 20px; color:var(--mm-ink);"><span aria-hidden="true"><sc-for list="{{ heroLetters }}" as="ch" hint-placeholder-count="12"><span class="mm-letter" style="{{ ch.style }}">{{ ch.ch }}</span></sc-for><span class="mm-caret" aria-hidden="true"></span></span></h1>
+        <p class="mm-paint mm-paint-line" style="position:relative; display:inline-block; color:var(--mm-ink); font-family:'Caveat',cursive; font-weight:600; font-size:34px; max-width:460px; line-height:1.4; margin:0 0 28px;">
+          {{ copy.heroLine }}
+          <svg width="100%" height="14" viewBox="0 0 460 14" preserveAspectRatio="none" style="position:absolute; left:0; bottom:-6px; width:100%;">
+            <path d="M2 8 C 80 2, 160 12, 240 6 S 400 3, 458 9" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="300" style="animation:underlineDraw 1.2s ease-out 3.65s forwards; color:var(--mm-faint);"/>
+          </svg>
+        </p>
+        <div class="mm-hero-actions" style="{{ heroSocialsAlign }}">
+          <div style="display:flex; gap:14px;">
+            <sc-for list="{{ heroSocials }}" as="s" hint-placeholder-count="4">
+              <a href="{{ s.href }}" aria-label="{{ s.label }}" style="width:46px; height:46px; border-radius:50%; background:var(--mm-chip); backdrop-filter:blur(16px) saturate(180%); -webkit-backdrop-filter:blur(16px) saturate(180%); border:1px solid var(--mm-border); box-shadow:0 1px 0 rgba(255,255,255,0.8) inset, 0 4px 14px rgba(0,0,0,0.04); display:flex; align-items:center; justify-content:center; color:var(--mm-ink); transition:all 0.25s ease;" style-hover="background:rgba(29,29,31,0.85); color:#ffffff; transform:translateY(-2px);">
+                <svg width="18" height="18" viewBox="0 0 24 24"><path d="{{ s.icon }}" fill="currentColor"/></svg>
+              </a>
+            </sc-for>
+          </div>
+          <a class="mm-lets" href="{{ workTogetherHref }}" target="_blank" rel="noopener">{{ copy.letsWork }}</a>
+        </div>
+      </div>
+
+      <div class="mm-hero-visual mm-paint-photo" style="position:relative; width:100%; max-width:{{ heroVisualMax }}; aspect-ratio:1/1; margin:0 auto; {{ heroVisualMargin }}">
+        <div style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:{{ heroBgSize }}; height:{{ heroBgSize }}; border-radius:50%; background:var(--mm-wash);"></div>
+
+        <svg class="hero-caption-spin" viewBox="0 0 540 540" style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:{{ heroSvgSize }}; height:{{ heroSvgSize }}; overflow:visible; animation:spinRecord 18s linear infinite; transform-origin:center;">
+          <path id="captionPath" d="M 270,60 A 210,210 0 1 1 269,60" fill="none"/>
+          <text font-family="'Caveat',cursive" font-weight="600" font-size="24" fill="currentColor" letter-spacing="0.5" style="color:var(--mm-muted); animation:handwriteReveal 2.2s cubic-bezier(0.65,0,0.35,1) 5.2s forwards; clip-path:inset(0 100% 0 0);">
+            <textPath href="#captionPath" startOffset="2%">{{ copy.ring }} ✦ {{ copy.ring }} ✦ </textPath>
+          </text>
+        </svg>
+
+        <div class="mm-portrait" style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:{{ heroPhotoSize }}; height:{{ heroPhotoSize }}; border-radius:50%; overflow:hidden; border:1px solid rgba(0,0,0,0.06); box-shadow:0 30px 60px rgba(0,0,0,0.08);">
+          <img src="uploads/mrt-hero.webp" alt="Mert Mazalı" width="480" height="480" fetchpriority="high" decoding="async" style="width:100%; height:100%; object-fit:cover; object-position:center; transform:translateX(-10px) scale(1.7); transform-origin:center center; display:block;"/>
+        </div>
+      </div>
+    </div>
+
+    <a class="mm-paint mm-paint-down" href="#hakkimda" aria-label="{{ copy.scrollDown }}" style="position:absolute; left:50%; bottom:36px; transform:translateX(-50%); display:flex; align-items:center; justify-content:center; width:46px; height:46px; border-radius:50%; background:var(--mm-chip); backdrop-filter:blur(14px) saturate(180%); -webkit-backdrop-filter:blur(14px) saturate(180%); border:1px solid var(--mm-border); box-shadow:0 4px 14px rgba(0,0,0,0.05); {{ scrollArrowStyle }}" style-hover="border-color:rgba(0,0,0,0.2);">
+      <svg width="16" height="16" viewBox="0 0 24 24"><path d="M12 4v16m0 0l-6-6m6 6l6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    </section>
+
+  <!-- ABOUT + EXPERIENCE -->
+  <section id="hakkimda" data-screen-label="Hakkımda" style="position:relative; z-index:1; padding:60px 6vw 20px;">
+    <div style="display:grid; {{ aboutGridStyle }} gap:20px; align-items:stretch;">
+      <div class="mm-glass" style="border-radius:36px; padding:clamp(28px,5vw,48px);">
+        <h2 style="font-size:clamp(28px,3.6vw,38px); font-weight:800; letter-spacing:-0.02em; margin:0 0 22px; color:var(--mm-ink);">{{ copy.aboutTitle }}</h2>
+        <p style="font-size:18px; line-height:1.65; color:var(--mm-body); margin:0; font-weight:400;">{{ copy.aboutBody }}</p>
+        <div style="display:flex; justify-content:flex-end; margin-top:18px;">
+          <div style="font-family:'Caveat',cursive; font-weight:700; font-size:40px; color:var(--mm-ink); transform:rotate(-2deg);">Mert Mazalı</div>
+        </div>
+      </div>
+      <div class="mm-glass" style="border-radius:36px; padding:clamp(28px,4vw,40px);">
+        <h3 style="font-size:22px; font-weight:700; margin:0 0 28px; letter-spacing:-0.01em; color:var(--mm-ink);">{{ copy.expTitle }}</h3>
+        <div style="position:relative; padding-left:26px;">
+          <div style="position:absolute; left:0; top:6px; bottom:6px; width:2px; background:var(--mm-line);"></div>
+          <sc-for list="{{ experience }}" as="job" hint-placeholder-count="3">
+            <div style="position:relative; padding-bottom:30px;">
+              <div style="position:absolute; left:-31px; top:4px; width:10px; height:10px; border-radius:50%; background:var(--mm-ink);"></div>
+              <div style="color:var(--mm-faint); font-size:12px; font-weight:600; letter-spacing:0.05em; margin-bottom:4px;">{{ job.date }}</div>
+              <div style="font-size:17px; font-weight:700; margin-bottom:2px; color:var(--mm-ink);">{{ job.role }}</div>
+              <div style="color:var(--mm-faint); font-size:13px;">{{ job.company }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENTO -->
+  <section id="yetenekler" data-screen-label="Yetenekler ve Deneyim" style="position:relative; z-index:1; padding:40px 6vw;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(360px,1fr)); gap:20px;">
+
+      <div class="mm-glass" style="border-radius:32px; padding:36px;">
+        <h3 style="font-size:22px; font-weight:700; margin:0 0 8px; letter-spacing:-0.01em; color:var(--mm-ink);">{{ copy.toolsTitle }}</h3>
+        <p style="color:var(--mm-muted); font-size:14px; margin:0 0 24px;">{{ copy.toolsLead }}</p>
+        <div class="mm-kit {{ kitInClass }}">
+          <sc-for list="{{ tools }}" as="tool" hint-placeholder-count="10">
+            <div class="mm-row" style="--i: {{ $index }}">
+              <span class="mm-row-ico">
+                <img src="{{ tool.icon }}" alt="" width="18" height="18"/>
+              </span>
+              <span>{{ tool.name }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div class="mm-glass" style="border-radius:32px; padding:36px;">
+        <h3 style="font-size:22px; font-weight:700; margin:0 0 8px; letter-spacing:-0.01em; color:var(--mm-ink);">{{ copy.aiTitle }}</h3>
+        <p style="color:var(--mm-muted); font-size:14px; margin:0 0 24px;">{{ copy.aiLead }}</p>
+        <div class="mm-kit {{ kitInClass }}">
+          <sc-for list="{{ aiTools }}" as="ai" hint-placeholder-count="15">
+            <div class="mm-row" style="--i: {{ $index }}">
+              <span class="mm-row-ico" style="background: {{ ai.bg }}">
+                <img src="{{ ai.icon }}" alt="" width="18" height="18"/>
+              </span>
+              <span>{{ ai.name }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- YOUTUBE -->
+  <section id="youtube" class="mm-yt" data-screen-label="YouTube">
+    <h2 class="mm-yt-head-title">YouTube</h2>
+    <div class="mm-yt-list">
+      <sc-for list="{{ channels }}" as="ch" hint-placeholder-count="2">
+        <article class="mm-yt-card mm-glass">
+          <div class="mm-yt-idrow">
+            <img class="mm-yt-avatar" src="{{ ch.avatarSrc }}" alt="" width="54" height="54" loading="lazy" decoding="async" style="object-position: {{ ch.avatarPosition }}"/>
+            <div class="mm-yt-id">
+              <a class="mm-yt-name" href="{{ ch.href }}" target="_blank" rel="noopener">{{ ch.name }}</a>
+              <div class="mm-yt-handle">{{ ch.tagline }}</div>
+            </div>
+            <a class="mm-yt-cta" href="{{ ch.href }}" target="_blank" rel="noopener">{{ copy.channelCta }}</a>
+          </div>
+          <div class="mm-yt-stats">
+            <sc-for list="{{ ch.stats }}" as="stat" hint-placeholder-count="3">
+              <div class="mm-yt-stat {{ stat.statClass }}">
+                <div class="mm-yt-stat-num">
+                  <sc-if value="{{ stat.isSubs }}" hint-placeholder-val="{{ false }}">
+                    <svg class="mm-yt-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.6 19.2c.9-2.8 2.9-4.2 5.4-4.2s4.5 1.4 5.4 4.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="17" cy="9" r="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16.2 14.2c2 .4 3.3 1.6 4.1 3.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                  </sc-if>
+                  <sc-if value="{{ stat.isVideos }}" hint-placeholder-val="{{ false }}">
+                    <svg class="mm-yt-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10.2 9.4v5.2l4.8-2.6-4.8-2.6z" fill="currentColor"/></svg>
+                  </sc-if>
+                  <sc-if value="{{ stat.isViews }}" hint-placeholder-val="{{ false }}">
+                    <svg class="mm-yt-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.2 12S5.8 6.6 12 6.6 21.8 12 21.8 12 18.2 17.4 12 17.4 2.2 12 2.2 12z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+                  </sc-if>
+                  <strong>{{ stat.value }}</strong>
+                </div>
+                <span>{{ stat.label }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <div class="mm-yt-kicker">{{ copy.recentVideos }}</div>
+          <div class="mm-yt-videos">
+            <sc-for list="{{ ch.recentVideos }}" as="v" hint-placeholder-count="5">
+              <div class="mm-yt-shot">
+                <sc-if value="{{ v.hasLink }}" hint-placeholder-val="{{ false }}">
+                  <a href="{{ v.href }}" target="_blank" rel="noopener" aria-label="{{ v.slotName }}">
+                    <img src="{{ v.imgSrc }}" alt="{{ v.slotName }}" loading="lazy" decoding="async"/>
+                  </a>
+                </sc-if>
+                <sc-if value="{{ v.hasImg }}" hint-placeholder-val="{{ false }}">
+                  <img src="{{ v.imgSrc }}" alt="{{ v.slotName }}" loading="lazy" decoding="async"/>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </section>
+
+  <div class="mm-duo">
+  <!-- POKO — kompakt UI vitrin -->
+  <section id="uygulama" data-screen-label="UI" style="position:relative; z-index:1; padding:0; min-width:0;">
+    <div class="mm-glass" style="position:relative; overflow:hidden; border-radius:24px; padding:14px 16px 10px;">
+      <div style="position:relative; z-index:1; display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:10px 18px; margin-bottom:10px;">
+        <div>
+          <div style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--mm-faint); margin-bottom:6px;">{{ copy.appKicker }}</div>
+          <h2 style="font-size:clamp(18px,2vw,24px); font-weight:800; letter-spacing:-0.03em; margin:0; color:var(--mm-ink);">{{ app.name }}</h2>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px;">
+          <div style="display:inline-flex; align-items:center; gap:7px; font-size:11px; font-weight:700; color:var(--mm-ink); padding:5px 10px; border-radius:999px; background:var(--mm-chip); border:1px solid var(--mm-border);">
+            <span style="width:6px; height:6px; border-radius:50%; background:#34C759;"></span>
+            {{ app.status }}
+          </div>
+          <div style="font-size:11px; font-weight:600; color:var(--mm-muted); padding:5px 10px; border-radius:999px; background:var(--mm-chip); border:1px solid var(--mm-border);">{{ app.audience }}</div>
+        </div>
+      </div>
+      <p style="font-family:'Caveat',cursive; font-weight:600; font-size:clamp(16px,1.6vw,20px); line-height:1.25; color:var(--mm-ink); margin:6px 0 6px; max-width:36ch;">{{ app.tagline }}</p>
+      <p style="font-size:13px; line-height:1.45; color:var(--mm-body); margin:0 0 10px; max-width:62ch;">{{ app.descriptionShort }}</p>
+
+      <div class="mm-duo-screens" style="position:relative; z-index:1; display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:8px;">
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--mm-faint);">{{ copy.screens }}</div>
+        <div style="font-size:11px; color:var(--mm-faint);">{{ copy.screensHint }}</div>
+      </div>
+      <div onpointerdown="{{ app.dragStart }}" onpointermove="{{ app.dragMove }}" onpointerup="{{ app.dragEnd }}" onpointerleave="{{ app.dragEnd }}" style="position:relative; z-index:1; display:flex; gap:14px; overflow-x:auto; padding:4px 2px 10px; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; cursor:grab; user-select:none; touch-action:pan-x;">
+        <sc-for list="{{ app.screens }}" as="s" hint-placeholder-count="4">
+          <div style="flex:0 0 112px; scroll-snap-align:start; pointer-events:none;">
+            <div style="font-size:9px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--mm-faint); margin-bottom:4px; text-align:center;">{{ s.caption }}</div>
+            <div style="background:#1D1D1F; border-radius:16px; padding:4px 4px 6px; box-shadow:0 8px 18px rgba(0,0,0,0.14), 0 1px 0 rgba(255,255,255,0.16) inset;">
+              <div style="display:flex; justify-content:center; height:7px;">
+                <div style="width:32px; height:4px; background:#000000; border-radius:0 0 5px 5px; margin-top:1px;"></div>
+              </div>
+              <div style="border-radius:12px; overflow:hidden; aspect-ratio:9/19.5; background:#111;">
+                <img src="{{ s.imgSrc }}" alt="{{ s.caption }}" loading="{{ s.loading }}" decoding="async" draggable="false" style="width:100%; height:100%; object-fit:cover; display:block; -webkit-user-drag:none;"/>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- KUZGUNBAHÇE — yatay oyun UI vitrin -->
+  <section id="dedektiflik" data-screen-label="Dedektiflik" style="position:relative; z-index:1; padding:0; min-width:0;">
+    <div class="mm-glass" style="position:relative; overflow:hidden; border-radius:24px; padding:14px 16px 10px;">
+      <div style="position:relative; z-index:1; display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:10px 18px; margin-bottom:10px;">
+        <div>
+          <div style="font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--mm-faint); margin-bottom:6px;">{{ copy.detectiveKicker }}</div>
+          <h2 style="font-size:clamp(18px,2vw,24px); font-weight:800; letter-spacing:-0.03em; margin:0; color:var(--mm-ink);">{{ dedektif.name }}</h2>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px;">
+          <div style="display:inline-flex; align-items:center; gap:7px; font-size:11px; font-weight:700; color:var(--mm-ink); padding:5px 10px; border-radius:999px; background:var(--mm-chip); border:1px solid var(--mm-border);">
+            <span style="width:6px; height:6px; border-radius:50%; background:#34C759;"></span>
+            {{ dedektif.status }}
+          </div>
+          <div style="font-size:11px; font-weight:600; color:var(--mm-muted); padding:5px 10px; border-radius:999px; background:var(--mm-chip); border:1px solid var(--mm-border);">{{ dedektif.audience }}</div>
+        </div>
+      </div>
+      <p style="font-family:'Caveat',cursive; font-weight:600; font-size:clamp(16px,1.6vw,20px); line-height:1.25; color:var(--mm-ink); margin:6px 0 6px; max-width:40ch;">{{ dedektif.tagline }}</p>
+      <p style="font-size:13px; line-height:1.45; color:var(--mm-body); margin:0 0 10px; max-width:62ch;">{{ dedektif.descriptionShort }}</p>
+
+      <div class="mm-duo-screens" style="position:relative; z-index:1; display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:8px;">
+        <div style="font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--mm-faint);">{{ copy.screens }}</div>
+        <div style="font-size:11px; color:var(--mm-faint);">{{ copy.screensHint }}</div>
+      </div>
+      <div onpointerdown="{{ dedektif.dragStart }}" onpointermove="{{ dedektif.dragMove }}" onpointerup="{{ dedektif.dragEnd }}" onpointerleave="{{ dedektif.dragEnd }}" style="position:relative; z-index:1; display:flex; gap:16px; overflow-x:auto; padding:4px 2px 12px; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; cursor:grab; user-select:none; touch-action:pan-x;">
+        <sc-for list="{{ dedektif.screens }}" as="s" hint-placeholder-count="4">
+          <div style="flex:0 0 min(210px,46vw); scroll-snap-align:start; pointer-events:none;">
+            <div style="font-size:9px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--mm-faint); margin-bottom:5px; text-align:center;">{{ s.caption }}</div>
+            <div style="background:#1D1D1F; border-radius:14px; padding:7px 8px; box-shadow:0 8px 18px rgba(0,0,0,0.16), 0 1px 0 rgba(255,255,255,0.14) inset;">
+              <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+                <div style="width:6px; height:6px; border-radius:50%; background:#3a3a3c;"></div>
+                <div style="flex:1; height:4px; border-radius:999px; background:#000;"></div>
+                <div style="width:6px; height:6px; border-radius:50%; background:#3a3a3c;"></div>
+              </div>
+              <div style="border-radius:10px; overflow:hidden; aspect-ratio:16/9; background:#111;">
+                <img src="{{ s.imgSrc }}" alt="{{ s.caption }}" loading="{{ s.loading }}" decoding="async" draggable="false" style="width:100%; height:100%; object-fit:cover; display:block; -webkit-user-drag:none;"/>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+  </div>
+
+  <!-- PROCESS / TASARIM SÜRECİM -->
+  <section id="surec" class="mm-process" data-screen-label="Tasarım Sürecim" style="position:relative; z-index:1; padding:80px 6vw 60px;">
+    <div class="mm-process-head">
+      <div class="mm-process-kicker">{{ copy.processKicker }}</div>
+      <h2 class="mm-process-title">{{ copy.processTitle }}</h2>
+      <p class="mm-process-lead">{{ copy.processLead }}</p>
+    </div>
+    <div class="mm-process-track">
+      <sc-for list="{{ processSteps }}" as="step" hint-placeholder-count="5">
+        <div class="mm-process-step">
+          <div class="mm-process-num">{{ step.num }}</div>
+          <h3 class="mm-process-name">{{ step.name }}</h3>
+          <p class="mm-process-text">{{ step.text }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="yorumlar" class="mm-quotes" aria-label="{{ copy.quotesTitle }}">
+    <div class="mm-quotes-head">
+      <div class="mm-quotes-kicker">{{ copy.quotesKicker }}</div>
+      <h2 class="mm-quotes-title">{{ copy.quotesTitle }}</h2>
+      <p class="mm-quotes-lead">{{ copy.quotesLead }}</p>
+      <div class="mm-bn mm-glass">
+        <span class="mm-bn-logo" aria-hidden="true">
+          <svg viewBox="0 0 40 40" width="40" height="40"><rect width="40" height="40" rx="11" fill="#1f2937"/><path d="M14 9v22M14 21a6 6 0 1 1 12 0 6 6 0 0 1-12 0z" fill="none" stroke="#ffffff" stroke-width="3.200" stroke-linecap="round" stroke-linejoin="round"/><circle cx="29" cy="12" r="2.600" fill="#f5b82e"/></svg>
+        </span>
+        <span class="mm-bn-score">
+          <strong>5.00</strong>
+          <span class="mm-stars" aria-label="5 / 5">★★★★★</span>
+          <small>{{ copy.bnMeta }}</small>
+        </span>
+        <span class="mm-bn-cats">
+          <span><em>{{ copy.bnQuality }}</em><i class="mm-stars">★★★★★</i></span>
+          <span><em>{{ copy.bnTiming }}</em><i class="mm-stars">★★★★★</i></span>
+          <span><em>{{ copy.bnComm }}</em><i class="mm-stars">★★★★★</i></span>
+        </span>
+        <a class="mm-bn-go" href="https://bionluk.com/onuyurmert" target="_blank" rel="noopener">{{ copy.bnGo }} <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <div class="mm-quotes-bar">
+      <button type="button" class="mm-quotes-arrow" onclick="{{ quotePrev }}" aria-label="{{ copy.quotesPrev }}" aria-disabled="{{ quoteAtStart }}">
+        <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M10 3L5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="mm-quotes-view" onpointerdown="{{ quoteDragStart }}" onpointermove="{{ quoteDragMove }}" onpointerup="{{ quoteDragEnd }}" onpointerleave="{{ quoteDragEnd }}">
+      <div class="mm-quotes-track" style="transform: translateX({{ quoteX }}px); {{ quoteDragStyle }}">
+        <sc-for list="{{ quotes }}" as="q" hint-placeholder-count="6">
+          <figure class="mm-quote mm-glass">
+            <div class="mm-quote-mark" aria-hidden="true">“</div>
+            <blockquote>{{ q.text }}</blockquote>
+            <figcaption>
+              <span class="mm-quote-person">
+                <sc-if value="{{ q.avatar }}" hint-placeholder-val="{{ false }}">
+                  <img class="mm-quote-avatar" src="{{ q.avatar }}" alt="" />
+                </sc-if>
+                <span class="mm-quote-who">{{ q.who }}</span>
+              </span>
+              <span class="mm-quote-focus"><span class="mm-stars">★★★★★</span> {{ q.rating }}</span>
+            </figcaption>
+          </figure>
+        </sc-for>
+      </div>
+      </div>
+      <button type="button" class="mm-quotes-arrow" onclick="{{ quoteNext }}" aria-label="{{ copy.quotesNext }}" aria-disabled="{{ quoteAtEnd }}">
+        <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- CREATIVE WORKS -->
+  <section id="calismalar" data-screen-label="Çalışmalarım" style="position:relative; z-index:1; padding:72px 6vw 64px;">
+    <h2 style="font-size:clamp(32px,4vw,44px); font-weight:800; letter-spacing:-0.02em; margin:0 0 28px; color:var(--mm-ink);">{{ copy.worksTitle }}</h2>
+    <div class="mm-mac-stage">
+      <div class="mm-mac-float">
+        <div class="mm-mac">
+          <div class="mm-mac-lid">
+            <div class="mm-mac-cam" aria-hidden="true"></div>
+            <div class="mm-mac-screen">
+              <div class="mm-mac-chrome">
+                <span class="mm-mac-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                <sc-if value="{{ finderInside }}" hint-placeholder-val="{{ false }}">
+                  <button type="button" class="mm-mac-back" onclick="{{ closeFolder }}" aria-label="{{ copy.finderBack }}">
+                    <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M10 3L5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                </sc-if>
+                <span class="mm-mac-tab">{{ finderTab }}</span>
+                <a class="mm-mac-pop" href="calismalar.html" target="_blank" rel="noopener">{{ copy.worksTab }}</a>
+              </div>
+              <div class="mm-mac-scroll">
+    <sc-if value="{{ finderHome }}" hint-placeholder-val="{{ true }}">
+                  <div class="mm-finder mm-finder-home">
+                    <div class="mm-folders">
+                      <sc-for list="{{ works }}" as="w" hint-placeholder-count="6">
+                        <button type="button" class="mm-folder" onclick="{{ w.openFolder }}">
+                          <span class="mm-folder-ico" aria-hidden="true">
+                            <span class="mm-folder-tab"></span>
+                            <span class="mm-folder-body">
+                              <span class="mm-folder-stack">
+                                <sc-for list="{{ w.previews }}" as="peek" hint-placeholder-count="0">
+                                  <img class="mm-folder-peek" src="{{ peek.src }}" alt="" loading="lazy" decoding="async"/>
+                                </sc-for>
+                              </span>
+                            </span>
+                          </span>
+                          <span class="mm-folder-name">{{ w.name }}</span>
+                          <span class="mm-folder-meta">{{ w.countLabel }}</span>
+                        </button>
+                      </sc-for>
+                    </div>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ finderInside }}" hint-placeholder-val="{{ false }}">
+                  <div class="mm-finder mm-finder-files">
+                    <sc-if value="{{ finderHasFolders }}" hint-placeholder-val="{{ false }}">
+                      <div class="mm-folders">
+                        <sc-for list="{{ finderFolders }}" as="w" hint-placeholder-count="4">
+                          <button type="button" class="mm-folder" onclick="{{ w.openFolder }}">
+                            <span class="mm-folder-ico" aria-hidden="true">
+                              <span class="mm-folder-tab"></span>
+                              <span class="mm-folder-body">
+                              <span class="mm-folder-stack">
+                                <sc-for list="{{ w.previews }}" as="peek" hint-placeholder-count="0">
+                                  <img class="mm-folder-peek" src="{{ peek.src }}" alt="" loading="lazy" decoding="async"/>
+                                </sc-for>
+                              </span>
+                            </span>
+                            </span>
+                            <span class="mm-folder-name">{{ w.name }}</span>
+                            <span class="mm-folder-meta">{{ w.countLabel }}</span>
+                          </button>
+                        </sc-for>
+                      </div>
+                    </sc-if>
+                    <sc-if value="{{ finderHasImages }}" hint-placeholder-val="{{ false }}">
+                      <div class="mm-files">
+                        <sc-for list="{{ finderImages }}" as="shot" hint-placeholder-count="4">
+                          <button type="button" class="{{ shot.fileClass }}" style="{{ shot.delayStyle }}" onclick="{{ shot.open }}">
+                            <img src="{{ shot.src }}" alt="{{ shot.alt }}" loading="lazy" decoding="async" />
+                            <sc-if value="{{ shot.isVideo }}" hint-placeholder-val="{{ false }}">
+                              <span class="mm-file-play" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24"><path d="M9 7.5v9l8-4.5-8-4.5z" fill="currentColor"/></svg></span>
+                            </sc-if>
+                          </button>
+                        </sc-for>
+                      </div>
+                    </sc-if>
+                  </div>
+                </sc-if>
+              </div>
+            </div>
+          </div>
+          <div class="mm-mac-deck" aria-hidden="true"><div class="mm-mac-hinge"></div></div>
+          <div class="mm-mac-foot" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEBSITELERIM -->
+  <section id="websitelerim" data-screen-label="WebSitelerim" style="position:relative; z-index:1; padding:20px 6vw 120px;">
+    <sc-for list="{{ websites }}" as="site" hint-placeholder-count="1">
+      <div class="mm-glass" style="position:relative; overflow:hidden; border-radius:36px; padding:clamp(28px,4vw,48px);">
+        <div style="display:grid; {{ websiteRowStyle }} gap:clamp(28px,4vw,56px); align-items:center;">
+          <div>
+            <div style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--mm-faint); margin-bottom:8px;">{{ copy.webKicker }}</div>
+            <h2 style="font-size:clamp(28px,4vw,44px); font-weight:800; letter-spacing:-0.03em; margin:0 0 6px; color:var(--mm-ink);">{{ site.name }}</h2>
+            <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-bottom:14px;">
+              <div style="color:var(--mm-faint); font-size:13px; font-weight:600;">{{ site.category }}</div>
+              <div style="font-size:12px; font-weight:700; color:var(--mm-ink); padding:5px 11px; border-radius:999px; background:var(--mm-chip); border:1px solid var(--mm-border);">{{ site.notice }}</div>
+            </div>
+            <p style="font-family:'Caveat',cursive; font-weight:600; font-size:clamp(24px,3vw,32px); line-height:1.35; color:var(--mm-ink); margin:0 0 16px; max-width:28ch;">{{ site.tagline }}</p>
+            <p style="font-size:17px; line-height:1.7; color:var(--mm-body); margin:0 0 22px; max-width:640px;">{{ site.description }}</p>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:10px; margin-bottom:28px;">
+              <sc-for list="{{ site.features }}" as="feat" hint-placeholder-count="4">
+                <div class="mm-glass" style="border-radius:18px; padding:16px 16px 14px;">
+                  <div style="font-size:14px; font-weight:700; color:var(--mm-ink); margin-bottom:6px;">{{ feat.title }}</div>
+                  <div style="font-size:13px; line-height:1.55; color:var(--mm-body);">{{ feat.text }}</div>
+                </div>
+              </sc-for>
+            </div>
+            <div class="mm-cta-row">
+              <a href="{{ site.href }}" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; font-size:14px; font-weight:700; color:var(--mm-cta-text); padding:12px 22px; border-radius:999px; background:var(--mm-cta); border:1px solid var(--mm-border); box-shadow:0 8px 22px rgba(0,0,0,0.16); transition:transform 0.25s ease;" style-hover="transform:translateY(-1px);">
+                {{ copy.visit }}
+                <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M17 7H9M17 7v8" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a href="{{ quoteHref }}" target="_blank" rel="noopener" class="mm-cta-ghost">{{ copy.getQuote }}</a>
+            </div>
+          </div>
+
+          <div style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
+            <a href="{{ site.href }}" target="_blank" rel="noopener" aria-label="{{ site.visitLabel }}" class="website-phone" style="display:block; color:inherit; text-decoration:none; width:min(210px,58vw); animation:phoneFloat 5.5s ease-in-out infinite;">
+              <div style="background:#1D1D1F; border-radius:36px; padding:10px 10px 14px; box-shadow:0 22px 48px rgba(0,0,0,0.2), 0 1px 0 rgba(255,255,255,0.18) inset;">
+                <div style="display:flex; justify-content:center; height:16px;">
+                  <div style="width:72px; height:8px; background:#000000; border-radius:0 0 8px 8px; margin-top:2px;"></div>
+                </div>
+                <div style="position:relative; border-radius:26px; overflow:hidden; aspect-ratio:9/19.5; background:#1a1714;">
+                  <img src="{{ site.imgSrc }}" alt="" aria-hidden="true" loading="lazy" decoding="async" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; opacity:0.38; display:block;"/>
+                  <div style="position:relative; z-index:1; height:100%; padding:22px 16px 18px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; color:#f7efe6;">
+                    <div style="font-size:8px; letter-spacing:0.22em; text-transform:uppercase; opacity:0.8; margin-bottom:10px;">{{ site.mockup.kicker }}</div>
+                    <div style="font-family:'Caveat',cursive; font-weight:700; font-size:28px; line-height:1; color:#fff8ef; margin-bottom:6px;">{{ site.mockup.names }}</div>
+                    <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; opacity:0.85; margin-bottom:14px;">{{ site.mockup.line }}</div>
+                    <div style="width:42px; height:1px; background:rgba(247,239,230,0.45); margin-bottom:14px;"></div>
+                    <div style="font-size:9px; line-height:1.45; opacity:0.88;">{{ site.mockup.date }}</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div style="margin-top:12px; font-size:12px; font-weight:600; color:var(--mm-faint); text-align:center;">{{ site.notice }}</div>
+          </div>
+        </div>
+      </div>
+    </sc-for>
+  </section>
+
+  <!-- WORKS LIGHTBOX -->
+  <sc-if value="{{ lb.open }}" hint-placeholder-val="{{ false }}">
+    <div onclick="{{ lb.close }}" style="position:fixed; inset:0; z-index:80; background:rgba(15,15,16,0.72); backdrop-filter:blur(22px) saturate(160%); -webkit-backdrop-filter:blur(22px) saturate(160%); display:flex; align-items:center; justify-content:center; padding:24px; animation:lbFade 0.22s ease;">
+      <button type="button" aria-label="{{ copy.close }}" onclick="{{ lb.close }}" style="position:absolute; top:22px; right:22px; width:46px; height:46px; border:0; border-radius:50%; background:rgba(255,255,255,0.16); color:#ffffff; font-size:22px; cursor:pointer;">×</button>
+      <div onclick="{{ lb.hold }}" style="max-width:min(1100px,96vw); max-height:88vh; display:flex; flex-direction:column; align-items:center; gap:14px;">
+        <div style="display:flex; align-items:center; gap:10px; max-width:100%;">
+          <sc-if value="{{ lb.showNav }}" hint-placeholder-val="{{ false }}">
+            <button type="button" aria-label="{{ copy.prev }}" onclick="{{ lb.prev }}" style="flex:0 0 auto; width:42px; height:42px; border:0; border-radius:50%; background:rgba(255,255,255,0.92); color:#1d1d1f; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(0,0,0,0.28);">
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5.5L8 12l6.5 6.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </sc-if>
+          <sc-if value="{{ lb.isImage }}" hint-placeholder-val="{{ true }}">
+            <img src="{{ lb.src }}" alt="{{ lb.title }}" decoding="async" style="max-width:min(980px, calc(96vw - 112px)); max-height:78vh; object-fit:contain; border-radius:18px; box-shadow:0 24px 80px rgba(0,0,0,0.4); background:#111;"/>
+          </sc-if>
+          <sc-if value="{{ lb.isVideo }}" hint-placeholder-val="{{ false }}">
+            <video src="{{ lb.src }}" poster="{{ lb.poster }}" controls="controls" playsinline preload="metadata" style="max-width:min(420px, calc(96vw - 112px)); max-height:78vh; border-radius:18px; background:#111; box-shadow:0 24px 80px rgba(0,0,0,0.4);"></video>
+          </sc-if>
+          <sc-if value="{{ lb.showNav }}" hint-placeholder-val="{{ false }}">
+            <button type="button" aria-label="{{ copy.next }}" onclick="{{ lb.next }}" style="flex:0 0 auto; width:42px; height:42px; border:0; border-radius:50%; background:rgba(255,255,255,0.92); color:#1d1d1f; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(0,0,0,0.28);">
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5.5L16 12l-6.5 6.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </sc-if>
+        </div>
+        <div style="text-align:center;">
+          <div style="color:#ffffff; font-weight:700; font-size:16px;">{{ lb.title }}</div>
+          <div style="color:rgba(255,255,255,0.7); font-size:13px; margin-top:4px;">{{ lb.counter }}</div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- CONTACT MODAL -->
+  <sc-if value="{{ contact.open }}" hint-placeholder-val="{{ false }}">
+    <div class="mm-contact-scrim" onclick="{{ contact.close }}">
+      <div class="mm-contact-panel" onclick="{{ contact.hold }}" role="dialog" aria-modal="true" aria-label="{{ copy.contactTitle }}">
+        <h3>{{ copy.contactTitle }}</h3>
+        <p class="lead">{{ copy.contactLead }}</p>
+        <div class="mm-contact-list">
+          <a class="mm-contact-item" href="mailto:contact@mertmazali.art">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="meta">
+              <strong>{{ copy.mail }}</strong>
+              <small>contact@mertmazali.art</small>
+            </div>
+          </a>
+          <a class="mm-contact-item" href="https://wa.me/905316174805" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 19l-2.8 1.6.7-3.2A7.5 7.5 0 1 1 12 19.5 7.4 7.4 0 0 1 8 19z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9.2 10.2h.01M12 10.2h.01M14.8 10.2h.01" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+            <div class="meta">
+              <strong>{{ copy.whatsapp }}</strong>
+              <small>{{ copy.whatsappHint }}</small>
+            </div>
+          </a>
+          <a class="mm-contact-item" href="Mert-Mazali-CV.pdf" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.5 12s3.2-5.5 8.5-5.5S20.5 12 20.5 12 17.3 17.5 12 17.5 3.5 12 3.5 12z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+            <div class="meta">
+              <strong>{{ copy.cvView }}</strong>
+              <small>Mert-Mazali-CV.pdf</small>
+            </div>
+          </a>
+          <a class="mm-contact-item" href="Mert-Mazali-CV.pdf" download="Mert-Mazali-CV.pdf">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v10M8.5 10.5L12 14l3.5-3.5M6 19h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="meta">
+              <strong>{{ copy.cvDownload }}</strong>
+              <small>PDF</small>
+            </div>
+          </a>
+        </div>
+        <button type="button" class="mm-contact-close" onclick="{{ contact.close }}">{{ copy.close }}</button>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- FOOTER -->
+  <footer style="position:relative; z-index:1; padding:40px 6vw 40px; border-top:1px solid var(--mm-line); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
+    <div style="color:var(--mm-faint); font-size:13px;">{{ copy.footer }}</div>
+    <div style="display:flex; gap:22px;">
+      <sc-for list="{{ socials }}" as="s" hint-placeholder-count="3">
+        <a href="{{ s.href }}" aria-label="{{ s.label }}" style="color:var(--mm-muted); font-size:13px; font-weight:600; transition:color 0.2s ease;" style-hover="color:var(--mm-ink);">{{ s.label }}</a>
+      </sc-for>
+    </div>
+  </footer>
+
+
+</main>
+
+</x-dc>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="intro.js"></script>
+
+<script data-dc-script>
+const I18N = {
+  tr: {
+    prefs: 'Dil ve tema',
+    theme: 'Tema',
+    themeLight: 'Açık',
+    themeDark: 'Koyu',
+    home: 'Anasayfa',
+    switchLang: 'English',
+    top: 'Yukarı çık',
+    heroLine: 'Görsel hikayeler ve dijital deneyimler tasarlıyorum.',
+    ring: 'Her başarılı tasarımcının arkasında sessiz ama güçlü bir destek vardır.',
+    aboutTitle: 'Hakkımda',
+    aboutBody: '5 yılı aşkın deneyime sahip bir grafik tasarımcıyım. Marka kimliği, etiket, sosyal medya ve basılı materyali Photoshop, Illustrator ve CorelDRAW ile üretiyorum. Prepress, preflight, CMYK ve Pantone süreçlerinde dosyayı baskıya hazır hale getiriyorum. Figma ile arayüz tasarlıyor, dijital işleri de aynı görsel dile bağlıyorum.',
+    expTitle: 'Tecrübelerim',
+    toolsTitle: 'Kullandığım Programlar',
+    toolsLead: 'Görsel tasarımdan video prodüksiyona uzman araç setim.',
+    aiTitle: 'Kullandığım Yapay Zekalar',
+    aiLead: 'Tasarım, kod ve içerik üretimimde kullandığım AI araçları.',
+    channelCta: 'Kanala git',
+    recentVideos: 'Son Videolar',
+    appKicker: 'UI tasarımı',
+    detectiveKicker: 'Oyun UI',
+    screens: 'Ekranlar',
+    screensHint: 'Kaydır',
+    processKicker: 'Tasarım sürecim',
+    processTitle: 'Nasıl çalışıyorum',
+    processLead: 'Her projede aynı disiplini izlerim: ihtiyacı netleştirir, görsel dili kurar ve üretilebilir bir sonuca bağlarım. Bu süreç, tasarımcı kimliğimi rastgele estetikten ayırır — ölçülebilir, tekrarlanabilir ve markaya özel.',
+    worksTitle: 'Çalışmalarım',
+    worksTab: 'Yeni sekme', finderBack: 'Geri',
+    webKicker: 'Web Sitelerim',
+    visit: 'Git',
+    getQuote: 'Fiyat al',
+    contact: 'İletişim',
+    contactTitle: 'İletişim',
+    contactLead: 'Projeyi buradan başlatalım — mail, WhatsApp veya CV.',
+    mail: 'E-posta',
+    whatsapp: 'WhatsApp',
+    whatsappHint: 'Sohbeti aç',
+    letsWork: 'Çalışalım',
+    quotesKicker: 'Müşteriler',
+    quotesTitle: 'Ne diyorlar',
+    quotesLead: 'Bionluk hesabıma gelen gerçek müşteri yorumları.',
+    bnMeta: '5 sipariş · 4 değerlendirme',
+    bnQuality: 'Hizmet Kalitesi',
+    bnTiming: 'Zamanlama',
+    bnComm: 'İletişim Becerisi',
+    bnGo: 'Bionluk\'ta gör',
+    quotesPrev: 'Önceki',
+    quotesNext: 'Sonraki',
+    quotes: [
+      { text: 'İşinde başarılı, işi zamanında teslim etti ve her türlü yönlendirmeyi yaptı. Rahatlıkla çalışabilirsiniz 😇', who: 'tamer41', rating: '5.0', avatar: 'uploads/musteriler/bionluk-tamer41.png' },
+      { text: 'Acil ihtiyacım olan thumbnail tasarımını anında yaptı. Hızlı iletişim, kaliteli iş ve hızlı teslimat.', who: 'kerimyaman', rating: '5.0', avatar: 'uploads/musteriler/bionluk-kerimyaman.png' },
+      { text: 'Onur Bey elinden gelenin en iyisini yapıp yine bizi mahcup etmedi. Sizinle çalıştığım için mutluyum, elinize sağlık <3', who: 'kalaycimedya', rating: '5.0', avatar: 'uploads/musteriler/bionluk-kalaycimedya.png' },
+      { text: 'Hızlı ve güzel bir çalışma oldu.', who: 'ozcnfth', rating: '5.0', avatar: 'uploads/musteriler/bionluk-ozcnfth.png' }
+    ],
+    portfolio: 'Portföy / CV',
+    cvView: 'CV Görüntüle',
+    cvDownload: 'CV İndir',
+    footer: '© 2026 Mert Mazalı. Tüm hakları saklıdır.',
+    close: 'Kapat',
+    prev: 'Önceki görsel',
+    next: 'Sonraki görsel',
+    growth: 'Yükselme',
+    images: 'görsel',
+    video: 'video',
+    videos: 'video',
+    folder: 'klasör',
+    folders: 'klasör',
+    scrollDown: 'Aşağı kaydır',
+    nav: [
+      { href: '#hakkimda', label: 'Hakkımda' },
+      { href: '#calismalar', label: 'Çalışmalar' },
+      { href: '#youtube', label: 'YouTube' }
+    ],
+    processSteps: [
+      { num: '01', name: 'Brifing', text: 'İhtiyacı ve hedefi anlarım.' },
+      { num: '02', name: 'Araştırma', text: 'Rakipleri, hedef kitleyi ve görsel dili incelerim.' },
+      { num: '03', name: 'Konsept', text: 'Fikir ve görsel yön oluştururum.' },
+      { num: '04', name: 'Tasarım', text: 'Tasarımı geliştirir ve alternatifleri değerlendiririm.' },
+      { num: '05', name: 'Final', text: 'Dijital veya baskı üretimine hazırlarım.' }
+    ]
+  },
+  en: {
+    prefs: 'Language and theme',
+    theme: 'Theme',
+    themeLight: 'Light',
+    themeDark: 'Dark',
+    home: 'Home',
+    switchLang: 'Türkçe',
+    top: 'Back to top',
+    heroLine: 'I design visual stories and digital experiences.',
+    ring: 'Behind every successful designer there is a quiet but powerful support.',
+    aboutTitle: 'About',
+    aboutBody: 'I am a graphic designer with 5+ years of experience. I design brand identity, labels, social content and print in Photoshop, Illustrator and CorelDRAW. I prepare files for press — preflight, CMYK and Pantone — and I design interfaces in Figma so digital work speaks the same visual language.',
+    expTitle: 'Experience',
+    toolsTitle: 'Software I Use',
+    toolsLead: 'My specialist toolkit from visual design to video production.',
+    aiTitle: 'AI Tools I Use',
+    aiLead: 'The AI tools I use for design, code and content.',
+    channelCta: 'Open channel',
+    recentVideos: 'Latest Videos',
+    appKicker: 'UI design',
+    detectiveKicker: 'Game UI',
+    screens: 'Screens',
+    screensHint: 'Drag',
+    processKicker: 'Design process',
+    processTitle: 'How I work',
+    processLead: 'I follow the same discipline on every project: clarify the need, build the visual language, and land on a production-ready result. This process is what separates intentional art direction from random aesthetics — measurable, repeatable, and brand-specific.',
+    worksTitle: 'Selected Work',
+    worksTab: 'New tab', finderBack: 'Back',
+    webKicker: 'My Websites',
+    visit: 'Visit',
+    getQuote: 'Get a quote',
+    contact: 'Contact',
+    contactTitle: 'Contact',
+    contactLead: 'Start the project here — email, WhatsApp, or CV.',
+    mail: 'Email',
+    whatsapp: 'WhatsApp',
+    whatsappHint: 'Open chat',
+    letsWork: "Let's work",
+    quotesKicker: 'Clients',
+    quotesTitle: 'What they say',
+    quotesLead: 'Real client reviews from my Bionluk account.',
+    bnMeta: '5 orders · 4 reviews',
+    bnQuality: 'Service quality',
+    bnTiming: 'Timing',
+    bnComm: 'Communication',
+    bnGo: 'View on Bionluk',
+    quotesPrev: 'Previous',
+    quotesNext: 'Next',
+    quotes: [
+      { text: 'Successful work, delivered on time, and guided me through everything. You can work with him with confidence 😇', who: 'tamer41', rating: '5.0', avatar: 'uploads/musteriler/bionluk-tamer41.png' },
+      { text: 'Made the thumbnail I urgently needed on the spot. Fast communication, quality work and quick delivery.', who: 'kerimyaman', rating: '5.0', avatar: 'uploads/musteriler/bionluk-kerimyaman.png' },
+      { text: 'Onur did his very best again and never let us down. Happy to work with you, well done <3', who: 'kalaycimedya', rating: '5.0', avatar: 'uploads/musteriler/bionluk-kalaycimedya.png' },
+      { text: 'A fast and nice job.', who: 'ozcnfth', rating: '5.0', avatar: 'uploads/musteriler/bionluk-ozcnfth.png' }
+    ],
+    portfolio: 'Portfolio / CV',
+    cvView: 'View CV',
+    cvDownload: 'Download CV',
+    footer: '© 2026 Mert Mazalı. All rights reserved.',
+    close: 'Close',
+    prev: 'Previous image',
+    next: 'Next image',
+    growth: 'Growth',
+    images: 'images',
+    video: 'video',
+    videos: 'videos',
+    folder: 'folder',
+    folders: 'folders',
+    scrollDown: 'Scroll down',
+    nav: [
+      { href: '#hakkimda', label: 'About' },
+      { href: '#calismalar', label: 'Work' },
+      { href: '#youtube', label: 'YouTube' }
+    ],
+    processSteps: [
+      { num: '01', name: 'Brief', text: 'I understand the need and the goal.' },
+      { num: '02', name: 'Research', text: 'I study competitors, audience, and visual language.' },
+      { num: '03', name: 'Concept', text: 'I shape the idea and creative direction.' },
+      { num: '04', name: 'Design', text: 'I develop the design and weigh alternatives.' },
+      { num: '05', name: 'Final', text: 'I prepare files for digital or print production.' }
+    ]
+  }
+};
+
+const EN_WORKS = {
+  'logo-calismalari': { name: 'Logo Work', category: 'Brand Identity' },
+  kartvizit: { name: 'Business Cards', category: 'Card Design' },
+  brosur: { name: 'Brochure', category: 'Brochure Design' },
+  'dergi-kapagi': { name: 'Turuncu Magazine', category: 'Magazine Cover' },
+  'dugun-davetiyesi': { name: 'Wedding Invitation', category: 'Invitation Design' },
+  'yilbasim-kart-tasarimi': { name: 'Christmas Card', category: 'Card Design' },
+  'instagram-post': { name: 'Instagram Posts', category: 'Social Media' },
+  'instagram-story': { name: 'Instagram Stories', category: 'Social Media' },
+  'youtube-thumbnail': { name: 'Thumbnails', category: 'YouTube' },
+  'shorts-thumbnail': { name: 'Shorts Thumbnail', category: 'YouTube Shorts' },
+  'urun-tanitim': { name: 'Product Launch', category: 'Visual Design' },
+  'tshirt-tasarim': { name: 'T-shirt Design', category: 'Product Graphics' },
+  'sapka-tasarim': { name: 'Cap Design', category: 'Product Graphics' },
+  matbaa: { name: 'Print', category: 'Labels & Print' },
+  'mzfood-ux-ui': { name: 'MZFOOD', category: 'UI/UX' },
+  twitch_panel: { name: 'Twitch Panel', category: 'Streaming' },
+  'Hareketli Banner': { name: 'Motion Banner', category: 'Advertising' },
+  'Yayıncı Emote ve Badges': { name: 'Emotes and Badges', category: 'Streaming' },
+  'Sosyal Medya': { name: 'Social Media', category: 'Social Media' },
+  'Sosyal Medya/Akis - Mobil Uygulama': { name: 'Akış', category: 'Social Media' },
+  'Sosyal Medya/Koz burger - Resturant': { name: 'Koz Burger', category: 'Social Media' },
+  'Sosyal Medya/Veyra - Otomotiv': { name: 'Veyra', category: 'Social Media' },
+  'Sosyal Medya/Arven - İnsaat Yapı': { name: 'Arven', category: 'Social Media' },
+  'ambalaj tasarımı': { name: 'Packaging', category: 'Packaging' },
+  'ambalaj tasarımı/mori': { name: 'Mori', category: 'Packaging' },
+  'ambalaj tasarımı/sora': { name: 'Sora', category: 'Packaging' },
+  'ambalaj tasarımı/volt': { name: 'Volt', category: 'Packaging' },
+  'ambalaj tasarımı/lunea': { name: 'Lunea', category: 'Packaging' },
+  'ambalaj tasarımı/pastello': { name: 'Pastello', category: 'Packaging' },
+  'ambalaj tasarımı/piko': { name: 'Piko', category: 'Packaging' },
+  'youtube-thumbnail/2mb': { name: '2 MB', category: 'YouTube' }
+};
+
+const EN_STATS = { Abone: 'Subscribers', Video: 'Videos', İzlenme: 'Views' };
+const EN_CHANNELS = {
+  'Oyun Kanalı': 'Gaming Channel',
+  'Tasarım Eğitim Kanalı': 'Design Education Channel'
+};
+const EN_SCREENS = {
+  'anaekran.png': 'Home',
+  'derse-giris.png': 'Start lesson',
+  'yol-haritasi.png': 'Roadmap',
+  'ders-icerik-1.png': 'Lesson content',
+  'ders-boyama.png': 'Coloring lesson',
+  'birdenfazla-dil.png': 'Multiple languages',
+  'karakter-ozellestirme.png': 'Character customization',
+  'profil-penceresi.png': 'Profile',
+  'magaza.png': 'Shop',
+  'liderlik-tablosu.png': 'Leaderboard',
+  'seri-hedefi-belirleme.png': 'Streak goal',
+  'ebeveyn-paneli.png': 'Parent panel',
+  'premium-ebeveyn-paneli.png': 'Premium parent panel',
+  'anasayfa.png': 'Home',
+  'liman-inceleme.jpg': 'Harbor investigation',
+  'ipucu-panosu.png': 'Clue board',
+  'profil.png': 'Profile',
+  'gunluk-odul.png': 'Daily reward',
+  'ebeveyn-kapisi.png': 'Parental gate'
+};
+
+class Component extends DCLogic {
+  state = { scrolled: false, navCompact: 0, content: null, isMobile: false, lightbox: null, finder: null, workSlides: [], theme: 'light', lang: 'tr', youtubeLive: null, contactOpen: false };
+
+  applyChrome(theme, lang) {
+    const html = document.documentElement;
+    html.classList.toggle('theme-dark', theme === 'dark');
+    html.classList.toggle('theme-light', theme !== 'dark');
+    html.lang = lang === 'en' ? 'en' : 'tr';
+  }
+
+  readPref(key, fallback) {
+    try {
+      const v = localStorage.getItem(key);
+      return v || fallback;
+    } catch (e) {
+      return fallback;
+    }
+  }
+
+  writePref(key, value) {
+    try { localStorage.setItem(key, value); } catch (e) {}
+  }
+
+  toggleTheme() {
+    const theme = this.state.theme === 'dark' ? 'light' : 'dark';
+    const lang = this.state.lang === 'en' ? 'en' : 'tr';
+    this.writePref('mm-theme', theme);
+    this.applyChrome(theme, lang);
+    this.setState({ theme, lang });
+  }
+
+  setLang(lang) {
+    this.writePref('mm-lang', lang);
+    this.applyChrome(this.state.theme, lang);
+    this.setState({ lang });
+  }
+
+  toggleLang() {
+    this.setLang(this.state.lang === 'en' ? 'tr' : 'en');
+  }
+
+  toggleContact() {
+    if (this.state.contactOpen) {
+      this.closeContact();
+      return;
+    }
+    this.setState({ contactOpen: true });
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeContact(e) {
+    if (e && e.stopPropagation) e.stopPropagation();
+    this.setState({ contactOpen: false });
+    if (!this.state.lightbox) document.body.style.overflow = '';
+  }
+
+  holdContact(e) {
+    if (e && e.stopPropagation) e.stopPropagation();
+  }
+
+  componentDidMount() {
+    const theme = this.readPref('mm-theme', 'light') === 'dark' ? 'dark' : 'light';
+    const lang = this.readPref('mm-lang', 'tr') === 'en' ? 'en' : 'tr';
+    this.applyChrome(theme, lang);
+    this.setState({ theme, lang });
+
+    this._navTarget = 0;
+    this._navCompact = 0;
+    this.tickNav = () => {
+      this._navTick = 0;
+      const cur = this._navCompact;
+      const target = this._navTarget;
+      const next = cur + (target - cur) * 0.085;
+      const done = Math.abs(target - next) < 0.0015;
+      this._navCompact = done ? target : next;
+      const navCompact = Math.round(this._navCompact * 1000) / 1000;
+      const scrolled = navCompact > 0.52;
+      if (
+        Math.abs(navCompact - (this.state.navCompact || 0)) > 0.004 ||
+        scrolled !== this.state.scrolled
+      ) {
+        this.setState({ navCompact, scrolled });
+      }
+      if (!done) this._navTick = requestAnimationFrame(this.tickNav);
+    };
+    this.onScroll = () => {
+      const root = document.documentElement;
+      if (root.classList.contains('mm-intro') && !root.classList.contains('mm-done')) return;
+      const y = window.scrollY;
+      const start = 8;
+      const end = 420;
+      let t = (y - start) / (end - start);
+      t = Math.min(1, Math.max(0, t));
+      t = t * t * (3 - 2 * t);
+      this._navTarget = t;
+      if (!this._navTick) this._navTick = requestAnimationFrame(this.tickNav);
+    };
+    this.onQuoteResize = () => this.measureQuotes();
+    window.addEventListener('resize', this.onQuoteResize);
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+    if (!window.__mmBrokenWatch) {
+      window.__mmBrokenWatch = true;
+      document.addEventListener('error', (e) => {
+        const img = e.target;
+        if (img && img.tagName === 'IMG') this.hideBrokenImage(img);
+      }, true);
+    }
+    this.mq = window.matchMedia('(max-width: 860px)');
+    const applyMq = () => this.setState({ isMobile: this.mq.matches });
+    applyMq();
+    if (this.mq.addEventListener) this.mq.addEventListener('change', applyMq);
+    else this.mq.addListener(applyMq);
+    this._applyMq = applyMq;
+
+    this.onLbKey = (e) => {
+      if (e.key === 'Escape' && this.state.contactOpen) {
+        this.closeContact();
+        return;
+      }
+      if (this.state.lightbox) {
+        if (e.key === 'Escape') this.closeLightbox();
+        if (e.key === 'ArrowLeft') this.stepLightbox(-1);
+        if (e.key === 'ArrowRight') this.stepLightbox(1);
+        return;
+      }
+      if (e.key === 'Escape' && this.state.finder != null) this.closeFinder();
+    };
+    window.addEventListener('keydown', this.onLbKey);
+
+    this._hoverWork = null;
+    this._workClock = 0;
+    this._workStarted = [];
+    this._worksInView = false;
+    this.startWorkCarousel();
+
+    const watchWorks = () => {
+      const el = document.getElementById('calismalar');
+      if (!el || !('IntersectionObserver' in window)) {
+        this._worksInView = true;
+        return;
+      }
+      this._worksIO = new IntersectionObserver((entries) => {
+        if (entries.some((e) => e.isIntersecting)) this._worksInView = true;
+      }, { rootMargin: '320px 0px' });
+      this._worksIO.observe(el);
+    };
+
+    this.watchKit = () => {
+      if (this.state.kitIn) return;
+      const el = document.getElementById('yetenekler');
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!el || reduce || !('IntersectionObserver' in window)) {
+        this.setState({ kitIn: true });
+        return;
+      }
+      if (this._kitIO) return;
+      this._kitIO = new IntersectionObserver((entries) => {
+        if (!entries.some((e) => e.isIntersecting)) return;
+        this.setState({ kitIn: true });
+        if (this._kitIO) { this._kitIO.disconnect(); this._kitIO = null; }
+      }, { threshold: 0.2 });
+      this._kitIO.observe(el);
+    };
+    requestAnimationFrame(() => this.watchKit());
+
+    // Çalışmalar klasörü api/works.php (yoksa dizin listesi, yoksa api/works.json) ile dolar. content.js son yedek.
+    const worksLoad = import('./api/works-client.js').then((mod) => mod.loadWorksTree()).catch(() => null);
+    import('./content.js?v=works7').then((mod) => {
+      const content = mod.default;
+      const apply = (tree) => {
+        const scanned = !!(tree && tree.length);
+        const works = scanned ? tree : (content.works || []);
+        this.setState({
+          content,
+          worksTree: works,
+          worksExact: scanned,
+          workSlides: works.map(() => 0)
+        });
+        this._workStarted = works.map(() => false);
+        requestAnimationFrame(watchWorks);
+        requestAnimationFrame(() => requestAnimationFrame(() => this.measureQuotes()));
+        if (!this._ytTimer) {
+          this.refreshYouTube();
+          this._ytTimer = setInterval(() => this.refreshYouTube(), 5 * 60 * 1000);
+          this._ytVis = () => { if (!document.hidden) this.refreshYouTube(); };
+          document.addEventListener('visibilitychange', this._ytVis);
+        }
+        this.paintFolderPeeks();
+        this.sweepBrokenImages();
+      };
+      let applied = false;
+      const timer = setTimeout(() => { if (!applied) { applied = true; apply(null); } }, 4000);
+      worksLoad.then((tree) => {
+        if (applied) {
+          if (tree && tree.length) apply(tree);
+          return;
+        }
+        applied = true;
+        clearTimeout(timer);
+        apply(tree);
+      }).catch(() => {
+        if (!applied) { applied = true; clearTimeout(timer); apply(null); }
+      });
+    });
+  }
+
+  componentDidUpdate() {
+    this.paintFolderPeeks();
+    this.sweepBrokenImages();
+  }
+
+  hideBrokenImage(img) {
+    if (!img || img.tagName !== 'IMG' || img.dataset.mmBroken) return;
+    const src = img.getAttribute('src') || '';
+    if (!src || src.indexOf('data:') === 0 || src.indexOf('blob:') === 0) return;
+    if (/^https?:\/\//i.test(src) || /favicon/i.test(src)) return;
+    if (img.naturalWidth > 0) return;
+    img.dataset.mmBroken = '1';
+    if (!this._deadSrc) this._deadSrc = new Set();
+    this._deadSrc.add(src);
+    if (img.classList.contains('mm-folder-peek')) {
+      img.remove();
+      return;
+    }
+    const tile = img.closest('.mm-file');
+    if (tile) {
+      if (tile.classList.contains('is-video')) img.remove();
+      else tile.remove();
+      return;
+    }
+    if (this.lightboxImageIs(img, src)) {
+      this.skipBrokenLightbox();
+      return;
+    }
+    const screen = img.closest('#uygulama, #dedektiflik');
+    if (screen) {
+      const card = this.screenCard(img);
+      if (card) card.remove();
+      else img.remove();
+      return;
+    }
+    img.remove();
+  }
+
+  screenCard(img) {
+    let node = img.parentElement;
+    while (node && node !== document.body) {
+      if (node.id === 'uygulama' || node.id === 'dedektiflik') return null;
+      const style = node.getAttribute('style') || '';
+      if (style.indexOf('scroll-snap-align') !== -1) return node;
+      node = node.parentElement;
+    }
+    return null;
+  }
+
+  lightboxImageIs(img, src) {
+    const lb = this.state.lightbox;
+    if (!lb) return false;
+    const node = this.workNode(lb.path);
+    const images = node && node.images ? node.images : [];
+    const file = String(images[lb.index] || '').trim();
+    if (!node || !file || /\.(mp4|webm)$/i.test(file)) return false;
+    return src === this.workSrc(node.folder, file);
+  }
+
+  skipBrokenLightbox() {
+    const lb = this.state.lightbox;
+    if (!lb) return;
+    const node = this.workNode(lb.path);
+    const images = (node && node.images) || [];
+    if (!this._deadSrc) this._deadSrc = new Set();
+    const srcOf = (file) => {
+      const name = String(file || '').trim();
+      if (/\.(mp4|webm)$/i.test(name)) return 'video:' + this.workSrc(node.folder, name);
+      return this.workSrc(node.folder, name);
+    };
+    if (images[lb.index]) this._deadSrc.add(srcOf(images[lb.index]));
+    for (let step = 1; step < images.length; step++) {
+      const next = (lb.index + step) % images.length;
+      const src = srcOf(images[next]);
+      if (src && !this._deadSrc.has(src)) {
+        this.setState({ lightbox: { path: lb.path, index: next } });
+        return;
+      }
+    }
+    this.closeLightbox();
+  }
+
+  sweepBrokenImages() {
+    document.querySelectorAll('img').forEach((img) => {
+      if (!img.complete || img.naturalWidth > 0 || !img.currentSrc) return;
+      this.hideBrokenImage(img);
+    });
+  }
+
+  paintFolderPeeks() {
+    document.querySelectorAll('.mm-folder-peek').forEach((img) => {
+      if (img.dataset.peekReady) return;
+      const kick = () => {
+        img.dataset.peekReady = '1';
+        if (img.decode) img.decode().catch(() => {});
+      };
+      if (img.complete && img.naturalWidth) kick();
+      else img.addEventListener('load', kick, { once: true });
+    });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+    if (this.onQuoteResize) window.removeEventListener('resize', this.onQuoteResize);
+    if (this._navTick) cancelAnimationFrame(this._navTick);
+    if (this._navRaf) cancelAnimationFrame(this._navRaf);
+    window.removeEventListener('keydown', this.onLbKey);
+    if (this._ytTimer) clearInterval(this._ytTimer);
+    if (this._ytVis) document.removeEventListener('visibilitychange', this._ytVis);
+    this.stopWorkCarousel();
+    if (this._worksIO) this._worksIO.disconnect();
+    if (this._kitIO) this._kitIO.disconnect();
+    document.body.style.overflow = '';
+    if (this.mq) {
+      if (this.mq.removeEventListener) this.mq.removeEventListener('change', this._applyMq);
+      else this.mq.removeListener(this._applyMq);
+    }
+  }
+
+  quoteMetrics() {
+    const view = document.querySelector('.mm-quotes-view');
+    const track = document.querySelector('.mm-quotes-track');
+    const card = track && track.querySelector('.mm-quote');
+    if (!view || !track || !card) return { step: 0, max: 0 };
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 18;
+    const step = card.getBoundingClientRect().width + gap;
+    const max = Math.max(0, track.scrollWidth - view.clientWidth);
+    return { step, max };
+  }
+
+  measureQuotes() {
+    const m = this.quoteMetrics();
+    const x = Math.max(-m.max, Math.min(0, this.state.quoteX || 0));
+    const prevMax = this.state.quoteMax || 0;
+    const prevX = this.state.quoteX || 0;
+    if (Math.abs(m.max - prevMax) > 2 || Math.abs(x - prevX) > 2) {
+      this.setState({ quoteMax: m.max, quoteX: x });
+    }
+  }
+
+  stepQuotes(dir, e) {
+    if (e && e.preventDefault) e.preventDefault();
+    const m = this.quoteMetrics();
+    if (!m.step) return;
+    const cur = this.state.quoteX || 0;
+    let next = cur - dir * m.step;
+    next = Math.max(-m.max, Math.min(0, next));
+    next = Math.round(next);
+    if (next === Math.round(cur) && Math.abs((this.state.quoteMax || 0) - m.max) < 2) return;
+    this.setState({ quoteX: next, quoteMax: m.max });
+  }
+
+  startQuoteDrag(e) {
+    if (!e || (e.button != null && e.button !== 0)) return;
+    const m = this.quoteMetrics();
+    this._qDrag = { x: e.clientX, base: this.state.quoteX || 0, max: m.max, pointerId: e.pointerId };
+    const el = e.currentTarget;
+    if (el && el.setPointerCapture && e.pointerId != null) {
+      try { el.setPointerCapture(e.pointerId); } catch (err) {}
+    }
+    this.setState({ quoteDragging: true, quoteMax: m.max });
+  }
+
+  moveQuoteDrag(e) {
+    const d = this._qDrag;
+    if (!d) return;
+    const next = Math.max(-d.max, Math.min(0, Math.round(d.base + (e.clientX - d.x))));
+    if (next === (this.state.quoteX || 0)) return;
+    this.setState({ quoteX: next, quoteMax: d.max, quoteDragging: true });
+  }
+
+  endQuoteDrag(e) {
+    const d = this._qDrag;
+    if (!d) return;
+    const el = e && e.currentTarget;
+    if (el && el.releasePointerCapture && d.pointerId != null) {
+      try { el.releasePointerCapture(d.pointerId); } catch (err) {}
+    }
+    this._qDrag = null;
+    this.setState({ quoteDragging: false });
+  }
+
+  formatCount(value, lang) {
+    const digits = String(value == null ? '' : value).replace(/[^\d]/g, '');
+    if (!digits) return value;
+    const n = Number(digits);
+    if (!Number.isFinite(n)) return value;
+    return n.toLocaleString(lang === 'en' ? 'en-US' : 'tr-TR');
+  }
+
+  youtubeGrowth(serverRise, lang) {
+    const n = Number(serverRise);
+    if (serverRise == null || serverRise === '' || !Number.isFinite(n)) {
+      return { text: '\u2014', statClass: 'is-rise mm-yt-rise-zero' };
+    }
+    const rounded = Math.round(n * 10) / 10;
+    const text = rounded.toLocaleString(lang === 'en' ? 'en-US' : 'tr-TR', {
+      minimumFractionDigits: 1,
+      maximumFractionDigits: 1
+    }) + '%';
+    const tone = rounded > 0 ? 'mm-yt-rise-up' : (rounded < 0 ? 'mm-yt-rise-down' : 'mm-yt-rise-zero');
+    return { text, statClass: 'is-rise ' + tone };
+  }
+
+  applyYouTubeLive(data) {
+    const byId = {};
+    (data && data.channels ? data.channels : []).forEach((ch) => {
+      if (ch && ch.id) byId[ch.id] = ch;
+    });
+    if (Object.keys(byId).length) this.setState({ youtubeLive: byId });
+  }
+
+  parseRss2Json(channelId, json) {
+    const feed = json && json.feed ? json.feed : {};
+    const title = String(feed.title || feed.author || '').trim();
+    const videos = (json && json.items ? json.items : []).slice(0, 5).map((it) => {
+      const href = it.link || it.guid || '';
+      const match = String(href).match(/[?&]v=([\w-]{6,})/) || String(href).match(/youtu\.be\/([\w-]{6,})/);
+      const id = match ? match[1] : '';
+      return {
+        id,
+        title: it.title || '',
+        href: id ? ('https://www.youtube.com/watch?v=' + id) : href,
+        thumb: id ? ('https://i.ytimg.com/vi/' + id + '/hqdefault.jpg') : (it.thumbnail || '')
+      };
+    }).filter((v) => v.thumb);
+    return { id: channelId, videos, stats: {}, title };
+  }
+
+  refreshYouTube() {
+    const channels = this.state.content && this.state.content.youtubeChannels;
+    if (!channels || !channels.length) return;
+    fetch('api/youtube.php', { cache: 'no-store' }).then((r) => {
+      if (!r.ok) throw new Error('php');
+      return r.json();
+    }).then((data) => {
+      const list = data && data.channels ? data.channels : [];
+      const hasVideos = list.some((ch) => ch && ch.videos && ch.videos.length);
+      if (!hasVideos) throw new Error('empty');
+      this.applyYouTubeLive(data);
+    }).catch(() => {
+      const jobs = channels.filter((ch) => ch.channelId).map((ch) => {
+        const rss = 'https://www.youtube.com/feeds/videos.xml?channel_id=' + encodeURIComponent(ch.channelId);
+        const url = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rss);
+        return fetch(url, { cache: 'no-store' }).then((r) => r.json()).then((json) => this.parseRss2Json(ch.channelId, json)).catch(() => null);
+      });
+      Promise.all(jobs).then((list) => this.applyYouTubeLive({ channels: list.filter(Boolean) }));
+    });
+  }
+
+  startWorkCarousel() {
+    this.stopWorkCarousel();
+      this._workTimer = setInterval(() => {
+        if (this.state.lightbox || document.hidden || !this._worksInView) return;
+        const works = this.state.content && this.state.content.works;
+        if (!works || !works.length) return;
+        const slides = (this.state.workSlides && this.state.workSlides.length === works.length)
+          ? this.state.workSlides.slice()
+          : works.map(() => 0);
+        this._workClock += 1;
+        let changed = false;
+        const period = 12;
+        works.forEach((w, i) => {
+          if (this._hoverWork === i) return;
+          const n = (w.images || []).length;
+          if (n < 2) return;
+          if ((this._workClock + i * 3) % period === 0) {
+            slides[i] = (slides[i] + 1) % n;
+            this._workStarted[i] = true;
+            changed = true;
+          }
+        });
+        if (changed) this.setState({ workSlides: slides });
+      }, 900);
+  }
+
+  stopWorkCarousel() {
+    if (this._workTimer) {
+      clearInterval(this._workTimer);
+      this._workTimer = null;
+    }
+  }
+
+  startPokoDrag(e) {
+    const el = e.currentTarget;
+    if (!el) return;
+    this._pokoDrag = {
+      el,
+      startX: e.clientX,
+      startScroll: el.scrollLeft,
+      pointerId: e.pointerId
+    };
+    el.style.cursor = 'grabbing';
+    if (el.setPointerCapture && e.pointerId != null) {
+      try { el.setPointerCapture(e.pointerId); } catch (err) {}
+    }
+  }
+
+  movePokoDrag(e) {
+    const d = this._pokoDrag;
+    if (!d || !d.el) return;
+    e.preventDefault();
+    d.el.scrollLeft = d.startScroll - (e.clientX - d.startX);
+  }
+
+  endPokoDrag(e) {
+    const d = this._pokoDrag;
+    if (!d || !d.el) return;
+    d.el.style.cursor = 'grab';
+    if (d.el.releasePointerCapture && d.pointerId != null) {
+      try { d.el.releasePointerCapture(d.pointerId); } catch (err) {}
+    }
+    this._pokoDrag = null;
+  }
+
+  optFile(file) {
+    return String(file || '').trim().replace(/\.(png|jpe?g)$/i, '.webp');
+  }
+
+  mediaSrc(dir, file) {
+    const f = this.optFile(file);
+    if (!dir || !f) return undefined;
+    return dir + '/' + encodeURIComponent(f);
+  }
+
+  folderPreviews(node) {
+    const out = [];
+    const seen = new Set();
+    const take = (node, file) => {
+      if (out.length >= 3) return;
+      let name = String(file || '').trim();
+      if (!name) return;
+      if (/\.(mp4|webm)$/i.test(name)) {
+        name = (node.posters && node.posters[name]) || name.replace(/\.(mp4|webm)$/i, '.webp');
+      }
+      const src = this.workSrc(node.folder, name);
+      if (!src || seen.has(src)) return;
+      seen.add(src);
+      out.push({ src });
+    };
+    const walk = (n) => {
+      if (!n || out.length >= 3) return;
+      if (n.cover) take(n, n.cover);
+      (n.images || []).forEach((img) => take(n, img));
+      (n.folders || []).forEach(walk);
+    };
+    walk(node);
+    return out;
+  }
+
+  workSrc(folder, file) {
+    const raw = String(file || '').trim();
+    const f = this.state.worksExact ? raw : this.optFile(raw);
+    if (!folder || !f) return undefined;
+    const parts = String(folder).split('/').concat(String(f).split('/')).filter(Boolean);
+    return 'works/' + parts.map((part) => encodeURIComponent(part)).join('/');
+  }
+
+  workNode(path) {
+    const works = (this.state.worksTree && this.state.worksTree.length)
+      ? this.state.worksTree
+      : (this.state.content && this.state.content.works);
+    if (!works || !path || !path.length) return null;
+    let list = works;
+    let node = null;
+    for (let i = 0; i < path.length; i++) {
+      node = list[path[i]];
+      if (!node) return null;
+      list = node.folders || [];
+    }
+    return node;
+  }
+
+  workCountLabel(node, copy) {
+    const folders = (node.folders || []).length;
+    const files = node.images || [];
+    const videoCount = files.filter((f) => /\.(mp4|webm)$/i.test(String(f || ''))).length;
+    const stillCount = files.length - videoCount;
+    const bits = [];
+    if (folders) bits.push(folders + ' ' + (folders === 1 ? copy.folder : copy.folders));
+    if (stillCount) bits.push(stillCount + ' ' + copy.images);
+    if (videoCount) bits.push(videoCount + ' ' + (videoCount === 1 ? copy.video : copy.videos));
+    return bits.join(' · ') || ('0 ' + copy.images);
+  }
+
+  openFinder(index) {
+    const path = Array.isArray(this.state.finder) ? this.state.finder.slice() : [];
+    path.push(index);
+    this.setState({ finder: path });
+    requestAnimationFrame(() => {
+      const sc = document.querySelector('#calismalar .mm-mac-scroll');
+      if (sc) sc.scrollTop = 0;
+    });
+  }
+
+  closeFinder() {
+    const path = Array.isArray(this.state.finder) ? this.state.finder.slice() : [];
+    if (!path.length) return;
+    path.pop();
+    this.setState({ finder: path.length ? path : null });
+    requestAnimationFrame(() => {
+      const sc = document.querySelector('#calismalar .mm-mac-scroll');
+      if (sc) sc.scrollTop = 0;
+    });
+  }
+
+  openLightbox(imageIndex, path) {
+    const usePath = path || (Array.isArray(this.state.finder) ? this.state.finder.slice() : []);
+    this.setState({ lightbox: { path: usePath, index: imageIndex } });
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeLightbox(e) {
+    if (e && e.stopPropagation) e.stopPropagation();
+    this.setState({ lightbox: null });
+    document.body.style.overflow = '';
+  }
+
+  holdLightbox(e) {
+    if (e && e.stopPropagation) e.stopPropagation();
+  }
+
+  stepLightbox(dir, e) {
+    if (e && e.stopPropagation) e.stopPropagation();
+    const lb = this.state.lightbox;
+    const node = lb ? this.workNode(lb.path) : null;
+    if (!node) return;
+    const total = (node.images || []).length;
+    if (total < 2) return;
+    const next = (lb.index + dir + total) % total;
+    this.setState({ lightbox: { path: lb.path, index: next } });
+  }
+
+  // content.js'teki her medya slotunu render için hazırlar:
+  // img alanı doluysa gerçek dosya yolu + görünür; boşsa yer tutucu görünür.
+  resolveMediaSlot(item) {
+    const file = this.optFile(item.img);
+    return {
+      ...item,
+      imgSrc: file ? ('uploads/' + encodeURIComponent(file)) : undefined,
+      hasImg: !!file
+    };
+  }
+
+  toolGlyph(key) {
+    const h = React.createElement;
+    const map = {
+      Ps: [h('rect',{key:'r',x:3,y:3,width:18,height:18,rx:2}), h('circle',{key:'c',cx:8.5,cy:8.5,r:1.5}), h('polyline',{key:'p',points:'21 15 16 10 5 21'})],
+      Ai: [h('path',{key:'p1',d:'M12 19l7-7 3 3-7 7-3-3z'}), h('path',{key:'p2',d:'M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z'}), h('circle',{key:'c',cx:11,cy:11,r:2})],
+      Fi: [h('path',{key:'a',d:'M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z'}), h('path',{key:'b',d:'M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z'}), h('path',{key:'c',d:'M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z'}), h('path',{key:'d',d:'M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z'}), h('path',{key:'e',d:'M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z'})],
+      AC: [h('circle',{key:'c',cx:12,cy:12,r:10}), h('polygon',{key:'g',points:'16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76'})],
+      Au: [h('polyline',{key:'p',points:'22 12 18 12 15 21 9 3 6 12 2 12'})],
+      Pr: [h('rect',{key:'r',x:2,y:2,width:20,height:20,rx:2.2}), h('line',{key:'l1',x1:7,y1:2,x2:7,y2:22}), h('line',{key:'l2',x1:17,y1:2,x2:17,y2:22}), h('line',{key:'l3',x1:2,y1:12,x2:22,y2:12})],
+      Pt: [h('rect',{key:'r',x:4,y:4,width:16,height:16,rx:2}), h('rect',{key:'i',x:9,y:9,width:6,height:6}), h('line',{key:'l1',x1:9,y1:1,x2:9,y2:4}), h('line',{key:'l2',x1:15,y1:1,x2:15,y2:4}), h('line',{key:'l3',x1:9,y1:20,x2:9,y2:23}), h('line',{key:'l4',x1:15,y1:20,x2:15,y2:23}), h('line',{key:'l5',x1:20,y1:9,x2:23,y2:9}), h('line',{key:'l6',x1:20,y1:14,x2:23,y2:14}), h('line',{key:'l7',x1:1,y1:9,x2:4,y2:9}), h('line',{key:'l8',x1:1,y1:14,x2:4,y2:14})],
+      Cs: [h('line',{key:'a',x1:4,y1:5,x2:4,y2:19}), h('line',{key:'b',x1:8,y1:5,x2:8,y2:19}), h('line',{key:'c',x1:11,y1:5,x2:11,y2:19}), h('line',{key:'d',x1:15,y1:5,x2:15,y2:19}), h('line',{key:'e',x1:18,y1:5,x2:18,y2:19}), h('line',{key:'f',x1:21,y1:5,x2:21,y2:19})],
+      NL: [h('path',{key:'p',d:'M20.59 13.41L13.42 20.58a2 2 0 0 1-2.83 0L2.83 12.83a2 2 0 0 1 0-2.83L10 2h8a2 2 0 0 1 2 2v8z'}), h('line',{key:'l',x1:7,y1:7,x2:7.01,y2:7})],
+      Of: [h('path',{key:'p1',d:'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'}), h('polyline',{key:'p2',points:'14 2 14 8 20 8'}), h('line',{key:'l1',x1:16,y1:13,x2:8,y2:13}), h('line',{key:'l2',x1:16,y1:17,x2:8,y2:17})]
+    };
+    return map[key] || null;
+  }
+
+  renderVals() {
+    const scrolled = this.state.scrolled;
+    const isMobile = this.state.isMobile;
+    const content = this.state.content;
+    const lang = this.state.lang === 'en' ? 'en' : 'tr';
+    const theme = this.state.theme === 'dark' ? 'dark' : 'light';
+    const copy = I18N[lang];
+    const isEn = lang === 'en';
+
+    const heroPadding = isMobile ? '96px 6vw 60px' : '120px 6vw 60px';
+    const heroGridStyle = isMobile ? 'grid-template-columns:1fr;' : 'grid-template-columns:1.1fr 0.9fr;';
+    const heroTextAlign = isMobile ? 'text-align:center; display:flex; flex-direction:column; align-items:center;' : '';
+    const heroSocialsAlign = isMobile ? 'align-items:center; margin-top:24px;' : '';
+    const heroVisualMax = isMobile ? '260px' : '540px';
+    const heroBgSize = isMobile ? 'min(52vw,220px)' : 'min(60vw,420px)';
+    const heroSvgSize = isMobile ? 'min(66vw,260px)' : 'min(78vw,540px)';
+    const heroPhotoSize = isMobile ? 'min(41vw,176px)' : 'min(48vw,330px)';
+    const heroVisualMargin = isMobile ? 'margin-bottom:16px;' : '';
+    const aboutGridStyle = isMobile ? 'grid-template-columns:1fr;' : 'grid-template-columns:1.15fr 0.85fr;';
+    const websiteRowStyle = isMobile ? 'grid-template-columns:1fr;' : 'grid-template-columns:1.2fr minmax(220px,0.65fr);';
+    const channels = content ? content.youtubeChannels.map((ch, i) => {
+      const live = this.state.youtubeLive && ch.channelId ? this.state.youtubeLive[ch.channelId] : null;
+      const liveVideos = live && live.videos ? live.videos.filter((v) => v.thumb) : [];
+      const liveStats = live && live.stats ? live.stats : {};
+      const stats = ch.stats.map((s) => {
+        const key = s.label === 'Abone' ? 'subscribers' : (s.label === 'Video' ? 'videos' : (s.label === 'İzlenme' ? 'views' : ''));
+        const liveVal = key ? liveStats[key] : null;
+        return {
+          value: liveVal ? this.formatCount(liveVal, lang) : s.value,
+          label: isEn ? (EN_STATS[s.label] || s.label) : s.label,
+          isSubs: key === 'subscribers',
+          isVideos: key === 'videos',
+          isViews: key === 'views',
+          statClass: ''
+        };
+      });
+      const rise = live && Object.prototype.hasOwnProperty.call(live, 'rise') ? live.rise : null;
+      const growth = this.youtubeGrowth(rise, lang);
+      stats.push({
+        value: growth.text,
+        label: copy.growth,
+        isSubs: false,
+        isVideos: false,
+        isViews: false,
+        statClass: growth.statClass
+      });
+      const recentVideos = liveVideos.length
+        ? liveVideos.slice(0, 5).map((v) => ({
+            imgSrc: v.thumb,
+            hasImg: false,
+            hasLink: true,
+            href: v.href,
+            slotName: v.title || ''
+          }))
+        : ch.recentVideos.map((v) => {
+            const slot = this.resolveMediaSlot(v);
+            return { ...slot, hasLink: false, href: '' };
+          });
+      return {
+        href: ch.href,
+        name: (ch.channelId === 'UCpeEXqZlujhiCQE8-QqsBJg' && live && String(live.title || '').trim())
+          ? String(live.title).trim()
+          : (isEn ? (EN_CHANNELS[ch.name] || ch.name) : ch.name),
+        tagline: ch.tagline,
+        avatarSlotId: 'YoutubeProfil' + (i + 1),
+        bannerSlotId: 'YoutubeBanner' + (i + 1),
+        avatarSrc: (live && live.avatar) || this.mediaSrc('uploads', ch.avatarImg),
+        avatarPosition: ch.channelId === 'UC7o3pqj1besDkUp8MaXQLnw' ? 'center 22%' : 'center',
+        bannerSrc: (live && live.banner) || this.mediaSrc('uploads', ch.bannerImg),
+        locked: !!ch.locked,
+        unlocked: !ch.locked,
+        stats,
+        recentVideos
+      };
+    }) : [];
+    const source = (this.state.worksTree && this.state.worksTree.length)
+      ? this.state.worksTree
+      : (content && content.works ? content.works : []);
+    const works = source.map((w, i) => {
+      const images = w.images || [];
+      const count = images.length;
+      const slide = ((this.state.workSlides && this.state.workSlides[i]) || 0) % Math.max(count, 1);
+      const file = (images[slide] || w.cover || '').trim();
+      const prevFile = count > 1 ? (images[(slide - 1 + count) % count] || '').trim() : '';
+      const en = EN_WORKS[w.folder] || {};
+      const featured = i === 0 ? ' is-wide' : (i === 1 ? ' is-tall' : '');
+      return {
+        name: isEn ? (en.name || w.name) : w.name,
+        category: isEn ? (en.category || w.category) : w.category,
+        cardClass: 'mm-work' + featured,
+        imgSrc: this.workSrc(w.folder, file),
+        imgKey: w.folder + '-' + slide + '-' + file,
+        prevSrc: this.workSrc(w.folder, prevFile),
+        hasPrev: !!(count > 1 && prevFile && this._workStarted && this._workStarted[i]),
+        hasImg: !!file,
+        countLabel: this.workCountLabel(w, copy),
+        previews: this.folderPreviews(w),
+        openFolder: (e) => { if (e && e.stopPropagation) e.stopPropagation(); this.openFinder(i); },
+        open: () => this.openLightbox(slide, [i]),
+        pause: () => { this._hoverWork = i; },
+        resume: () => { if (this._hoverWork === i) this._hoverWork = null; }
+      };
+    });
+    const workName = (node) => {
+      const en = EN_WORKS[node.folder] || {};
+      return isEn ? (en.name || node.name) : node.name;
+    };
+    const finderPath = Array.isArray(this.state.finder) ? this.state.finder : null;
+    const finderRaw = finderPath ? this.workNode(finderPath) : null;
+    const finderName = finderRaw ? workName(finderRaw) : '';
+    const finderInside = !!finderRaw;
+    const finderTab = finderInside ? finderName : copy.worksTitle;
+    const finderFolders = finderRaw ? (finderRaw.folders || []).map((child, i) => ({
+      name: workName(child),
+      countLabel: this.workCountLabel(child, copy),
+      previews: this.folderPreviews(child),
+      openFolder: (e) => { if (e && e.stopPropagation) e.stopPropagation(); this.openFinder(i); }
+    })) : [];
+    const finderImages = finderRaw ? (finderRaw.images || []).map((file, imageIndex) => {
+      const name = String(file || '').trim();
+      const isVideo = /\.(mp4|webm)$/i.test(name);
+      const poster = (finderRaw.posters && finderRaw.posters[name]) || name.replace(/\.(mp4|webm)$/i, '.webp');
+      return {
+        src: this.workSrc(finderRaw.folder, isVideo ? poster : name),
+        alt: finderName,
+        isVideo,
+        fileClass: isVideo ? 'mm-file is-video' : 'mm-file',
+        delayStyle: 'animation-delay:' + (Math.min(imageIndex, 14) * 28) + 'ms',
+        open: (e) => { if (e && e.stopPropagation) e.stopPropagation(); this.openLightbox(imageIndex); }
+      };
+    }) : [];
+    const finderHasFolders = finderFolders.length > 0;
+    const finderHasImages = finderImages.length > 0;
+    const closeFolder = (e) => { if (e && e.stopPropagation) e.stopPropagation(); this.closeFinder(); };
+    const lbState = this.state.lightbox;
+    const lbWork = lbState ? this.workNode(lbState.path) : null;
+    const lbImages = lbWork && lbWork.images ? lbWork.images : [];
+    const lbFile = String(lbImages[lbState ? lbState.index : 0] || '').trim();
+    const lbIsVideo = /\.(mp4|webm)$/i.test(lbFile);
+    const lb = {
+      open: !!(lbState && lbWork),
+      isVideo: lbIsVideo,
+      isImage: !!(lbState && lbWork && !lbIsVideo),
+      src: lbWork ? this.workSrc(lbWork.folder, lbFile) : undefined,
+      poster: lbWork && lbIsVideo ? this.workSrc(lbWork.folder, (lbWork.posters && lbWork.posters[lbFile]) || lbFile.replace(/\.(mp4|webm)$/i, '.webp')) : undefined,
+      title: lbWork ? workName(lbWork) : '',
+      counter: lbWork ? ((lbState.index + 1) + ' / ' + lbImages.length) : '',
+      showNav: lbImages.length > 1,
+      close: (e) => this.closeLightbox(e),
+      hold: (e) => this.holdLightbox(e),
+      prev: (e) => this.stepLightbox(-1, e),
+      next: (e) => this.stepLightbox(1, e)
+    };
+    const rawApp = content && content.mobileApp ? content.mobileApp : { name: '', status: '', tagline: '', audience: '', description: '', storeLabel: '', storeHref: '', screens: [], highlights: [] };
+    const appEn = {
+      name: 'Learn English with Poko',
+      status: 'In development',
+      tagline: 'Have fun with English, with parent peace of mind.',
+      audience: 'Designed for children · Parent-controlled',
+      description: 'Learn English with Poko is a language app for children. Kids discover words, pronunciation and everyday phrases through games, songs and short quests with Poko, a bird character I designed. Learning is framed as time with a friend rather than a lesson: Poko encourages, celebrates and makes every small step visible. Parents stay in control of time, content and progress, so the child learns in a safe, age-appropriate space without ad pressure. I design the visual language, character and interface flow end to end.',
+      descriptionShort: 'A kids’ language app where I designed the character, interface and visual language end to end.',
+      comingSoonPlay: 'Coming soon on Google Play',
+      comingSoonApple: 'Coming soon on the App Store',
+      highlights: [
+        { title: 'Poko the character', text: 'Poko is a bird friend who stays by the child’s side. He does not lecture; he plays, repeats and cheers every right step. The character is the heart of the app’s visual language.' },
+        { title: 'Play to learn', text: 'Word cards, spoken repetition, mini-games and short quests tie English to daily life. Sessions stay short, clear and rewarding so children keep going without getting bored.' },
+        { title: 'Parent controls', text: 'Time limits, content choices and a progress summary stay in the parent’s hands. The child learns at their own pace while the family sees screen time and progress clearly.' },
+        { title: 'A safe space', text: 'Age-appropriate content, a calm interface and a rhythm that does not distract. Children explore independently; parents know they are safe in the background.' }
+      ]
+    };
+    const app = {
+      name: isEn ? appEn.name : rawApp.name,
+      status: isEn ? appEn.status : rawApp.status,
+      tagline: isEn ? appEn.tagline : rawApp.tagline,
+      audience: isEn ? appEn.audience : rawApp.audience,
+      description: isEn ? appEn.description : rawApp.description,
+      descriptionShort: isEn
+        ? (appEn.descriptionShort || appEn.description)
+        : (rawApp.descriptionShort || rawApp.description),
+      storeLabel: rawApp.storeLabel || (isEn ? 'Soon' : 'Yakında'),
+      storeHref: rawApp.storeHref || '',
+      comingSoonPlay: isEn ? appEn.comingSoonPlay : (rawApp.comingSoonPlay || 'Yakında Google Play\'de'),
+      comingSoonApple: isEn ? appEn.comingSoonApple : (rawApp.comingSoonApple || 'Yakında App Store\'da'),
+      hasStore: !!(rawApp.storeHref && String(rawApp.storeHref).trim()),
+      highlights: isEn ? appEn.highlights : (rawApp.highlights || []),
+      dragStart: (e) => this.startPokoDrag(e),
+      dragMove: (e) => this.movePokoDrag(e),
+      dragEnd: (e) => this.endPokoDrag(e),
+      screens: (rawApp.screens || []).map((s, i) => {
+        const file = (s.file || s.img || '').trim();
+        return {
+          ...s,
+          caption: isEn ? (EN_SCREENS[file] || s.caption) : s.caption,
+          imgSrc: this.workSrc('poko', file),
+          hasImg: !!file,
+          loading: i < 2 ? 'eager' : 'lazy'
+        };
+      })
+    };
+
+    const rawDetective = content && content.detectiveGame
+      ? content.detectiveGame
+      : { name: '', status: '', tagline: '', audience: '', description: '', descriptionShort: '', screens: [] };
+    const detectiveEn = {
+      name: 'Kuzgunbahçe',
+      status: 'In development',
+      tagline: 'The secrets of the harbor town — you solve them.',
+      audience: 'Landscape game · For kids · Parental gate',
+      description: 'Kuzgunbahçe is a landscape detective game set in a foggy harbor town. Players explore scenes, follow trails, connect clues on the board and solve the case step by step. The visual language is built on wood, parchment and soft harbor light; Fin, the young detective character, stays by the child’s side. Daily rewards, rank progress and a parental gate balance play rhythm with safety. I design the scene composition, UI language and interface flow end to end.',
+      descriptionShort: 'A landscape detective game where I designed the scenes, character and interface language end to end — gather clues in a foggy harbor and connect them. You walk the scenes, follow a trail, and pin what you find on the board. The look is wood, parchment and low harbor light; Fin, the young detective, stays beside the child. Daily rewards, rank and a parental gate keep the play rhythm and the safety in the same place.'
+    };
+    const dedektif = {
+      name: isEn ? detectiveEn.name : rawDetective.name,
+      status: isEn ? detectiveEn.status : rawDetective.status,
+      tagline: isEn ? detectiveEn.tagline : rawDetective.tagline,
+      audience: isEn ? detectiveEn.audience : rawDetective.audience,
+      description: isEn ? detectiveEn.description : rawDetective.description,
+      descriptionShort: isEn
+        ? (detectiveEn.descriptionShort || detectiveEn.description)
+        : (rawDetective.descriptionShort || rawDetective.description),
+      dragStart: (e) => this.startPokoDrag(e),
+      dragMove: (e) => this.movePokoDrag(e),
+      dragEnd: (e) => this.endPokoDrag(e),
+      screens: (rawDetective.screens || []).map((s, i) => {
+        const file = (s.file || s.img || '').trim();
+        return {
+          ...s,
+          caption: isEn ? (EN_SCREENS[file] || s.caption) : s.caption,
+          imgSrc: this.workSrc('dedektiflik', file),
+          hasImg: !!file,
+          loading: i < 2 ? 'eager' : 'lazy'
+        };
+      })
+    };
+
+    const navLinks = copy.nav;
+    const websites = content && content.websites ? content.websites.map((site) => {
+      const en = {
+        name: 'A custom wedding website',
+        category: 'Digital invitation',
+        notice: 'Mobile only',
+        tagline: 'Invitation, music and memories in one place.',
+        description: 'The wedding sites I build for couples go beyond a printed invitation. Guests open it on their phone: names, date and venue sit clearly, a chosen song plays in the background, and photos tell the story. From invitation copy to music, event details and gallery, everything is tailored to the couple.',
+        mockup: { kicker: 'Invitation', names: site.mockup && site.mockup.names, line: 'We are getting married', date: '30 August 2026 · 18:00' },
+        features: [
+          { title: 'Music', text: 'A song chosen for the couple on the welcome screen. The invitation begins with sound.' },
+          { title: 'Wedding invitation', text: 'Names, date and an elegant opening. Guests feel as if they are holding a digital invite.' },
+          { title: 'Event details', text: 'Venue, time, schedule and directions in one place. Guests do not have to ask; they tap through every detail.' },
+          { title: 'Imagery', text: 'Portraits, memories and invitation aesthetics. The site carries the couple’s visual language.' }
+        ]
+      };
+      return {
+        ...site,
+        name: isEn ? en.name : site.name,
+        category: isEn ? en.category : site.category,
+        notice: isEn ? en.notice : site.notice,
+        tagline: isEn ? en.tagline : site.tagline,
+        description: isEn ? en.description : site.description,
+        mockup: isEn ? en.mockup : (site.mockup || {}),
+        features: isEn ? en.features : (site.features || []),
+        visitLabel: (isEn ? en.name : site.name) + (isEn ? ' — visit' : ' sitesine git'),
+        imgSrc: this.workSrc(site.folder, site.cover)
+      };
+    }) : [];
+    const compact = typeof this.state.navCompact === 'number' ? this.state.navCompact : 0;
+    const navChromeStyle = `--mm-c:${compact};background:${compact > 0.45 ? 'var(--mm-nav-scrolled)' : 'var(--mm-nav)'};`;
+    const navBarClass = 'mm-nav' + (compact > 0.82 ? ' is-compact' : '') + (scrolled ? ' is-scrolled' : '');
+    const linksWrapStyle = '';
+    const topBtnStyle = scrolled
+      ? 'opacity:1; transform:translateY(0);'
+      : 'opacity:0; transform:translateY(12px); pointer-events:none;';
+    const scrollArrowStyle = scrolled
+      ? 'opacity:0; transform:translate(-50%,10px); pointer-events:none; transition:opacity 0.4s ease, transform 0.4s ease, border-color 0.25s ease;'
+      : 'opacity:1; transform:translate(-50%,0); transition:opacity 0.4s ease, transform 0.4s ease, border-color 0.25s ease; animation:bobArrow 2s ease-in-out infinite;';
+
+
+    const heroLetters = Array.from('Mert Mazal\u0131.').map((ch, i) => ({
+      ch: ch === ' ' ? '\u00A0' : ch,
+      style: 'animation-delay:' + (0.32 + i * 0.09).toFixed(2) + 's'
+    }));
+    return {
+      navLinks,
+      websites,
+      isDesktopNav: !isMobile,
+      isMobileNav: isMobile,
+      navChromeStyle,
+      navBarClass,
+      linksWrapStyle,
+      topBtnStyle,
+      scrollArrowStyle,
+      heroPadding,
+      heroGridStyle,
+      heroTextAlign,
+      heroSocialsAlign,
+      heroVisualMax,
+      heroBgSize,
+      heroSvgSize,
+      heroPhotoSize,
+      heroVisualMargin,
+      heroLetters,
+      aboutGridStyle,
+      websiteRowStyle,
+      socials: [
+        { href: 'https://www.instagram.com/mr.mazali/', label: 'Instagram' },
+        { href: 'https://x.com/mrmazali', label: 'X' },
+        { href: 'https://www.linkedin.com/in/mert-mazal%C4%B1-70625b203/', label: 'LinkedIn' }
+      ],
+      heroSocials: [
+        { href: 'https://x.com/mrmazali', label: 'X', icon: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z' },
+        { href: 'https://www.instagram.com/mr.mazali/', label: 'Instagram', icon: 'M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z' },
+        { href: 'https://www.behance.net/mrmazali', label: 'Behance', icon: 'M22 7.505h-6.918v-1.6H22v1.6zM7.706 12.181c.777-.389 1.323-1.06 1.323-2.194 0-2.194-1.634-2.85-3.548-2.85H0v11.928h5.702c2.05 0 4.096-.984 4.096-3.312 0-1.445-.686-2.42-2.092-2.99v-.03zM2.802 8.98h2.505c.996 0 1.89.276 1.89 1.436 0 1.06-.735 1.483-1.72 1.483H2.802V8.98zm2.81 8.6H2.803v-3.325h2.914c1.222 0 2.042.517 2.042 1.79 0 1.395-1.06 1.536-2.147 1.536zM17.803 9.194c-3.485 0-5.44 2.475-5.44 5.708 0 3.35 1.83 5.66 5.44 5.66 2.746 0 4.607-1.235 5.203-3.673h-2.5c-.24.836-1.222 1.442-2.598 1.442-1.98 0-2.958-1.128-3.017-3.096h8.187c.07-3.44-1.735-6.041-5.275-6.041zm-2.912 4.556c.11-1.53 1.12-2.618 2.727-2.618 1.696 0 2.51 1.038 2.62 2.618h-5.347z' },
+        { href: 'https://www.linkedin.com/in/mert-mazal%C4%B1-70625b203/', label: 'LinkedIn', icon: 'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z' }
+      ],
+      tools: [
+        { name: 'Adobe Photoshop', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg' },
+        { name: 'Adobe Illustrator', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg' },
+        { name: 'Figma', icon: 'https://cdn.simpleicons.org/figma' },
+        { name: 'AutoCad 2D', icon: 'https://cdn.simpleicons.org/autocad' },
+        { name: 'Adobe Audition', icon: 'uploads/icons/adobe-audition.svg' },
+        { name: 'Adobe Premiere Pro', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-plain.svg' },
+        { name: 'Adobe Media Encoder', icon: 'uploads/icons/adobe-media-encoder.svg' },
+        { name: 'Proteus', icon: 'https://www.google.com/s2/favicons?domain=labcenter.com&sz=64' },
+        { name: 'Codesoft', icon: 'https://www.google.com/s2/favicons?domain=teklynx.com&sz=64' },
+        { name: 'Nicelabel', icon: 'https://www.google.com/s2/favicons?domain=nicelabel.com&sz=64' },
+        { name: 'MS Office', icon: 'https://www.google.com/s2/favicons?domain=office.com&sz=64' }
+      ],
+      experience: isEn ? [
+        { date: 'Jan 2025 – Aug 2026', role: 'Graphic Designer', company: 'Charming' },
+        { date: 'Sep 2024 – Jan 2025', role: 'Graphic Designer', company: 'Erdemözalit' },
+        { date: 'Jan 2024 – Sep 2024', role: 'Digital Print Designer', company: 'Usb Etiket' },
+        { date: 'Aug 2018 – Aug 2021', role: 'Graphic Designer', company: 'Usb Etiket' }
+      ] : [
+        { date: 'Ocak 2025 – Ağustos 2026', role: 'Grafiker', company: 'Charming' },
+        { date: 'Eylül 2024 – Ocak 2025', role: 'Grafiker', company: 'Erdemözalit' },
+        { date: 'Ocak 2024 – Eylül 2024', role: 'Dijital Baskı Grafiker', company: 'Usb Etiket' },
+        { date: 'Ağustos 2018 – Ağustos 2021', role: 'Grafiker', company: 'Usb Etiket' }
+      ],
+      aiTools: [
+        { name: 'Qwen Studio', bg: 'var(--mm-wash)', icon: 'https://cdn.simpleicons.org/qwen' },
+        { name: 'DeepSeek', bg: 'var(--mm-wash)', icon: 'https://cdn.simpleicons.org/deepseek' },
+        { name: 'Gemini', bg: 'var(--mm-wash)', icon: 'https://cdn.simpleicons.org/googlegemini' },
+        { name: 'Adobe Firefly', bg: 'var(--mm-wash)', icon: 'https://www.google.com/s2/favicons?domain=firefly.adobe.com&sz=64' },
+        { name: 'Meta AI', bg: 'var(--mm-wash)', icon: 'https://cdn.simpleicons.org/metaai' },
+        { name: 'Kimi', bg: 'var(--mm-wash)', icon: 'https://cdn.simpleicons.org/kimi' },
+        { name: 'ChatGPT', bg: 'var(--mm-wash)', icon: 'https://www.google.com/s2/favicons?domain=chatgpt.com&sz=64' },
+        { name: 'LongCat', bg: 'var(--mm-wash)', icon: 'https://www.google.com/s2/favicons?domain=longcat.chat&sz=64' },
+        { name: 'Grok', bg: 'var(--mm-wash)', icon: 'https://www.google.com/s2/favicons?domain=grok.com&sz=64' },
+        { name: 'Claude', bg: 'var(--mm-wash)', icon: 'https://cdn.simpleicons.org/claude' },
+        { name: 'Arena', bg: 'var(--mm-wash)', icon: 'https://www.google.com/s2/favicons?domain=lmarena.ai&sz=64' },
+        { name: 'OpenCode', bg: 'var(--mm-wash)', icon: 'https://cdn.simpleicons.org/opencode' },
+        { name: 'Cursor', bg: 'var(--mm-wash)', icon: 'https://cdn.simpleicons.org/cursor' },
+        { name: 'Google Flow', bg: 'var(--mm-wash)', icon: 'https://www.google.com/s2/favicons?domain=labs.google&sz=64' },
+        { name: 'Wan AI', bg: 'var(--mm-wash)', icon: 'https://cdn.simpleicons.org/alibabacloud' },
+        { name: 'Suno', bg: 'var(--mm-wash)', icon: 'https://cdn.simpleicons.org/suno' }
+      ],
+      channels,
+      finderInside,
+      finderHome: !finderInside,
+      finderTab,
+      finderImages,
+      finderFolders,
+      finderHasFolders,
+      finderHasImages,
+      closeFolder,
+      works,
+      app,
+      dedektif,
+      lb,
+      copy,
+      quoteHref: isEn
+        ? 'https://wa.me/905316174805?text=' + encodeURIComponent('Hi Mert, I would like a quote for a custom wedding website.')
+        : 'https://wa.me/905316174805?text=' + encodeURIComponent('Merhaba Mert, kişiye özel düğün websitesi için fiyat almak istiyorum.'),
+      workTogetherHref: isEn
+        ? 'https://wa.me/905316174805?text=' + encodeURIComponent('Hi Mert, I would like to work together.')
+        : 'https://wa.me/905316174805?text=' + encodeURIComponent('Merhaba Mert, birlikte çalışmak istiyorum.'),
+      quotes: copy.quotes || [],
+      kitInClass: this.state.kitIn ? 'is-in' : '',
+      quoteX: this.state.quoteX || 0,
+      quoteDragStyle: this.state.quoteDragging ? 'transition: none' : '',
+      quoteAtStart: (this.state.quoteX || 0) >= -1 ? 'true' : 'false',
+      quoteAtEnd: ((this.state.quoteMax || 0) <= 1 || (this.state.quoteX || 0) <= -(this.state.quoteMax || 0) + 1) ? 'true' : 'false',
+      quotePrev: (e) => this.stepQuotes(-1, e),
+      quoteNext: (e) => this.stepQuotes(1, e),
+      quoteDragStart: (e) => this.startQuoteDrag(e),
+      quoteDragMove: (e) => this.moveQuoteDrag(e),
+      quoteDragEnd: (e) => this.endQuoteDrag(e),
+      contact: {
+        open: !!this.state.contactOpen,
+        openClass: this.state.contactOpen ? 'is-open' : '',
+        close: (e) => this.closeContact(e),
+        hold: (e) => this.holdContact(e),
+        toggle: () => this.toggleContact()
+      },
+      processSteps: copy.processSteps,
+      toggleTheme: () => this.toggleTheme(),
+      toggleLang: () => this.toggleLang()
+    };
+  }
+}
+
+</script>
+</body>
+</html>
