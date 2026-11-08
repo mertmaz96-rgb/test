@@ -45,7 +45,7 @@ def parse_srt(text):
     return cues
 
 
-def build_segments(cues, lang):
+def build_segments(cues, lang, spk):
     segments = []
     for start, end, body in cues:
         dur = max(end - start, 0.001)
@@ -69,7 +69,7 @@ def build_segments(cues, lang):
         segments.append({
             "duration": round(dur, 4),
             "language": lang,
-            "speaker": "spk0",
+            "speaker": spk,
             "start": round(start, 4),
             "words": words,
         })
@@ -81,10 +81,11 @@ def convert(srt_path, out_root, fmt, lang):
     if not cues:
         print(f"! Atlandı (geçerli altyazı yok): {srt_path}")
         return
+    spk = str(uuid.uuid4())  # Premiere konuşmacıları UUID ile eşler
     data = {
         "language": lang,
-        "segments": build_segments(cues, lang),
-        "speakers": [{"id": "spk0", "name": "Konuşmacı 1"}],
+        "segments": build_segments(cues, lang, spk),
+        "speakers": [{"id": spk, "name": "Konuşmacı 1"}],
     }
     for kind, ext in (("prtranscript", ".prtranscript"), ("json", ".json")):
         if fmt in (kind, "both"):
